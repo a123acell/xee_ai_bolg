@@ -1,0 +1,204 @@
+<div
+  class="mb-4 bg-white rounded-lg border border-gray-200 shadow-sm transition-shadow last:mb-0 hover:shadow-md"
+  data-controller="generate-content archive-suggestion"
+  data-generate-content-suggestion-id-value="{{ suggestion.id }}"
+  data-generate-content-project-id-value="{{ suggestion.project.id }}"
+  data-archive-suggestion-suggestion-id-value="{{ suggestion.id }}"
+  data-archive-suggestion-archived-value="{{ suggestion.archived|yesno:'true,false' }}"
+  data-suggestion-type="{{ suggestion.content_type }}"
+>
+  <div class="p-6">
+    <!-- Header with title and action button -->
+    <div class="flex justify-between items-start mb-1">
+      <div class="flex-1">
+        <h4 class="text-lg font-semibold text-gray-900">
+          {{ suggestion.title }}
+        </h4>
+      </div>
+
+      {% if page != "generated_post" %}
+      <!-- Action Button -->
+      <div class="flex-shrink-0 ml-4">
+        <div data-generate-content-target="buttonContainer">
+          {% with generated_post=suggestion.generated_blog_posts.first %}
+            {% if not generated_post %}
+              {% if request.user.profile.reached_content_generation_limit %}
+                <a
+                  href="{% url 'settings' %}"
+                  class="inline-flex items-center px-4 py-2 text-sm font-medium text-gray-400 bg-gray-100 rounded-md border border-gray-200 hover:bg-gray-200 hover:text-gray-500"
+                  data-controller="tooltip"
+                  data-tooltip-message-value="You've reached the content generation limit ({{ request.user.profile.number_of_generated_blog_posts_this_month }}/{{ request.user.profile.blog_post_generation_limit }} blog posts this month on {{ request.user.profile.product_name }} plan).\nUpgrade to Pro in settings for unlimited content."
+                  data-action="mouseenter->tooltip#show mouseleave->tooltip#hide">
+                  <svg class="mr-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                  </svg>
+                  Generate
+                </a>
+              {% else %}
+                <button
+                  data-action="generate-content#generate"
+                  class="inline-flex items-center px-4 py-2 text-sm font-medium text-white bg-gray-900 rounded-md border border-gray-900 hover:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-gray-500">
+                  <svg class="mr-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                  </svg>
+                  Generate
+                </button>
+              {% endif %}
+            {% elif generated_post.content %}
+              <a
+                href="{% url 'generated_blog_post_detail' suggestion.project.id generated_post.id %}"
+                class="inline-flex items-center px-4 py-2 text-sm font-medium text-white bg-gray-900 rounded-md border border-gray-900 hover:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-gray-500">
+                <svg class="mr-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path>
+                </svg>
+                View Post
+              </a>
+            {% endif %}
+          {% endwith %}
+        </div>
+      </div>
+      {% endif %}
+
+    </div>
+
+    <!-- Date row -->
+    <div class="flex gap-1 items-center mb-2">
+      <svg class="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+      </svg>
+      <span class="text-sm text-gray-500">
+        {{ suggestion.created_at|date:"M j, Y" }}
+      </span>
+    </div>
+
+    <!-- Status indicator -->
+    <div data-generate-content-target="status" class="mb-4">
+      {% with generated_post=suggestion.generated_blog_posts.first %}
+        {% if generated_post and generated_post.content %}
+          <div class="flex gap-1.5 items-center">
+            <div class="w-3 h-3 bg-green-500 rounded-full"></div>
+            <span class="text-sm font-medium text-green-700">Generated</span>
+          </div>
+        {% else %}
+          <div class="flex gap-1.5 items-center">
+            <div class="w-3 h-3 bg-gray-400 rounded-full"></div>
+            <span class="text-sm text-gray-600">Ready to generate</span>
+          </div>
+        {% endif %}
+      {% endwith %}
+    </div>
+
+    <!-- Category row -->
+    <div class="flex gap-2 items-center pb-4 mb-4 border-b border-gray-100">
+      <span class="text-sm text-gray-500">Category:</span>
+      <span class="inline-flex items-center px-2.5 py-1 text-xs font-medium text-gray-700 bg-gray-100 rounded-full">
+        {{ suggestion.category }}
+      </span>
+    </div>
+
+    <!-- Description -->
+    <p class="mb-6 leading-relaxed text-gray-700">
+      {{ suggestion.description }}
+    </p>
+
+    <!-- Content sections -->
+    <div class="space-y-5">
+      <!-- Keywords -->
+      {% if suggestion.target_keywords %}
+        <div>
+          <h5 class="flex gap-2 items-center mb-3 text-sm font-medium text-gray-700">
+            <svg class="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 010 2.828l-7 7a2 2 0 01-2.828 0l-7-7A1.994 1.994 0 013 12V7a4 4 0 014-4z"></path>
+            </svg>
+            Keywords
+          </h5>
+          <div class="flex flex-wrap gap-2">
+            {% for keyword_data in suggestion.keywords_with_usage %}
+              {% include "components/keyword_chip.html" with keyword=keyword_data.text project_id=suggestion.project.id keyword_in_use=keyword_data.in_use %}
+            {% endfor %}
+          </div>
+        </div>
+      {% endif %}
+
+      <!-- Meta Description -->
+      {% if suggestion.suggested_meta_description %}
+        <div class="p-4 bg-gray-50 rounded-lg border border-gray-200">
+          <h5 class="flex gap-2 items-center mb-2 text-sm font-medium text-gray-700">
+            <svg class="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h7"></path>
+            </svg>
+            Meta Description
+          </h5>
+          <p class="text-sm leading-relaxed text-gray-600">
+            {{ suggestion.suggested_meta_description }}
+          </p>
+        </div>
+      {% endif %}
+    </div>
+
+    <!-- Actions Row -->
+    <div class="flex justify-between items-center pt-6 mt-6 border-t border-gray-100">
+      <!-- Rating Actions -->
+      <div class="flex items-center space-x-3"
+           data-controller="title-score"
+           data-title-score-suggestion-id-value="{{ suggestion.id }}"
+           data-title-score-current-score-value="{{ suggestion.user_score }}">
+
+        <button data-title-score-target="likeButton"
+                data-action="title-score#updateScore"
+                class="inline-flex items-center px-3 py-1.5 text-xs font-medium text-gray-600 rounded border border-gray-300 transition-colors hover:bg-green-50 hover:text-green-700 hover:border-green-300 like">
+          <svg class="mr-1 w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 10h4.764a2 2 0 011.789 2.894l-3.5 7A2 2 0 0115.263 21h-4.017c-.163 0-.326-.02-.485-.06L7 20m7-10V5a2 2 0 00-2-2h-.095c-.5 0-.905.405-.905.905 0 .714-.211 1.412-.608 2.006L7 11v9m7-10h-2M7 20H5a2 2 0 01-2-2v-6a2 2 0 012-2h2.5" />
+          </svg>
+          Like
+        </button>
+
+        <button data-title-score-target="dislikeButton"
+                data-action="title-score#updateScore"
+                class="inline-flex items-center px-3 py-1.5 text-xs font-medium text-gray-600 rounded border border-gray-300 transition-colors hover:bg-red-50 hover:text-red-700 hover:border-red-300 dislike">
+          <svg class="mr-1 w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 14H5.236a2 2 0 01-1.789-2.894l3.5-7A2 2 0 018.736 3h4.018c.163 0 .326.02.485.06L17 4m-7 10v2a2 2 0 002 2h.095c.5 0 .905-.405-.905-.905 0-.714.211-1.412.608-2.006L17 13V4m-7 10h2m5-10h2a2 2 0 012 2v6a2 2 0 01-2 2h-2.5" />
+          </svg>
+          Dislike
+        </button>
+      </div>
+
+      <!-- Archive Action -->
+      <div>
+        <button data-action="archive-suggestion#archive"
+                data-archive-suggestion-target="archiveButton"
+                class="inline-flex items-center px-3 py-1.5 text-xs font-medium text-gray-600 border border-gray-300 rounded hover:bg-gray-50 transition-colors {% if suggestion.archived %}hidden{% endif %}">
+          <svg xmlns="http://www.w3.org/2000/svg" class="mr-1 w-3.5 h-3.5" viewBox="0 0 20 20" fill="currentColor">
+            <path d="M4 3a2 2 0 100 4h12a2 2 0 100-4H4z"></path>
+            <path fill-rule="evenodd" d="M3 8h14v7a2 2 0 01-2 2H5a2 2 0 01-2-2V8zm5 3a1 1 0 011-1h2a1 1 0 110 2H9a1 1 0 01-1-1z" clip-rule="evenodd"></path>
+          </svg>
+          Archive
+        </button>
+
+        <button data-action="archive-suggestion#unarchive"
+                data-archive-suggestion-target="unarchiveButton"
+                class="inline-flex items-center px-3 py-1.5 text-xs font-medium text-gray-600 border border-gray-300 rounded hover:bg-gray-50 transition-colors {% if not suggestion.archived %}hidden{% endif %}">
+          <svg xmlns="http://www.w3.org/2000/svg" class="mr-1 w-3.5 h-3.5" viewBox="0 0 20 20" fill="currentColor">
+            <path fill-rule="evenodd" d="M5 2a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V4a2 2 0 00-2-2H5zm3 8a1 1 0 00-1 1v2a1 1 0 102 0v-2a1 1 0 00-1-1zm3 0a1 1 0 00-1 1v2a1 1 0 102 0v-2a1 1 0 00-1-1z" clip-rule="evenodd" />
+          </svg>
+          Unarchive
+        </button>
+      </div>
+
+      <!-- Post Button Integration -->
+      <div data-generate-content-target="postButtonContainer"
+           data-has-pro-subscription="{{ has_pro_subscription }}"
+           data-has-auto-submission-setting="{{ has_auto_submission_setting }}"
+           data-pricing-url="{% url 'pricing' %}"
+           data-project-settings-url="{% url 'project_settings' suggestion.project.id %}">
+        {% include "components/post-button.html" with suggestion=suggestion %}
+      </div>
+    </div>
+
+    <!-- Hidden targets for Stimulus controller compatibility -->
+    <div data-generate-content-target="dropdown" class="hidden">
+      <div data-generate-content-target="content"></div>
+    </div>
+  </div>
+</div>

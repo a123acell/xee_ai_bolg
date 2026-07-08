@@ -1,0 +1,81 @@
+{% extends "base_app.html" %}
+{% load static %}
+
+{% block content %}
+<div class="py-8 bg-white sm:py-12">
+  <div class="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
+
+    <!-- Project Header -->
+    <div class="mb-8">
+      <div class="flex flex-col gap-4 items-center sm:flex-row sm:justify-between">
+        <!-- Back to Projects Button - Hidden on mobile, visible on desktop -->
+        <div class="hidden sm:block sm:flex-shrink-0">
+          <a
+            href="{% url 'home' %}"
+            class="inline-flex items-center px-4 py-2 text-sm font-medium text-gray-700 bg-white rounded-md border border-gray-300 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-gray-500"
+          >
+            <svg class="mr-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+            </svg>
+            Back to Projects
+          </a>
+        </div>
+
+        <!-- Project Title - Centered -->
+        <div class="flex-1 text-center">
+          <h1 class="text-2xl font-bold text-gray-900 sm:text-3xl">
+            {{ project.name }}
+          </h1>
+          <div class="flex justify-center items-center mt-2">
+            <span class="inline-flex items-center px-2.5 py-0.5 text-xs font-medium text-gray-700 bg-gray-100 rounded-full border">
+              {{ project.get_type_display }}
+            </span>
+            {% if project.url %}
+              <a href="{{ project.url }}" target="_blank" rel="noopener noreferrer"
+                 class="inline-flex items-center ml-3 text-sm text-gray-600 hover:text-gray-900">
+                <svg class="mr-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                </svg>
+                Visit Site
+              </a>
+            {% endif %}
+          </div>
+        </div>
+
+        <!-- Spacer for desktop alignment -->
+        <div class="hidden sm:block sm:flex-shrink-0 sm:w-[140px]"></div>
+
+        <!-- Back to Projects Button for Mobile - Full width below title -->
+        <div class="block w-full sm:hidden">
+          <a
+            href="{% url 'home' %}"
+            class="inline-flex justify-center items-center px-4 py-2 w-full text-sm font-medium text-gray-700 bg-white rounded-md border border-gray-300 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-gray-500"
+          >
+            <svg class="mr-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+            </svg>
+            Back to Projects
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Main Layout: Sidebar + Content -->
+    <div class="flex flex-col gap-6 lg:flex-row lg:items-start">
+
+      <!-- Sidebar Navigation -->
+      <aside class="w-full lg:w-64 lg:flex-shrink-0 lg:sticky lg:top-6" style="align-self: flex-start;">
+        {% include "components/project_navigation.html" %}
+      </aside>
+
+      <!-- Main Content Area -->
+      <main class="relative flex-1 w-full pointer-events-auto lg:min-w-0">
+        {% block project_content %}
+        <!-- Project-specific content goes here -->
+        {% endblock project_content %}
+      </main>
+
+    </div>
+  </div>
+</div>
+{% endblock content %}
