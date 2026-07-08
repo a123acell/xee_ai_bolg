@@ -1,6 +1,6 @@
 ---
 title: API · Title Suggestions
-description: Title suggestion endpoints for a project in the TuxSEO Public API.
+description: Title suggestion endpoints for a project in the XeeAISto Public API.
 ---
 
 ## Endpoints

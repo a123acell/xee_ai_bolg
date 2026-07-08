@@ -1,7 +1,7 @@
 ---
 title: Blog Post Suggestions
 description: Generate AI-powered blog post title ideas for your website.
-keywords: TuxSEO, blog posts, content ideas, title generation, SEO
+keywords: XeeAISto, blog posts, content ideas, title generation, SEO
 author: Rasul Kireev
 ---
 
@@ -15,7 +15,7 @@ Generate targeted blog post ideas that align with your website's content and aud
 
 ## Overview
 
-TuxSEO's blog post suggestion feature analyzes your website and generates relevant title ideas for your blog. The AI considers your existing content, target audience, and industry to create suggestions that fit your brand and SEO strategy.
+XeeAISto's blog post suggestion feature analyzes your website and generates relevant title ideas for your blog. The AI considers your existing content, target audience, and industry to create suggestions that fit your brand and SEO strategy.
 
 ## How it works
 
@@ -25,7 +25,7 @@ Navigate to your project dashboard and find the Blog Post Suggestions section.
 
 Click "Generate Blog Post Ideas" to start the process.
 
-TuxSEO analyzes:
+XeeAISto analyzes:
 - Your website's existing content and themes
 - Your target audience and industry
 - Current trends in your niche

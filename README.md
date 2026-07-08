@@ -1,8 +1,8 @@
-<p align="center"><img src="https://minio-api.cr.lvtd.dev/tuxseo-prod/logo512.png" width="230" alt="TuxSEO Logo"></p>
+<p align="center"><img src="https://minio-api.cr.lvtd.dev/tuxseo-prod/logo512.png" width="230" alt="XeeAISto Logo"></p>
 
 <div align="center">
 
-<img src="https://minio-api.cr.lvtd.dev/tuxseo-prod/logo-large.png" width="230" alt="TuxSEO Name">
+<img src="https://minio-api.cr.lvtd.dev/tuxseo-prod/logo-large.png" width="230" alt="XeeAISto Name">
 
 <b>Automated Blog Content Creation for Founders Who Hate Writing</b>
 </div>
@@ -11,18 +11,18 @@
 
 ## Archive Status
 
-TuxSEO is being archived on May 26, 2026. The product is no longer considered useful enough to actively maintain because AI agents can now handle this work better directly.
+XeeAISto is being archived on May 26, 2026. The product is no longer considered useful enough to actively maintain because AI agents can now handle this work better directly.
 
-The hosted site will stay live for now, but new signups are disabled. After the `tuxseo.com` domain expires, the site will move to [tuxseo.lvtd.dev](http://tuxseo.lvtd.dev).
+The hosted site will stay live for now, but new signups are disabled. After the `tuxseo.com` domain expires, the site will move to [xeeaisto.lvtd.dev](http://xeeaisto.lvtd.dev).
 
 ***
 
 ## Overview
 
-- TuxSEO learns about your business, analyzes the market which lets you...
+- XeeAISto learns about your business, analyzes the market which lets you...
 - Generate content ideas for you business blog to drive traffic from searches.
-- Stop wasting time and money on research and writing, let TuxSEO do it for you.
-- TuxSEO is open-source, self-hostable. Always.
+- Stop wasting time and money on research and writing, let XeeAISto do it for you.
+- XeeAISto is open-source, self-hostable. Always.
 - Run it privately on [your computer](#deployment) or try it on our [cloud app](https://tuxseo.com).
 
 ***
@@ -84,7 +84,7 @@ Copy the contents of `.env.example` into `.env` and update all the necessary val
 
 Copy the contents of `docker-compose-prod.yml` into `docker-compose.yml` and run the suggested command from the top of the `docker-compose-prod.yml` file.
 
-How you are going to expose the backend container is up to you. I usually do it via Nginx Reverse Proxy with `http://tuxseo-backend-1:80` UPSTREAM_HTTP_ADDRESS.
+How you are going to expose the backend container is up to you. I usually do it via Nginx Reverse Proxy with `http://xeeaisto-backend-1:80` UPSTREAM_HTTP_ADDRESS.
 
 
 ### Pure Python / Django deployment
@@ -103,14 +103,14 @@ You'd still need to make sure .env has correct values.
 ### Custom Deployment on Caprover
 
 1. Create 4 apps on CapRover.
-  - `tuxseo`
-  - `tuxseo-workers`
-  - `tuxseo-postgres`
-  - `tuxseo-redis`
+  - `xeeaisto`
+  - `xeeaisto-workers`
+  - `xeeaisto-postgres`
+  - `xeeaisto-redis`
 
 2. Create a new CapRover app token for:
-   - `tuxseo`
-   - `tuxseo-workers`
+   - `xeeaisto`
+   - `xeeaisto-workers`
 
 3. Add Environment Variables to those same apps from `.env`.
 
@@ -149,7 +149,7 @@ If this fails, fix locally before pushing.
 
 ### PostHog Logs (structured backend observability)
 
-TuxSEO can ship structured backend logs to **PostHog Logs** over OTLP HTTP.
+XeeAISto can ship structured backend logs to **PostHog Logs** over OTLP HTTP.
 
 - Web request logs include correlation IDs (`request_id`, `trace_id`) via middleware.
 - Background and AI generation jobs bind `task_id`/`job_id` so failures can be traced end-to-end.
@@ -166,7 +166,7 @@ See `docs/posthog-logs.md` for full configuration and field-level behavior.
 
 ### PostHog LLM analytics (PydanticAI flows)
 
-TuxSEO emits `$ai_generation` events from key PydanticAI generation flows via `run_agent_synchronously(...)`.
+XeeAISto emits `$ai_generation` events from key PydanticAI generation flows via `run_agent_synchronously(...)`.
 
 - Includes model, latency, token usage (when available), flow path, and failure context.
 - Designed for PostHog LLM analytics views to compare performance/cost by feature path.
@@ -175,7 +175,7 @@ See `docs/posthog-llm-analytics.md` for event schema and verification steps.
 
 ### Product analytics event taxonomy (PostHog)
 
-TuxSEO maintains a canonical event taxonomy and coverage matrix for funnel-safe product analytics:
+XeeAISto maintains a canonical event taxonomy and coverage matrix for funnel-safe product analytics:
 
 - `docs/event-taxonomy.md`
 - `docs/posthog-event-coverage-matrix.md`
@@ -192,14 +192,14 @@ Use `scripts/posthog_dashboard_bootstrap.py` to create/update all dashboard tile
 
 ### Paid acquisition attribution foundation (Meta/Google/Reddit/X)
 
-TuxSEO now persists first-touch/latest-touch attribution and enriches server-side conversion events with normalized acquisition fields.
+XeeAISto now persists first-touch/latest-touch attribution and enriches server-side conversion events with normalized acquisition fields.
 
 - canonical schema + guardrails: `docs/acquisition-attribution-v1.md`
 - source of truth for event names: `core/analytics/event_taxonomy.json`
 
 ### Analytics ingestion jobs (GA4, GSC, Plausible)
 
-TuxSEO now ships background ingestion for connected analytics providers:
+XeeAISto now ships background ingestion for connected analytics providers:
 - Google Analytics 4 (GA4)
 - Google Search Console (GSC)
 - Plausible
@@ -225,7 +225,7 @@ Worker task entrypoint:
 
 ### Periodic sitemap sync for “Your Pages”
 
-TuxSEO now auto-refreshes sitemap-backed project pages on a configurable schedule.
+XeeAISto now auto-refreshes sitemap-backed project pages on a configurable schedule.
 
 - batch entrypoint: `core.tasks.sync_all_projects_with_sitemaps`
 - single-project sync: `core.tasks.parse_sitemap_and_save_urls(project_id)`
@@ -292,4 +292,4 @@ Non-superuser or missing API keys are rejected with unauthorized responses.
 
 ## Star History
 
-[![Star History Chart](https://api.star-history.com/svg?repos=rasulkireev/tuxseo&type=Date)](https://www.star-history.com/#rasulkireev/tuxseo&Date)
+[![Star History Chart](https://api.star-history.com/svg?repos=rasulkireev/xeeaisto&type=Date)](https://www.star-history.com/#rasulkireev/xeeaisto&Date)

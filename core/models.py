@@ -74,9 +74,9 @@ from core.utils import (
     process_generated_blog_content,
     run_agent_synchronously,
 )
-from tuxseo.utils import get_tuxseo_logger
+from xeeaisto.utils import get_xeeaisto_logger
 
-logger = get_tuxseo_logger(__name__)
+logger = get_xeeaisto_logger(__name__)
 
 
 class Profile(BaseModel):

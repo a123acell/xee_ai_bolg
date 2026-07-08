@@ -9,7 +9,7 @@ from django.conf import settings
 def pytest_configure(config):
     settings.STORAGES["staticfiles"]["BACKEND"] = "django.contrib.staticfiles.storage.StaticFilesStorage"
 
-    manifest_path = Path(tempfile.gettempdir()) / "tuxseo-test-webpack-manifest.json"
+    manifest_path = Path(tempfile.gettempdir()) / "xeeaisto-test-webpack-manifest.json"
     manifest_path.write_text(
         json.dumps(
             {

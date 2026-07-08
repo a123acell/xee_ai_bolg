@@ -20,13 +20,13 @@ def test_build_research_targets_contains_key_page_categories():
 
 def test_build_competitor_vs_research_brief_requires_balanced_structure_and_evidence():
     context = CompetitorVsPostContext(
-        project_name="TuxSEO",
+        project_name="XeeAISto",
         project_url="https://tuxseo.com",
         project_summary="AI SEO workflow for product-led teams",
         competitor_name="CompetitorX",
         competitor_url="https://competitorx.com",
         competitor_description="SEO automation suite",
-        title="TuxSEO vs CompetitorX",
+        title="XeeAISto vs CompetitorX",
         language="English",
         project_pages=[
             ProjectPageContext(

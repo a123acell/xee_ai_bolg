@@ -152,7 +152,7 @@ class PostHogLogsEmitter:
             )
 
             handler = LoggingHandler(level=logging.INFO, logger_provider=provider)
-            exporter_logger = logging.getLogger("tuxseo.posthog_logs")
+            exporter_logger = logging.getLogger("xeeaisto.posthog_logs")
             exporter_logger.handlers = [handler]
             exporter_logger.propagate = False
             exporter_logger.setLevel(logging.INFO)

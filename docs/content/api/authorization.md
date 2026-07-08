@@ -1,9 +1,9 @@
 ---
 title: API Authorization
-description: How to authenticate requests to the TuxSEO Public API.
+description: How to authenticate requests to the XeeAISto Public API.
 ---
 
-Use your TuxSEO API key in the `X-API-Key` header for every request.
+Use your XeeAISto API key in the `X-API-Key` header for every request.
 
 - Header: `X-API-Key: <your_api_key>`
 - API key location: **Settings → API Access**

@@ -13,9 +13,9 @@ from django.forms.utils import ErrorList
 from pydantic_ai import capture_run_messages
 
 from core.choices import OGImageStyle
-from tuxseo.utils import get_tuxseo_logger
+from xeeaisto.utils import get_xeeaisto_logger
 
-logger = get_tuxseo_logger(__name__)
+logger = get_xeeaisto_logger(__name__)
 
 _AUTHORITY_MIN_SCORE = 0.15
 _AUTHORITY_MIN_OVERLAP_RATIO = 0.12
@@ -95,7 +95,7 @@ def _extract_usage_metrics(result):
 
 def _resolve_distinct_id_from_deps(deps):
     if deps is None:
-        return "tuxseo-agent"
+        return "xeeaisto-agent"
 
     candidates = []
     candidates.append(getattr(deps, "distinct_id", None))
@@ -128,7 +128,7 @@ def _resolve_distinct_id_from_deps(deps):
         if text:
             return text
 
-    return "tuxseo-agent"
+    return "xeeaisto-agent"
 
 
 def _resolve_agent_model_name(agent, fallback_model_name=""):
@@ -387,10 +387,10 @@ def get_jina_embedding(text: str) -> list[float] | None:
 def generate_random_key():
     """Generate a high-entropy API key with an explicit product prefix.
 
-    Format: ``tuxseo_<40 lowercase hex chars>`` (160 bits entropy)
-    Example: ``tuxseo_a3f5...``
+    Format: ``xeeaisto_<40 lowercase hex chars>`` (160 bits entropy)
+    Example: ``xeeaisto_a3f5...``
     """
-    return f"tuxseo_{secrets.token_hex(20)}"
+    return f"xeeaisto_{secrets.token_hex(20)}"
 
 
 def get_html_content(url):

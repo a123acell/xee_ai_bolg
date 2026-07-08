@@ -1,6 +1,6 @@
 # PostHog LLM analytics (PydanticAI generation flows)
 
-TuxSEO now emits PostHog **LLM analytics** events (`$ai_generation`) for every `run_agent_synchronously(...)` execution used by our PydanticAI generation flows.
+XeeAISto now emits PostHog **LLM analytics** events (`$ai_generation`) for every `run_agent_synchronously(...)` execution used by our PydanticAI generation flows.
 
 ## What is captured
 

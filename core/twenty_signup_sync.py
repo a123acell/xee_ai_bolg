@@ -9,11 +9,11 @@ from urllib.parse import urlparse
 import requests
 from django.conf import settings
 
-from tuxseo.utils import get_tuxseo_logger
+from xeeaisto.utils import get_xeeaisto_logger
 
-logger = get_tuxseo_logger(__name__)
+logger = get_xeeaisto_logger(__name__)
 
-SOURCE_SYSTEM = "tuxseo_signup"
+SOURCE_SYSTEM = "xeeaisto_signup"
 
 
 @dataclass

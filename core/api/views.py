@@ -89,9 +89,9 @@ from core.models import (
 )
 from core.publish_quality_gate import evaluate_pre_publish_quality_gate
 from core.utils import download_image_from_url, generate_random_key
-from tuxseo.utils import get_tuxseo_logger
+from xeeaisto.utils import get_xeeaisto_logger
 
-logger = get_tuxseo_logger(__name__)
+logger = get_xeeaisto_logger(__name__)
 
 api = NinjaAPI(docs_url=None, openapi_url=None)
 

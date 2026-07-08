@@ -1,6 +1,6 @@
 # PostHog Logs integration
 
-TuxSEO ships structured backend logs to PostHog Logs using OTLP over HTTP.
+XeeAISto ships structured backend logs to PostHog Logs using OTLP over HTTP.
 
 ## What is logged
 

@@ -4,9 +4,9 @@ from djstripe.models import Customer, Product, Subscription
 
 from core.analytics import ANALYTICS_EVENTS
 from core.models import Profile, ProfileStates
-from tuxseo.utils import get_tuxseo_logger
+from xeeaisto.utils import get_xeeaisto_logger
 
-logger = get_tuxseo_logger(__name__)
+logger = get_xeeaisto_logger(__name__)
 
 
 @djstripe_receiver("customer.subscription.created")

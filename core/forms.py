@@ -13,9 +13,9 @@ from core.abuse_prevention import (
 from core.models import AutoSubmissionSetting, Profile, Project, ProjectCustomPostType
 from core.turnstile import get_turnstile_secret_key, get_turnstile_site_key
 from core.utils import DivErrorList
-from tuxseo.utils import get_tuxseo_logger
+from xeeaisto.utils import get_xeeaisto_logger
 
-logger = get_tuxseo_logger(__name__)
+logger = get_xeeaisto_logger(__name__)
 
 TURNSTILE_VERIFY_URL = "https://challenges.cloudflare.com/turnstile/v0/siteverify"
 

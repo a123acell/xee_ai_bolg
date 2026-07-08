@@ -77,9 +77,9 @@ from core.public_api.schemas import (
     PublicTitleSuggestionGetOut,
     PublicTitleSuggestionListOut,
 )
-from tuxseo.utils import get_tuxseo_logger
+from xeeaisto.utils import get_xeeaisto_logger
 
-logger = get_tuxseo_logger(__name__)
+logger = get_xeeaisto_logger(__name__)
 
 
 def get_public_pricing_url() -> str:
@@ -103,7 +103,7 @@ def get_public_entitlement_error(profile, entitlement: PlanEntitlement) -> dict 
 
 
 public_api = NinjaAPI(
-    title="TuxSEO Public API",
+    title="XeeAISto Public API",
     version="1.0.0",
     urls_namespace="public_api",
     docs_url="/docs",

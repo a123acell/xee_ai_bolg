@@ -1,7 +1,7 @@
 ---
-title: Deploying TuxSEO to Render
-description: Learn how to deploy TuxSEO on Render.
-keywords: TuxSEO, deployment, render, self-hosting
+title: Deploying XeeAISto to Render
+description: Learn how to deploy XeeAISto on Render.
+keywords: XeeAISto, deployment, render, self-hosting
 author: Rasul Kireev
 ---
 

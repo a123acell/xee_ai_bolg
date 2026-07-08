@@ -1,22 +1,22 @@
 ---
 title: Docker Compose
-description: Learn how to deploy TuxSEO on Render.
-keywords: TuxSEO, deployment, render, self-hosting
+description: Learn how to deploy XeeAISto on Render.
+keywords: XeeAISto, deployment, render, self-hosting
 author: Rasul Kireev
 ---
 
-Deploy TuxSEO on your own server using Docker Compose.
+Deploy XeeAISto on your own server using Docker Compose.
 
 ## What you'll learn
 
-- Set up TuxSEO with Docker Compose
+- Set up XeeAISto with Docker Compose
 - Configure environment variables
 - Access your deployed application
 - Troubleshoot common deployment issues
 
 ## Overview
 
-Docker Compose provides a streamlined way to deploy TuxSEO on your server. This method handles all services (database, Redis, backend, and workers) with a single command.
+Docker Compose provides a streamlined way to deploy XeeAISto on your server. This method handles all services (database, Redis, backend, and workers) with a single command.
 
 This approach works best if you have a VPS or dedicated server where you can run Docker.
 
@@ -33,25 +33,25 @@ Before starting, make sure you have:
 
 ### 1. Create deployment directory
 
-SSH into your server and create a folder for TuxSEO:
+SSH into your server and create a folder for XeeAISto:
 
 ```bash
-mkdir tuxseo-deployment
-cd tuxseo-deployment
+mkdir xeeaisto-deployment
+cd xeeaisto-deployment
 ```
 
 ### 2. Download and configure environment file
 
-Download the example environment file from the TuxSEO repository:
+Download the example environment file from the XeeAISto repository:
 
 ```bash
-wget https://raw.githubusercontent.com/rasulkireev/tuxseo/main/.env.example -O .env
+wget https://raw.githubusercontent.com/rasulkireev/xeeaisto/main/.env.example -O .env
 ```
 
 Or if you prefer curl:
 
 ```bash
-curl -o .env https://raw.githubusercontent.com/rasulkireev/tuxseo/main/.env.example
+curl -o .env https://raw.githubusercontent.com/rasulkireev/xeeaisto/main/.env.example
 ```
 
 Now edit the `.env` file to add your credentials:
@@ -60,7 +60,7 @@ Now edit the `.env` file to add your credentials:
 nano .env
 ```
 
-You need to configure several environment variables for TuxSEO to work properly. See the [Environment Variables](/docs/deployment/environment-variables/) guide for complete details on all available options.
+You need to configure several environment variables for XeeAISto to work properly. See the [Environment Variables](/docs/deployment/environment-variables/) guide for complete details on all available options.
 
 At minimum, update these required values:
 
@@ -77,16 +77,16 @@ Save the file (in nano: Ctrl+X, then Y, then Enter).
 
 ### 3. Download docker-compose file
 
-Download the production docker-compose configuration from the TuxSEO repository:
+Download the production docker-compose configuration from the XeeAISto repository:
 
 ```bash
-wget https://raw.githubusercontent.com/rasulkireev/tuxseo/main/docker-compose-prod.yml -O docker-compose.yml
+wget https://raw.githubusercontent.com/rasulkireev/xeeaisto/main/docker-compose-prod.yml -O docker-compose.yml
 ```
 
 Or if you prefer curl:
 
 ```bash
-curl -o docker-compose.yml https://raw.githubusercontent.com/rasulkireev/tuxseo/main/docker-compose-prod.yml
+curl -o docker-compose.yml https://raw.githubusercontent.com/rasulkireev/xeeaisto/main/docker-compose-prod.yml
 ```
 You can use the file as-is, or customize it if needed.
 
@@ -95,7 +95,7 @@ You can use the file as-is, or customize it if needed.
 Run this command to start all services:
 
 ```bash
-docker-compose -f docker-compose-prod.yml -p "tuxseo" up --detach --remove-orphans || true
+docker-compose -f docker-compose-prod.yml -p "xeeaisto" up --detach --remove-orphans || true
 ```
 
 Docker will:
@@ -128,7 +128,7 @@ The backend runs on port 8000. You need to expose it to the internet.
 
 ### Option 1: Direct port access
 
-If your server allows it, access TuxSEO at:
+If your server allows it, access XeeAISto at:
 
 ```
 http://your-server-ip:8000
@@ -148,7 +148,7 @@ sudo apt install nginx
 Create an Nginx configuration:
 
 ```bash
-sudo nano /etc/nginx/sites-available/tuxseo
+sudo nano /etc/nginx/sites-available/xeeaisto
 ```
 
 Add this configuration:
@@ -171,12 +171,12 @@ server {
 Enable the site:
 
 ```bash
-sudo ln -s /etc/nginx/sites-available/tuxseo /etc/nginx/sites-enabled/
+sudo ln -s /etc/nginx/sites-available/xeeaisto /etc/nginx/sites-enabled/
 sudo nginx -t
 sudo systemctl reload nginx
 ```
 
-Now access TuxSEO at `http://yourdomain.com`.
+Now access XeeAISto at `http://yourdomain.com`.
 
 ### Option 3: Add SSL with Certbot
 

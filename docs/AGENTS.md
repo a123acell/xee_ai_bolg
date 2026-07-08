@@ -5,7 +5,7 @@ These instructions apply to files under `docs/`. Root-level engineering guidance
 
 ## Audience
 
-- Write for TuxSEO users first. Explain what they can accomplish before describing how the system is
+- Write for XeeAISto users first. Explain what they can accomplish before describing how the system is
   implemented.
 - Use plain language and short paragraphs. Avoid framework jargon unless the document is explicitly
   for contributors.

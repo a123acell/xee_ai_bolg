@@ -7,9 +7,9 @@ from urllib.parse import parse_qs
 
 from django.utils import timezone
 
-from tuxseo.utils import get_tuxseo_logger
+from xeeaisto.utils import get_xeeaisto_logger
 
-logger = get_tuxseo_logger(__name__)
+logger = get_xeeaisto_logger(__name__)
 
 ATTRIBUTION_SCHEMA_VERSION = 1
 ATTRIBUTION_SESSION_KEY = "acquisition_attribution_v1"

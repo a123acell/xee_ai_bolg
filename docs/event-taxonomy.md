@@ -1,4 +1,4 @@
-# TuxSEO Analytics Event Taxonomy (PostHog)
+# XeeAISto Analytics Event Taxonomy (PostHog)
 
 Canonical analytics event names live in:
 
@@ -8,7 +8,7 @@ This file is the **single source of truth** for event names, required properties
 
 ## Actor identity strategy
 
-TuxSEO uses a dual identity model so funnels are stable and queryable:
+XeeAISto uses a dual identity model so funnels are stable and queryable:
 
 - **PostHog distinct_id**: authenticated user email (`profile.user.email`) from backend capture.
 - **Stable actor dimensions** (always attached server-side in `track_event`):

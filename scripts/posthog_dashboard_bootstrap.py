@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Bootstrap/update TuxSEO PostHog dashboards for ops, funnel, and LLM health.
+"""Bootstrap/update XeeAISto PostHog dashboards for ops, funnel, and LLM health.
 
 Usage:
   POSTHOG_API_KEY=phx_... python scripts/posthog_dashboard_bootstrap.py --project-id 105300
@@ -41,13 +41,13 @@ class DashboardSpec:
 def dashboard_specs() -> tuple[DashboardSpec, ...]:
     return (
         DashboardSpec(
-            name="TuxSEO – Operational Health (Logs + Failures)",
+            name="XeeAISto – Operational Health (Logs + Failures)",
             description=(
                 "Operational pulse for backend reliability: ingestion heartbeat, "
                 "failure trends, and publish error hotspots. "
                 "Use dashboard date range + property filters (project_id, email/profile_id)."
             ),
-            tags=("tuxseo", "ops", "posthog"),
+            tags=("xeeaisto", "ops", "posthog"),
             insights=(
                 InsightSpec(
                     name="Ingestion heartbeat: key event volume (daily)",
@@ -96,12 +96,12 @@ def dashboard_specs() -> tuple[DashboardSpec, ...]:
             ),
         ),
         DashboardSpec(
-            name="TuxSEO – Product Funnel Health",
+            name="XeeAISto – Product Funnel Health",
             description=(
                 "Activation → generation → publish funnel health. "
                 "Use dashboard date range + property filters (project_id, email/profile_id)."
             ),
-            tags=("tuxseo", "product", "funnel", "posthog"),
+            tags=("xeeaisto", "product", "funnel", "posthog"),
             insights=(
                 InsightSpec(
                     name="Funnel: signup → project create → content generate → publish",
@@ -148,12 +148,12 @@ def dashboard_specs() -> tuple[DashboardSpec, ...]:
             ),
         ),
         DashboardSpec(
-            name="TuxSEO – LLM Analytics Health",
+            name="XeeAISto – LLM Analytics Health",
             description=(
                 "LLM reliability/cost performance from $ai_generation events. "
                 "Use dashboard date range + property filters (project_id, email/profile_id, feature_path)."
             ),
-            tags=("tuxseo", "llm", "posthog"),
+            tags=("xeeaisto", "llm", "posthog"),
             insights=(
                 InsightSpec(
                     name="LLM runs by model (daily)",
@@ -254,12 +254,12 @@ def dashboard_specs() -> tuple[DashboardSpec, ...]:
             ),
         ),
         DashboardSpec(
-            name="TuxSEO – Paid Acquisition Attribution",
+            name="XeeAISto – Paid Acquisition Attribution",
             description=(
                 "Compare paid acquisition performance across channels, campaigns, creatives, "
                 "and copy variants. Use dashboard-level date range and plan filters."
             ),
-            tags=("tuxseo", "paid", "attribution", "posthog"),
+            tags=("xeeaisto", "paid", "attribution", "posthog"),
             insights=(
                 InsightSpec(
                     name="Channel performance: paid conversions by channel (daily)",
@@ -467,7 +467,7 @@ def upsert_insights(client: PostHogClient, *, dashboard_id: int, specs: tuple[In
 
 
 def main() -> int:
-    parser = argparse.ArgumentParser(description="Create/update TuxSEO PostHog dashboards")
+    parser = argparse.ArgumentParser(description="Create/update XeeAISto PostHog dashboards")
     parser.add_argument("--host", default=os.getenv("POSTHOG_HOST", DEFAULT_HOST))
     parser.add_argument("--project-id", default=os.getenv("POSTHOG_PROJECT_ID", "105300"))
     parser.add_argument("--api-key", default=os.getenv("POSTHOG_API_KEY"))

@@ -17,9 +17,9 @@ from core.models import (
 )
 from core.outcome_attribution import record_outcome_attribution_event
 from core.tasks import add_email_to_buttondown
-from tuxseo.utils import get_tuxseo_logger
+from xeeaisto.utils import get_xeeaisto_logger
 
-logger = get_tuxseo_logger(__name__)
+logger = get_xeeaisto_logger(__name__)
 
 
 @receiver(post_save, sender=User)

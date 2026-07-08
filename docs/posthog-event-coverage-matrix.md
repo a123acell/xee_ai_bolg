@@ -1,4 +1,4 @@
-# PostHog Event Coverage Matrix (TuxSEO)
+# PostHog Event Coverage Matrix (XeeAISto)
 
 Last updated: 2026-03-19
 

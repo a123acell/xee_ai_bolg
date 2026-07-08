@@ -1,6 +1,6 @@
 # PostHog dashboard pack (Ops + Funnel + LLM + Paid attribution)
 
-This document defines and links the first-pass TuxSEO dashboard set requested for operational + product + LLM analytics visibility.
+This document defines and links the first-pass XeeAISto dashboard set requested for operational + product + LLM analytics visibility.
 
 ## Live dashboards (project `105300`)
 

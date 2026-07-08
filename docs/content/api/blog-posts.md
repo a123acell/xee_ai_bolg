@@ -1,6 +1,6 @@
 ---
 title: API · Blog Posts
-description: Blog post generation and publishing endpoints for the TuxSEO Public API.
+description: Blog post generation and publishing endpoints for the XeeAISto Public API.
 ---
 
 ## Endpoints

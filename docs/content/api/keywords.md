@@ -1,6 +1,6 @@
 ---
 title: API · Keywords
-description: Keyword endpoints for a project in the TuxSEO Public API.
+description: Keyword endpoints for a project in the XeeAISto Public API.
 ---
 
 ## Endpoints

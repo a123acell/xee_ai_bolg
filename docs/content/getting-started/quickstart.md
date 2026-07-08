@@ -1,15 +1,15 @@
 ---
 title: Quick Start Guide
-description: Get up and running with TuxSEO in 5 minutes
-keywords: TuxSEO, quick start, setup, tutorial
+description: Get up and running with XeeAISto in 5 minutes
+keywords: XeeAISto, quick start, setup, tutorial
 author: Rasul Kireev
 ---
 
-Get your first TuxSEO project up and running in just 5 minutes!
+Get your first XeeAISto project up and running in just 5 minutes!
 
 ## Step 1: Create an Account
 
-Visit [TuxSEO](https://tuxseo.com) and sign up for a free account.
+Visit [XeeAISto](https://tuxseo.com) and sign up for a free account.
 
 ## Step 2: Create Your First Project
 
@@ -29,7 +29,7 @@ In the background we started a few jobs to populate all the relevant parts:
 
 1. Navigate to the blog posts section
 2. Click "Generate New Post"
-3. Let TuxSEO create your content!
+3. Let XeeAISto create your content!
 
 ## Step 5: Automate the whole thing
 

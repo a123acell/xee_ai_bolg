@@ -25,7 +25,7 @@ def test_skill_markdown_is_public_and_links_api_docs(client):
     assert response["Content-Type"].startswith("text/markdown")
 
     content = response.content.decode()
-    assert "# TuxSEO Agent Skill" in content
+    assert "# XeeAISto Agent Skill" in content
     assert "https://tuxseo.com/api/docs" in content
     assert "https://tuxseo.com/public-api" in content
 

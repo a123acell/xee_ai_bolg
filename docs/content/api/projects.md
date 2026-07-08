@@ -1,6 +1,6 @@
 ---
 title: API · Projects
-description: Project management endpoints for the TuxSEO Public API.
+description: Project management endpoints for the XeeAISto Public API.
 ---
 
 ## Endpoints

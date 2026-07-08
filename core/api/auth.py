@@ -2,9 +2,9 @@ from django.http import HttpRequest
 from ninja.security import APIKeyQuery
 
 from core.models import Profile
-from tuxseo.utils import get_tuxseo_logger
+from xeeaisto.utils import get_xeeaisto_logger
 
-logger = get_tuxseo_logger(__name__)
+logger = get_xeeaisto_logger(__name__)
 
 
 def _redact_key(key: str) -> str:

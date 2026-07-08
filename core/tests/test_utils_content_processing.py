@@ -225,9 +225,9 @@ class TestGenerateRandomKey:
     def test_generates_prefixed_high_entropy_hex_key(self):
         random_key = generate_random_key()
 
-        assert random_key.startswith("tuxseo_")
+        assert random_key.startswith("xeeaisto_")
         assert len(random_key) == 47
-        suffix = random_key.removeprefix("tuxseo_")
+        suffix = random_key.removeprefix("xeeaisto_")
         assert len(suffix) == 40
         assert all(char in "0123456789abcdef" for char in suffix)
 

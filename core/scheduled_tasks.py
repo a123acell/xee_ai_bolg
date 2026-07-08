@@ -13,9 +13,9 @@ from core.choices import EmailType, ProjectPageSource
 from core.integration_analytics import schedule_all_connected_project_analytics_syncs
 from core.models import Competitor, EmailSent, Profile, Project, ProjectPage
 from core.utils import get_jina_embedding
-from tuxseo.utils import get_tuxseo_logger
+from xeeaisto.utils import get_xeeaisto_logger
 
-logger = get_tuxseo_logger(__name__)
+logger = get_xeeaisto_logger(__name__)
 
 User = get_user_model()
 

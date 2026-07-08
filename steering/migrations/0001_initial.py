@@ -5,20 +5,20 @@ import django.db.models.deletion
 import django.utils.timezone
 
 
-def seed_tuxseo_project(apps, schema_editor):
+def seed_xeeaisto_project(apps, schema_editor):
     Project = apps.get_model("steering", "Project")
     Project.objects.get_or_create(
-        key="tuxseo",
+        key="xeeaisto",
         defaults={
-            "display_name": "TuxSEO",
+            "display_name": "XeeAISto",
             "is_active": True,
         },
     )
 
 
-def unseed_tuxseo_project(apps, schema_editor):
+def unseed_xeeaisto_project(apps, schema_editor):
     Project = apps.get_model("steering", "Project")
-    Project.objects.filter(key="tuxseo").delete()
+    Project.objects.filter(key="xeeaisto").delete()
 
 
 class Migration(migrations.Migration):
@@ -305,5 +305,5 @@ class Migration(migrations.Migration):
             index=models.Index(fields=["project", "last_success_at"], name="steering_so_project_8f0877_idx"),
         ),
         migrations.AlterUniqueTogether(name="sourcehealth", unique_together={("project", "source")}),
-        migrations.RunPython(seed_tuxseo_project, unseed_tuxseo_project),
+        migrations.RunPython(seed_xeeaisto_project, unseed_xeeaisto_project),
     ]

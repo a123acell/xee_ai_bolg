@@ -1,14 +1,14 @@
-# TuxSEO Agent Skill
+# XeeAISto Agent Skill
 
-## What TuxSEO is
+## What XeeAISto is
 
-TuxSEO is an SEO content automation platform for founders and small teams. It helps agents and humans go from project setup to generated and published blog posts using the TuxSEO API.
+XeeAISto is an SEO content automation platform for founders and small teams. It helps agents and humans go from project setup to generated and published blog posts using the XeeAISto API.
 
 Base URL: `https://tuxseo.com/public-api`
 
 ## Core capabilities
 
-Use these API surfaces to operate TuxSEO workflows:
+Use these API surfaces to operate XeeAISto workflows:
 
 1. **Account + project management**
    - Read account context
@@ -44,4 +44,4 @@ Use the API docs as the source of truth for endpoint paths, payloads, and respon
 
 ## Maintenance policy
 
-This `/skill.md` file is the authoritative onboarding artifact for AI agents using TuxSEO. Keep it concise and aligned with current product capabilities whenever APIs or workflows change.
+This `/skill.md` file is the authoritative onboarding artifact for AI agents using XeeAISto. Keep it concise and aligned with current product capabilities whenever APIs or workflows change.

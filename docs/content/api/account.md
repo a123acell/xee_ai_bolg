@@ -1,6 +1,6 @@
 ---
 title: API · Account
-description: Account endpoints for the TuxSEO Public API.
+description: Account endpoints for the XeeAISto Public API.
 ---
 
 ## Endpoints

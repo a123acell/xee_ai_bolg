@@ -9,7 +9,7 @@ def test_landing_content_that_converts_section_uses_new_conversion_copy():
 
     assert "Content that converts" in content
     assert "Everything you need to ship SEO content that drives signups" in content
-    assert "TuxSEO combines research, writing, and publishing" in content
+    assert "XeeAISto combines research, writing, and publishing" in content
 
 
 def test_landing_content_that_converts_section_highlights_real_product_capabilities():

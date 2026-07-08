@@ -3,9 +3,9 @@
 from pydantic import BaseModel, Field, field_validator
 
 from core.choices import Language, ProjectPageType, ProjectType
-from tuxseo.utils import get_tuxseo_logger
+from xeeaisto.utils import get_xeeaisto_logger
 
-logger = get_tuxseo_logger(__name__)
+logger = get_xeeaisto_logger(__name__)
 
 
 class WebPageContent(BaseModel):

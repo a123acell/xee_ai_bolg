@@ -175,7 +175,7 @@ def test_project_home_view_renders_how_to_use_block_with_expected_links(client):
 
     assert response.status_code == 200
     content = response.content.decode()
-    assert "How to use TuxSEO" in content
+    assert "How to use XeeAISto" in content
     assert reverse("project_seo_posts", kwargs={"pk": project.id}) in content
     assert reverse("project_keywords", kwargs={"pk": project.id}) in content
     assert reverse("settings") in content
@@ -198,10 +198,10 @@ def test_project_home_view_renders_copyable_api_and_prompt_snippets(client):
     assert f"X-API-Key: {user.profile.key}" in content
     assert "https://tuxseo.com/public-api/account" in content
     assert "Security note: treat this key like a password." in content
-    assert "You are helping me operate TuxSEO for my project." in content
+    assert "You are helping me operate XeeAISto for my project." in content
     assert "First read the agent skill file: https://tuxseo.com/skill.md" in content
-    assert "TuxSEO API base URL: https://tuxseo.com/public-api" in content
-    assert f"TuxSEO API key: {user.profile.key}" in content
+    assert "XeeAISto API base URL: https://tuxseo.com/public-api" in content
+    assert f"XeeAISto API key: {user.profile.key}" in content
     assert "Project URL:" not in content
     assert "Goal:" not in content
     assert f"X-API-Key: {user.profile.key}" in content

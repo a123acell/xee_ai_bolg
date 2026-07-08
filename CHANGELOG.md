@@ -1,6 +1,6 @@
 # Changelog
 
-All notable changes for TuxSEO.
+All notable changes for XeeAISto.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
@@ -9,7 +9,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 ### Added
 - Documentation
-  - README archive notice for the May 26, 2026 project archive, disabled signups, and future `tuxseo.lvtd.dev` hosting.
+  - README archive notice for the May 26, 2026 project archive, disabled signups, and future `xeeaisto.lvtd.dev` hosting.
 - Account
   - added `ALLOW_SIGNUPS` environment flag (default `true`) to pause new email/social registrations while keeping existing user logins available.
 - Analytics

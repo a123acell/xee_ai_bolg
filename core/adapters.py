@@ -10,9 +10,9 @@ from django.urls import reverse
 from django_q.tasks import async_task
 
 from core.choices import EmailType
-from tuxseo.utils import get_tuxseo_logger
+from xeeaisto.utils import get_xeeaisto_logger
 
-logger = get_tuxseo_logger(__name__)
+logger = get_xeeaisto_logger(__name__)
 
 User = get_user_model()
 

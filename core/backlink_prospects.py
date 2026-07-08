@@ -11,9 +11,9 @@ import requests
 from django.conf import settings
 from django.core.cache import cache
 
-from tuxseo.utils import get_tuxseo_logger
+from xeeaisto.utils import get_xeeaisto_logger
 
-logger = get_tuxseo_logger(__name__)
+logger = get_xeeaisto_logger(__name__)
 
 _BLOCKED_DOMAIN_SUFFIXES = (
     "reddit.com",
@@ -688,7 +688,7 @@ def _enrich_candidate_contacts(
         response = requests.get(
             url,
             headers={
-                "User-Agent": "TuxSEO/BacklinkProspectsBot (+https://tuxseo.com)",
+                "User-Agent": "XeeAISto/BacklinkProspectsBot (+https://tuxseo.com)",
                 "Accept": "text/html,application/xhtml+xml",
             },
             timeout=max(1, float(fetch_timeout_seconds)),

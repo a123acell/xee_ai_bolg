@@ -1,6 +1,6 @@
 ---
 title: API · Competitors
-description: Competitor endpoints for a project in the TuxSEO Public API.
+description: Competitor endpoints for a project in the XeeAISto Public API.
 ---
 
 ## Endpoints

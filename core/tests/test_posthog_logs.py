@@ -3,9 +3,9 @@ from unittest.mock import Mock
 from django.http import HttpResponse
 from django.test import RequestFactory
 
-from tuxseo.logging_context import get_request_correlation_ids
-from tuxseo.middleware import RequestLogContextMiddleware
-from tuxseo.posthog_logs import ensure_exception_fields, redact_event
+from xeeaisto.logging_context import get_request_correlation_ids
+from xeeaisto.middleware import RequestLogContextMiddleware
+from xeeaisto.posthog_logs import ensure_exception_fields, redact_event
 
 
 def test_redact_event_redacts_sensitive_fields_and_tokens():

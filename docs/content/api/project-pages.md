@@ -1,6 +1,6 @@
 ---
 title: API · Project Pages
-description: Project page endpoints for the TuxSEO Public API.
+description: Project page endpoints for the XeeAISto Public API.
 ---
 
 ## Endpoints

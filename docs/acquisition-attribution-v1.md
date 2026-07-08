@@ -1,6 +1,6 @@
 # Paid acquisition attribution schema (v1)
 
-This document defines the canonical paid-acquisition schema used by TuxSEO server-side events and PostHog analysis.
+This document defines the canonical paid-acquisition schema used by XeeAISto server-side events and PostHog analysis.
 
 ## Goals
 

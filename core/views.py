@@ -84,12 +84,12 @@ from core.tasks import (
     track_event,
     try_create_posthog_alias,
 )
-from tuxseo.utils import get_tuxseo_logger
+from xeeaisto.utils import get_xeeaisto_logger
 
 stripe.api_key = settings.STRIPE_SECRET_KEY
 
 
-logger = get_tuxseo_logger(__name__)
+logger = get_xeeaisto_logger(__name__)
 
 User = get_user_model()
 

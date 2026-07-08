@@ -4,7 +4,7 @@
 Proposed (implementation-ready)
 
 ## Problem
-TuxSEO has integration auth/connectivity for Google Analytics 4 (GA4), Google Search Console (GSC), and Plausible, but no finalized storage contract for analytics ingestion and reporting.
+XeeAISto has integration auth/connectivity for Google Analytics 4 (GA4), Google Search Console (GSC), and Plausible, but no finalized storage contract for analytics ingestion and reporting.
 
 Without a stable data model, each provider would push ad-hoc fields into product features, making cross-provider SEO reporting brittle and expensive to evolve.
 
@@ -50,7 +50,7 @@ Without a stable data model, each provider would push ad-hoc fields into product
 | Column | Type | Notes |
 |---|---|---|
 | id | UUID PK | |
-| project_id | FK | TuxSEO project |
+| project_id | FK | XeeAISto project |
 | integration_id | FK nullable | linked integration record |
 | provider | enum | `ga4`, `gsc`, `plausible` |
 | source_account_ref | varchar(255) | e.g., GA4 property id, GSC site URL, Plausible site id |

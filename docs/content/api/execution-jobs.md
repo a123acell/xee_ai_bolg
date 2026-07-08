@@ -1,6 +1,6 @@
 ---
 title: API · Execution Jobs
-description: Asynchronous execution lifecycle endpoints for agent-triggered jobs in the TuxSEO Public API.
+description: Asynchronous execution lifecycle endpoints for agent-triggered jobs in the XeeAISto Public API.
 ---
 
 ## Endpoints

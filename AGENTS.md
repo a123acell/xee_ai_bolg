@@ -18,7 +18,7 @@ on facts an agent needs to work safely in this codebase.
 
 ## Project Snapshot
 
-- TuxSEO is a Django 5 application running on Python 3.11.
+- XeeAISto is a Django 5 application running on Python 3.11.
 - The backend is intentionally a single Django app: `core`.
 - Runtime services include PostgreSQL, Redis, `django-q2`, `django-ninja`, `structlog`, `logfire`,
   `dj-stripe`, and `pydantic-ai`.

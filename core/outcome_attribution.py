@@ -38,12 +38,12 @@ OUTCOME_ATTRIBUTION_EVENTS = {
 REPORTING_METRIC_DEFINITIONS = {
     "blog_posts_generated": {
         "label": "Drafts generated",
-        "tooltip": "Count of generated blog post drafts produced by TuxSEO workflows.",
+        "tooltip": "Count of generated blog post drafts produced by XeeAISto workflows.",
         "definition": "Total generated draft outcomes linked through content.blog_post_generated events.",
     },
     "blog_posts_published": {
         "label": "Posts published",
-        "tooltip": "Count of posts successfully published from TuxSEO workflows.",
+        "tooltip": "Count of posts successfully published from XeeAISto workflows.",
         "definition": "Total publish outcomes linked through content.blog_post_published events.",
     },
     "links_placed": {

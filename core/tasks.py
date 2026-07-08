@@ -51,10 +51,10 @@ from core.models import (
     ProjectPageAnalysisRun,
 )
 from core.twenty_signup_sync import sync_signup_project_to_twenty as sync_signup_project_to_twenty_service
-from tuxseo.logging_context import bind_log_context
-from tuxseo.utils import get_tuxseo_logger
+from xeeaisto.logging_context import bind_log_context
+from xeeaisto.utils import get_xeeaisto_logger
 
-logger = get_tuxseo_logger(__name__)
+logger = get_xeeaisto_logger(__name__)
 
 SITEMAP_PATH_CANDIDATES = (
     "/sitemap.xml",
@@ -228,7 +228,7 @@ def add_email_to_buttondown(email, tag):
         "email_address": str(email),
         "metadata": {"source": tag},
         "tags": [tag],
-        "referrer_url": "https://tuxseo.app",
+        "referrer_url": "https://xeeaisto.app",
         "subscriber_type": "regular",
     }
 
@@ -861,10 +861,10 @@ If you have any questions or need help, just reply to this email. I'm here to he
 
 Best regards,
 - Rasul
-Founder, TuxSEO
+Founder, XeeAISto
 
 ---
-This email was sent by TuxSEO
+This email was sent by XeeAISto
 """  # noqa: E501
 
         # Create email with both plain text and HTML versions
@@ -2040,7 +2040,7 @@ Add Sitemap: {pages_url}"""  # noqa: E501
         plain_text += """
 
 Happy blogging!
-- The TuxSEO Team
+- The XeeAISto Team
 
 ---
 If you have any questions or feedback, just reply to this email.
@@ -2091,7 +2091,7 @@ If you have any questions or feedback, just reply to this email.
 def send_feedback_request_email(profile_id: int):
     """
     Send a feedback request email to a user profile.
-    Asks about their experience with TuxSEO and Black Friday upgrade offer.
+    Asks about their experience with XeeAISto and Black Friday upgrade offer.
     """
     from django.conf import settings
     from django.core.mail import EmailMultiAlternatives
@@ -2135,15 +2135,15 @@ def send_feedback_request_email(profile_id: int):
         email_content = render_to_string("emails/feedback_request.html", context)
 
         # Extract subject from the template
-        subject = "I'd love your feedback on TuxSEO"
+        subject = "I'd love your feedback on XeeAISto"
 
         # Create plain text version
         plain_text = f"""Hi {user.first_name or user.username}!
 
-My name is Rasul, and I'm the founder of TuxSEO. I hope you're enjoying the product! I'm constantly working to improve it, and your feedback would be incredibly valuable to me.
+My name is Rasul, and I'm the founder of XeeAISto. I hope you're enjoying the product! I'm constantly working to improve it, and your feedback would be incredibly valuable to me.
 
 I'd love to hear from you about:
-• How are you finding TuxSEO? (ease of usage, quality of content generated)
+• How are you finding XeeAISto? (ease of usage, quality of content generated)
 • What's working well for you?
 • What could I improve?
 
@@ -2157,9 +2157,9 @@ If you're not interested in upgrading right now, I'd love to know why. Your feed
 
 View Pricing & Upgrade: {pricing_url}
 
-Please reply to this email with your feedback. I read every response and use your input to make TuxSEO better.
+Please reply to this email with your feedback. I read every response and use your input to make XeeAISto better.
 
-Thank you for being part of the TuxSEO community!
+Thank you for being part of the XeeAISto community!
 - Rasul
 
 ---
@@ -2246,10 +2246,10 @@ def send_project_feedback_checkin_email(profile_id: int):
 
     recipient_name = user.first_name or user.username
 
-    subject = "Quick check-in from Rasul at TuxSEO"
+    subject = "Quick check-in from Rasul at XeeAISto"
     plain_text = f"""Hi {recipient_name}!
 
-I wanted to quickly check in and see how TuxSEO is going for you.
+I wanted to quickly check in and see how XeeAISto is going for you.
 
 - Are you finding the product useful so far?
 - Do you have any suggestions for improvement?
@@ -2364,10 +2364,10 @@ def send_create_project_reminder_email(profile_id: int):
 
 Thanks for verifying your email! I noticed you haven't created your first project yet.
 
-TuxSEO helps you generate SEO-optimized blog posts by analyzing your website and competitors. Here's how easy it is to get started:
+XeeAISto helps you generate SEO-optimized blog posts by analyzing your website and competitors. Here's how easy it is to get started:
 
 1. Add your website URL
-2. Let TuxSEO analyze your content
+2. Let XeeAISto analyze your content
 3. Get AI-generated blog post suggestions tailored to your site
 
 Create your first project: {home_url}
@@ -2376,7 +2376,7 @@ If you have any questions or need help getting started, just reply to this email
 
 Best regards,
 - Rasul
-Founder, TuxSEO
+Founder, XeeAISto
 
 ---
 Ready to get started? {home_url}

@@ -1,4 +1,4 @@
-"""tuxseo URL Configuration
+"""xeeaisto URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/4.0/topics/http/urls/
@@ -30,7 +30,7 @@ from core.views import (
     skill_markdown_view,
     trigger_error,
 )
-from tuxseo.sitemaps import sitemaps
+from xeeaisto.sitemaps import sitemaps
 
 urlpatterns = [
     path("admin/", admin.site.urls),

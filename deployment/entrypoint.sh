@@ -8,7 +8,7 @@ else
     server=false
 fi
 
-export PROJECT_NAME=tuxseo
+export PROJECT_NAME=xeeaisto
 export DJANGO_SETTINGS_MODULE="${PROJECT_NAME}.settings"
 
 while getopts ":sw" option; do

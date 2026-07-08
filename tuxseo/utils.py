@@ -2,13 +2,13 @@ from django.conf import settings
 import structlog
 
 
-def get_tuxseo_logger(name):
-    """This will add a `tuxseo` prefix to logger for easy configuration."""
+def get_xeeaisto_logger(name):
+    """This will add a `xeeaisto` prefix to logger for easy configuration."""
 
     return structlog.get_logger(
-        f"tuxseo.{name}",
-        project="tuxseo",
+        f"xeeaisto.{name}",
+        project="xeeaisto",
         environment=settings.ENVIRONMENT,
-        service="tuxseo-backend",
+        service="xeeaisto-backend",
         module=name,
     )

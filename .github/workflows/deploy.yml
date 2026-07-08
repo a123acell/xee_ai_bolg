@@ -6,7 +6,7 @@ on:
         - main
 
 env:
-  PROJECT_NAME: tuxseo
+  PROJECT_NAME: xeeaisto
 
 jobs:
   build-and-deploy:

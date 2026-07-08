@@ -1,19 +1,19 @@
 ---
 title: Environment Variables
-description: Complete guide to configuring TuxSEO environment variables.
-keywords: TuxSEO, environment variables, configuration, API keys
+description: Complete guide to configuring XeeAISto environment variables.
+keywords: XeeAISto, environment variables, configuration, API keys
 author: Rasul Kireev
 ---
 
-This guide covers all environment variables needed to configure TuxSEO.
+This guide covers all environment variables needed to configure XeeAISto.
 
 ## Required variables
 
-These variables are essential for TuxSEO to function:
+These variables are essential for XeeAISto to function:
 
 ### AI API Keys
 
-TuxSEO uses several AI services to generate content and analyze your website. You need API keys for each service:
+XeeAISto uses several AI services to generate content and analyze your website. You need API keys for each service:
 
 **OPENAI_API_KEY**
 - Get your key from [OpenAI Platform](https://platform.openai.com/api-keys)
@@ -80,7 +80,7 @@ These variables enhance functionality but aren't required:
 
 ### Email configuration
 
-Configure these to send emails from TuxSEO (for notifications, password resets, etc.):
+Configure these to send emails from XeeAISto (for notifications, password resets, etc.):
 
 **EMAIL_HOST**
 - SMTP server hostname
@@ -131,7 +131,7 @@ Configure these to use cloud storage for media files:
 ### Additional settings
 
 **SITE_URL**
-- Full URL where your TuxSEO instance is accessible
+- Full URL where your XeeAISto instance is accessible
 - Example: `https://yourdomain.com`
 - Used for generating absolute URLs in emails and notifications
 
@@ -147,25 +147,25 @@ Configure these to use cloud storage for media files:
 
 ## Getting the .env.example file
 
-The complete `.env.example` file with all variables and detailed comments is available in the TuxSEO repository.
+The complete `.env.example` file with all variables and detailed comments is available in the XeeAISto repository.
 
 Download it directly:
 
 ```bash
-wget https://raw.githubusercontent.com/rasulkireev/tuxseo/main/.env.example -O .env
+wget https://raw.githubusercontent.com/rasulkireev/xeeaisto/main/.env.example -O .env
 ```
 
 Or with curl:
 
 ```bash
-curl -o .env https://raw.githubusercontent.com/rasulkireev/tuxseo/main/.env.example
+curl -o .env https://raw.githubusercontent.com/rasulkireev/xeeaisto/main/.env.example
 ```
 
 This file includes all available options with explanations and example values.
 
 ## Security best practices
 
-Follow these guidelines to keep your TuxSEO installation secure:
+Follow these guidelines to keep your XeeAISto installation secure:
 
 **Never commit .env files**
 - Add `.env` to your `.gitignore`

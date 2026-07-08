@@ -38,7 +38,7 @@ class TestSendProjectFeedbackCheckinEmail:
         assert len(mail.outbox) == 1
 
         sent_email_message = mail.outbox[0]
-        assert sent_email_message.subject == "Quick check-in from Rasul at TuxSEO"
+        assert sent_email_message.subject == "Quick check-in from Rasul at XeeAISto"
         assert sent_email_message.from_email == "rasul@tuxseo.com"
         assert sent_email_message.to == [user.email]
         assert "Do you have any suggestions for improvement?" in sent_email_message.body

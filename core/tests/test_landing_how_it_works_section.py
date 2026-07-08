@@ -9,7 +9,7 @@ def test_landing_how_it_works_section_mentions_humans_and_ai_agents():
 
     assert "How it works" in content
     assert "One workflow for founders and AI agents" in content
-    assert "Choose your path: click through the UI yourself, or hand the same flow to an agent via TuxSEO skill.md." in content
+    assert "Choose your path: click through the UI yourself, or hand the same flow to an agent via XeeAISto skill.md." in content
 
 
 def test_landing_how_it_works_steps_cover_shared_human_and_agent_flow():

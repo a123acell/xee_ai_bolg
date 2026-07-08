@@ -90,7 +90,7 @@ def test_blog_post_generation_context_includes_external_authority_links(monkeypa
     )
     suggestion._state.fields_cache["project"] = SimpleNamespace(
         project_details={
-            "name": "TuxSEO",
+            "name": "XeeAISto",
             "type": "SaaS",
             "summary": "SEO automation product",
             "blog_theme": "- SEO",

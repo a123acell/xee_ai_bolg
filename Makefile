@@ -24,9 +24,9 @@ test-ci:
 		-e SECRET_KEY=test-secret-key \
 		-e DEBUG=True \
 		-e SITE_URL=http://localhost:8000 \
-		-e POSTGRES_DB=tuxseo \
-		-e POSTGRES_USER=tuxseo \
-		-e POSTGRES_PASSWORD=tuxseo \
+		-e POSTGRES_DB=xeeaisto \
+		-e POSTGRES_USER=xeeaisto \
+		-e POSTGRES_PASSWORD=xeeaisto \
 		-e POSTGRES_HOST=db \
 		-e POSTGRES_PORT=5432 \
 		-e JINA_READER_API_KEY=test-jina-key \
@@ -59,9 +59,9 @@ test-content-quality:
 	SECRET_KEY=test-secret-key \
 	DEBUG=True \
 	SITE_URL=http://localhost:8000 \
-	POSTGRES_DB=tuxseo \
-	POSTGRES_USER=tuxseo \
-	POSTGRES_PASSWORD=tuxseo \
+	POSTGRES_DB=xeeaisto \
+	POSTGRES_USER=xeeaisto \
+	POSTGRES_PASSWORD=xeeaisto \
 	POSTGRES_HOST=localhost \
 	POSTGRES_PORT=5432 \
 	JINA_READER_API_KEY=test-jina-key \

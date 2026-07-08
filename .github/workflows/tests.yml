@@ -20,13 +20,13 @@ jobs:
       postgres:
         image: pgvector/pgvector:pg16
         env:
-          POSTGRES_DB: tuxseo
+          POSTGRES_DB: xeeaisto
           POSTGRES_USER: postgres
           POSTGRES_PASSWORD: postgres
         ports:
           - 5432:5432
         options: >-
-          --health-cmd "pg_isready -U postgres -d tuxseo"
+          --health-cmd "pg_isready -U postgres -d xeeaisto"
           --health-interval 10s
           --health-timeout 5s
           --health-retries 5
@@ -36,7 +36,7 @@ jobs:
       SECRET_KEY: test-secret-key
       DEBUG: "True"
       SITE_URL: http://localhost:8000
-      POSTGRES_DB: tuxseo
+      POSTGRES_DB: xeeaisto
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: postgres
       POSTGRES_HOST: 127.0.0.1

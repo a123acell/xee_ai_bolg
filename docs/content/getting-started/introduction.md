@@ -1,15 +1,15 @@
 ---
-title: Getting Started with TuxSEO
-description: Learn how to get started with TuxSEO, an AI-powered SEO blog writer that helps you create high-quality, search engine optimized content for your website.
-keywords: TuxSEO, getting started, SEO blog writer, AI content generation, tutorial
+title: Getting Started with XeeAISto
+description: Learn how to get started with XeeAISto, an AI-powered SEO blog writer that helps you create high-quality, search engine optimized content for your website.
+keywords: XeeAISto, getting started, SEO blog writer, AI content generation, tutorial
 author: Rasul Kireev
 ---
 
-Welcome to TuxSEO! This guide will help you get started with creating SEO-optimized blog content for your website.
+Welcome to XeeAISto! This guide will help you get started with creating SEO-optimized blog content for your website.
 
-## What is TuxSEO?
+## What is XeeAISto?
 
-TuxSEO is an AI-powered SEO blog writer that helps you create high-quality, search engine optimized content for your website. Our platform analyzes your competitors, identifies keyword opportunities, and generates content that ranks.
+XeeAISto is an AI-powered SEO blog writer that helps you create high-quality, search engine optimized content for your website. Our platform analyzes your competitors, identifies keyword opportunities, and generates content that ranks.
 
 ## Next Steps
 

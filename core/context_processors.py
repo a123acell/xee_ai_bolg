@@ -2,9 +2,9 @@ from allauth.socialaccount.models import SocialApp
 from django.conf import settings
 
 from core.turnstile import get_turnstile_site_key
-from tuxseo.utils import get_tuxseo_logger
+from xeeaisto.utils import get_xeeaisto_logger
 
-logger = get_tuxseo_logger(__name__)
+logger = get_xeeaisto_logger(__name__)
 
 
 def pro_subscription_status(request):

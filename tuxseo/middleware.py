@@ -1,10 +1,10 @@
 import time
 
 from core.acquisition import capture_request_attribution
-from tuxseo.logging_context import bind_log_context, get_request_correlation_ids
-from tuxseo.utils import get_tuxseo_logger
+from xeeaisto.logging_context import bind_log_context, get_request_correlation_ids
+from xeeaisto.utils import get_xeeaisto_logger
 
-logger = get_tuxseo_logger(__name__)
+logger = get_xeeaisto_logger(__name__)
 
 
 class RequestLogContextMiddleware:
@@ -29,7 +29,7 @@ class RequestLogContextMiddleware:
             trace_id=correlation["trace_id"],
             user_id=user_id,
             project_id=project_id,
-            service="tuxseo-backend",
+            service="xeeaisto-backend",
             module="django.request",
         ):
             try:

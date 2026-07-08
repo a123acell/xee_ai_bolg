@@ -44,7 +44,7 @@ def test_extract_backlink_topics_uses_project_and_page_fields():
     project = Project.objects.create(
         profile=user.profile,
         url="https://tuxseo.com",
-        name="TuxSEO",
+        name="XeeAISto",
         summary="SEO automation toolkit for startups",
         blog_theme="technical SEO, content strategy",
         key_features="rank tracking; content briefs; site audits",
@@ -78,7 +78,7 @@ def test_discover_backlink_prospects_scores_deduplicates_and_ranks(monkeypatch, 
     project = Project.objects.create(
         profile=user.profile,
         url="https://tuxseo.com",
-        name="TuxSEO",
+        name="XeeAISto",
         summary="technical SEO indexing improvements",
     )
     page = ProjectPage.objects.create(
@@ -173,7 +173,7 @@ def test_discover_backlink_prospects_filters_low_signal_junk_pages(monkeypatch, 
     project = Project.objects.create(
         profile=user.profile,
         url="https://tuxseo.com",
-        name="TuxSEO",
+        name="XeeAISto",
         summary="seo platform for startups",
     )
     page = ProjectPage.objects.create(
@@ -239,7 +239,7 @@ def test_discover_backlink_prospects_filters_trailing_slash_taxonomy_pages(monke
     project = Project.objects.create(
         profile=user.profile,
         url="https://tuxseo.com",
-        name="TuxSEO",
+        name="XeeAISto",
         summary="seo platform for startups",
     )
     page = ProjectPage.objects.create(
@@ -303,7 +303,7 @@ def test_discover_backlink_prospects_limits_exa_calls_with_overcollect_cap(
     project = Project.objects.create(
         profile=user.profile,
         url="https://tuxseo.com",
-        name="TuxSEO",
+        name="XeeAISto",
         summary="seo platform for startups",
     )
     page = ProjectPage.objects.create(
@@ -361,7 +361,7 @@ def test_discover_backlink_prospects_enriches_contact_methods_from_public_signal
     project = Project.objects.create(
         profile=user.profile,
         url="https://tuxseo.com",
-        name="TuxSEO",
+        name="XeeAISto",
         summary="seo platform for startups",
     )
     page = ProjectPage.objects.create(
@@ -442,7 +442,7 @@ def test_discover_backlink_prospects_marks_low_confidence_vs_not_found(monkeypat
     project = Project.objects.create(
         profile=user.profile,
         url="https://tuxseo.com",
-        name="TuxSEO",
+        name="XeeAISto",
         summary="seo platform for startups",
     )
     page = ProjectPage.objects.create(
@@ -512,7 +512,7 @@ def test_discover_backlink_prospects_avoids_common_false_positive_contact_hints(
     project = Project.objects.create(
         profile=user.profile,
         url="https://tuxseo.com",
-        name="TuxSEO",
+        name="XeeAISto",
         summary="seo platform for startups",
     )
     page = ProjectPage.objects.create(
@@ -572,7 +572,7 @@ def test_discover_backlink_prospects_is_safe_without_api_key(settings):
     project = Project.objects.create(
         profile=user.profile,
         url="https://tuxseo.com",
-        name="TuxSEO",
+        name="XeeAISto",
         summary="technical SEO indexing improvements",
     )
     page = ProjectPage.objects.create(

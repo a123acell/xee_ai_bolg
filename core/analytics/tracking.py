@@ -1,8 +1,8 @@
 from django_q.tasks import async_task
 
-from tuxseo.utils import get_tuxseo_logger
+from xeeaisto.utils import get_xeeaisto_logger
 
-logger = get_tuxseo_logger(__name__)
+logger = get_xeeaisto_logger(__name__)
 
 
 def enqueue_track_event(*, profile_id: int, event_name: str, properties: dict, source_function: str) -> None:

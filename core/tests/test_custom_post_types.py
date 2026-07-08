@@ -210,7 +210,7 @@ def test_edit_custom_post_type_requires_authentication(client):
 
 
 @pytest.mark.django_db
-@override_settings(MEDIA_ROOT="/tmp/tuxseo-test-media")
+@override_settings(MEDIA_ROOT="/tmp/xeeaisto-test-media")
 def test_edit_custom_post_type_updates_name_prompt_and_logo(client):
     user = User.objects.create_user("owner-edit", "owner-edit@example.com", "secret")
     project = Project.objects.create(profile=user.profile, name="Site", url="https://site.test")
@@ -238,7 +238,7 @@ def test_edit_custom_post_type_updates_name_prompt_and_logo(client):
 
 
 @pytest.mark.django_db
-@override_settings(MEDIA_ROOT="/tmp/tuxseo-test-media")
+@override_settings(MEDIA_ROOT="/tmp/xeeaisto-test-media")
 def test_edit_custom_post_type_rejects_remove_logo_and_new_upload_together(client):
     user = User.objects.create_user("owner-replace-logo", "owner-replace-logo@example.com", "secret")
     project = Project.objects.create(profile=user.profile, name="Site", url="https://site.test")
@@ -269,7 +269,7 @@ def test_edit_custom_post_type_rejects_remove_logo_and_new_upload_together(clien
 
 
 @pytest.mark.django_db
-@override_settings(MEDIA_ROOT="/tmp/tuxseo-test-media")
+@override_settings(MEDIA_ROOT="/tmp/xeeaisto-test-media")
 def test_edit_custom_post_type_can_remove_existing_logo(client):
     user = User.objects.create_user("owner-remove-logo", "owner-remove-logo@example.com", "secret")
     project = Project.objects.create(profile=user.profile, name="Site", url="https://site.test")
@@ -346,7 +346,7 @@ def test_build_content_generation_prompt_does_not_duplicate_custom_post_type_gui
 
 
 @pytest.mark.django_db
-@override_settings(MEDIA_ROOT="/tmp/tuxseo-test-media")
+@override_settings(MEDIA_ROOT="/tmp/xeeaisto-test-media")
 def test_create_custom_post_type_with_logo_upload(client):
     user = User.objects.create_user("owner-logo", "owner-logo@example.com", "secret")
     project = Project.objects.create(profile=user.profile, name="Site", url="https://site.test")
@@ -367,7 +367,7 @@ def test_create_custom_post_type_with_logo_upload(client):
 
 
 @pytest.mark.django_db
-@override_settings(MEDIA_ROOT="/tmp/tuxseo-test-media")
+@override_settings(MEDIA_ROOT="/tmp/xeeaisto-test-media")
 def test_create_custom_post_type_without_logo_works(client):
     user = User.objects.create_user("owner-no-logo", "owner-no-logo@example.com", "secret")
     project = Project.objects.create(profile=user.profile, name="Site", url="https://site.test")
@@ -387,7 +387,7 @@ def test_create_custom_post_type_without_logo_works(client):
 
 
 @pytest.mark.django_db
-@override_settings(MEDIA_ROOT="/tmp/tuxseo-test-media")
+@override_settings(MEDIA_ROOT="/tmp/xeeaisto-test-media")
 def test_create_custom_post_type_rejects_unsupported_logo_type(client):
     user = User.objects.create_user("owner-bad-logo", "owner-bad-logo@example.com", "secret")
     project = Project.objects.create(profile=user.profile, name="Site", url="https://site.test")
@@ -407,7 +407,7 @@ def test_create_custom_post_type_rejects_unsupported_logo_type(client):
 
 
 @pytest.mark.django_db
-@override_settings(MEDIA_ROOT="/tmp/tuxseo-test-media")
+@override_settings(MEDIA_ROOT="/tmp/xeeaisto-test-media")
 def test_create_custom_post_type_rejects_oversized_logo(client):
     user = User.objects.create_user("owner-big-logo", "owner-big-logo@example.com", "secret")
     project = Project.objects.create(profile=user.profile, name="Site", url="https://site.test")

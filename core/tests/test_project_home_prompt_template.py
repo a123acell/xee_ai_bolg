@@ -4,14 +4,14 @@ from pathlib import Path
 PROJECT_HOME_TEMPLATE_PATH = Path("frontend/templates/project/project_home.html")
 
 
-def test_project_home_prompt_template_uses_minimal_tuxseo_agent_template():
+def test_project_home_prompt_template_uses_minimal_xeeaisto_agent_template():
     content = PROJECT_HOME_TEMPLATE_PATH.read_text(encoding="utf-8")
 
     assert "Prompt template for AI agents" in content
-    assert "You are helping me operate TuxSEO for my project." in content
+    assert "You are helping me operate XeeAISto for my project." in content
     assert "First read the agent skill file: https://tuxseo.com/skill.md" in content
-    assert "TuxSEO API base URL: https://tuxseo.com/public-api" in content
-    assert "TuxSEO API key:" in content
+    assert "XeeAISto API base URL: https://tuxseo.com/public-api" in content
+    assert "XeeAISto API key:" in content
     assert "Project URL:" not in content
     assert "Goal:" not in content
     assert "Use this key in every API request header:" not in content
