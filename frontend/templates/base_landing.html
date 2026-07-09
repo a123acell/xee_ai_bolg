@@ -112,11 +112,6 @@
                     Docs
                   </a>
                 </li>
-                <li>
-                  <a href="{% url 'pricing' %}" class="rounded-full px-6 py-3 text-base font-semibold leading-[1.7] tracking-[-0.09px] text-gray-900 transition-colors hover:bg-gray-100">
-                    Pricing
-                  </a>
-                </li>
               </ul>
             </nav>
           </div>
@@ -163,11 +158,6 @@
                   <li class="py-5 text-center border-b border-gray-200">
                     <a href="{% url 'docs_page' category='getting-started' page='introduction' %}" class="text-sm font-semibold text-gray-900 hover:text-red-600">
                       Docs
-                    </a>
-                  </li>
-                  <li class="py-5 text-center border-b border-gray-200">
-                    <a href="{% url 'pricing' %}" class="text-sm font-semibold text-gray-900 hover:text-red-600">
-                      Pricing
                     </a>
                   </li>
                   {% if user.is_authenticated %}

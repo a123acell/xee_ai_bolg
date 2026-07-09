@@ -303,12 +303,11 @@ export default class extends Controller {
     const profileSettings = profileSettingsJSON ? JSON.parse(profileSettingsJSON) : {};
     const projectSettings = projectSettingsJSON ? JSON.parse(projectSettingsJSON) : {};
 
-    const hasPro = profileSettings.has_pro_subscription || false;
     const hasAutoSubmit = projectSettings.has_auto_submission_setting || false;
 
     let buttonHtml;
 
-    if (hasPro && hasAutoSubmit) {
+    if (hasAutoSubmit) {
       // Pro user with settings: Enabled Post button
       buttonHtml = `
         <button
@@ -321,8 +320,7 @@ export default class extends Controller {
           Post
         </button>
       `;
-    } else if (hasPro && !hasAutoSubmit) {
-      // Pro user without settings: Disabled link to settings
+    } else {
       buttonHtml = `
         <a
           href="${this.projectSettingsUrlValue}#blogging-agent-settings"
@@ -336,22 +334,6 @@ export default class extends Controller {
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
           </svg>
           Setup
-        </a>
-      `;
-    } else {
-      // Not a pro user: Disabled link to pricing
-      buttonHtml = `
-        <a
-          href="${this.pricingUrlValue}"
-          class="inline-flex items-center px-3 py-1.5 text-xs font-medium text-gray-500 bg-gray-100 rounded border border-gray-200 transition-colors hover:bg-gray-50"
-          data-controller="tooltip"
-          data-tooltip-message-value="This feature is available for Pro subscribers only."
-          data-action="mouseenter->tooltip#show mouseleave->tooltip#hide"
-        >
-          <svg class="mr-1 w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path>
-          </svg>
-          Pro Only
         </a>
       `;
     }

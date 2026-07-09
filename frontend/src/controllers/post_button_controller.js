@@ -34,7 +34,7 @@ export default class extends Controller {
       const button = this.element.querySelector("button, a");
       if (!button) return;
 
-      const isEnabled = profileSettings.has_pro_subscription && projectSettings.has_auto_submission_setting;
+      const isEnabled = projectSettings.has_auto_submission_setting;
 
       // The generate-content controller now renders the correct initial state.
       // This method is now just for updating the state if settings change while the button is visible.

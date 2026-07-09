@@ -2120,14 +2120,9 @@ def send_feedback_request_email(profile_id: int):
         )
         return f"Email already sent to {user.email}, skipping"
 
-    # Construct the pricing URL
-    pricing_url = f"{settings.SITE_URL}{reverse('pricing')}"
-
-    # Prepare template context
     context = {
         "user": user,
         "profile": profile,
-        "pricing_url": pricing_url,
     }
 
     try:
@@ -2146,16 +2141,6 @@ I'd love to hear from you about:
 • How are you finding XeeAISto? (ease of usage, quality of content generated)
 • What's working well for you?
 • What could I improve?
-
-🎉 Black Friday Special Offer
-
-I'm also running a special Black Friday promotion! Would you consider upgrading to Pro with my exclusive discount?
-
-Use code BF2025-85OFF for 85% off your subscription.
-
-If you're not interested in upgrading right now, I'd love to know why. Your feedback helps me understand what features matter most to you.
-
-View Pricing & Upgrade: {pricing_url}
 
 Please reply to this email with your feedback. I read every response and use your input to make XeeAISto better.
 

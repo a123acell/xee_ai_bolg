@@ -1,20 +1,7 @@
 {% with generated_post=suggestion.generated_blog_posts.first %}
   {% if generated_post %}
     <div data-controller="post-button" data-post-button-generated-post-id-value="{{ generated_post.id }}">
-      {% if not has_pro_subscription %}
-        <a
-          href="{% url 'pricing' %}"
-          class="inline-flex items-center px-3 py-1.5 text-xs font-medium text-gray-500 bg-gray-100 border border-gray-200 rounded hover:bg-gray-50 transition-colors"
-          data-controller="tooltip"
-          data-tooltip-message-value="This feature is available for Pro subscribers only."
-          data-action="mouseenter->tooltip#show mouseleave->tooltip#hide"
-        >
-          <svg class="w-3.5 h-3.5 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path>
-          </svg>
-          Pro Only
-        </a>
-      {% elif not has_auto_submission_setting %}
+      {% if not has_auto_submission_setting %}
         <a
           href="{% url 'project_settings' generated_post.project.id %}#blogging-agent-settings"
           class="inline-flex items-center px-3 py-1.5 text-xs font-medium text-gray-500 bg-gray-100 border border-gray-200 rounded hover:bg-gray-50 transition-colors"

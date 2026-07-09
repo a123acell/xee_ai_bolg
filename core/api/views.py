@@ -753,7 +753,7 @@ def generate_title_suggestions(request: HttpRequest, data: GenerateTitleSuggesti
 
         context = {
             "suggestion": suggestion,
-            "has_pro_subscription": profile.is_on_pro_plan,
+            "has_pro_subscription": True,
             "has_auto_submission_setting": project.has_auto_submission_setting,
         }
         html = render_to_string("components/blog_post_suggestion_card.html", context)
@@ -849,7 +849,7 @@ def generate_title_from_idea(request: HttpRequest, data: GenerateTitleSuggestion
         # Render HTML for the suggestion using the Django template
         context = {
             "suggestion": suggestion,
-            "has_pro_subscription": profile.is_on_pro_plan,
+            "has_pro_subscription": True,
             "has_auto_submission_setting": project.has_auto_submission_setting,
         }
         suggestion_html = render_to_string("components/blog_post_suggestion_card.html", context)
@@ -1623,7 +1623,7 @@ def user_settings(request: HttpRequest, project_id: int):
         project = get_object_or_404(Project, id=project_id, profile=profile)
 
         profile_data = {
-            "has_pro_subscription": profile.is_on_pro_plan,
+            "has_pro_subscription": True,
             "reached_content_generation_limit": profile.reached_content_generation_limit,
             "reached_title_generation_limit": profile.reached_title_generation_limit,
         }

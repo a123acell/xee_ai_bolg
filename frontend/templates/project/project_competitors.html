@@ -17,70 +17,18 @@
       <h2 class="text-2xl font-bold text-gray-900">Your Competitors</h2>
       <p class="mt-2 text-gray-600">
         View and analyze competitors for your project
-        {% if is_on_free_plan and competitor_limit %}
-          <span class="text-sm text-gray-500">({{ number_of_competitors }}/{{ competitor_limit }} competitors)</span>
-        {% endif %}
       </p>
     </div>
-    {% if can_add_competitors %}
-      <button
-        data-action="click->add-competitor#showModal"
-        class="inline-flex items-center px-4 py-2 text-sm font-medium text-white bg-gray-900 rounded-md border border-gray-900 hover:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-gray-500"
-      >
-        <svg class="mr-2 w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
-        </svg>
-        Add Competitor
-      </button>
-    {% else %}
-      <button
-        disabled
-        class="inline-flex items-center px-4 py-2 text-sm font-medium text-gray-400 bg-gray-200 rounded-md border border-gray-200 cursor-not-allowed"
-        title="You have reached the competitor limit for your plan"
-      >
-        <svg class="mr-2 w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
-        </svg>
-        Add Competitor
-      </button>
-    {% endif %}
+    <button
+      data-action="click->add-competitor#showModal"
+      class="inline-flex items-center px-4 py-2 text-sm font-medium text-white bg-gray-900 rounded-md border border-gray-900 hover:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-gray-500"
+    >
+      <svg class="mr-2 w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
+      </svg>
+      Add Competitor
+    </button>
   </div>
-
-  <!-- Upgrade Banner for Competitor Limit -->
-  {% if is_on_free_plan and not can_add_competitors %}
-    <div class="p-4 mb-6 bg-yellow-50 rounded-lg border border-yellow-200">
-      <div class="flex">
-        <svg class="flex-shrink-0 w-5 h-5 text-yellow-600" fill="currentColor" viewBox="0 0 20 20">
-          <path fill-rule="evenodd" d="M8.257 3.099c.765-1.36 2.722-1.36 3.486 0l5.58 9.92c.75 1.334-.213 2.98-1.742 2.98H4.42c-1.53 0-2.493-1.646-1.743-2.98l5.58-9.92zM11 13a1 1 0 11-2 0 1 1 0 012 0zm-1-8a1 1 0 00-1 1v3a1 1 0 002 0V6a1 1 0 00-1-1z" clip-rule="evenodd" />
-        </svg>
-        <div class="flex-1 ml-3">
-          <h3 class="text-sm font-medium text-yellow-800">Competitor Limit Reached</h3>
-          <p class="mt-1 text-sm text-yellow-700">
-            You have reached the maximum of {{ competitor_limit }} competitors for the free plan.
-            <a href="{% url 'user_upgrade_checkout_session' product_name='Pro - Monthly' %}" class="font-semibold underline hover:text-yellow-900">Upgrade to Pro</a> to add unlimited competitors.
-          </p>
-        </div>
-      </div>
-    </div>
-  {% endif %}
-
-  <!-- Upgrade Banner for Competitor Posts Limit -->
-  {% if is_on_free_plan and not can_generate_competitor_posts %}
-    <div class="p-4 mb-6 bg-yellow-50 rounded-lg border border-yellow-200">
-      <div class="flex">
-        <svg class="flex-shrink-0 w-5 h-5 text-yellow-600" fill="currentColor" viewBox="0 0 20 20">
-          <path fill-rule="evenodd" d="M8.257 3.099c.765-1.36 2.722-1.36 3.486 0l5.58 9.92c.75 1.334-.213 2.98-1.742 2.98H4.42c-1.53 0-2.493-1.646-1.743-2.98l5.58-9.92zM11 13a1 1 0 11-2 0 1 1 0 012 0zm-1-8a1 1 0 00-1 1v3a1 1 0 002 0V6a1 1 0 00-1-1z" clip-rule="evenodd" />
-        </svg>
-        <div class="flex-1 ml-3">
-          <h3 class="text-sm font-medium text-yellow-800">Competitor Post Generation Limit Reached</h3>
-          <p class="mt-1 text-sm text-yellow-700">
-            You have generated {{ number_of_competitor_posts_generated }}/{{ competitor_posts_limit }} competitor comparison posts for the free plan.
-            <a href="{% url 'user_upgrade_checkout_session' product_name='Pro - Monthly' %}" class="font-semibold underline hover:text-yellow-900">Upgrade to Pro</a> to generate unlimited competitor posts.
-          </p>
-        </div>
-      </div>
-    </div>
-  {% endif %}
 
   <!-- Add Competitor Modal -->
   <div
@@ -189,10 +137,6 @@
           <p class="mt-1 text-sm text-blue-700">
             Competitors are automatically discovered and analyzed to help you understand your competitive landscape.
             Analysis includes key features, strengths, weaknesses, and opportunities for differentiation.
-            {% if is_on_free_plan and competitor_posts_limit %}
-              <br><br>
-              <strong>Free Plan Limits:</strong> You can generate {{ competitor_posts_limit }} competitor comparison posts ({{ number_of_competitor_posts_generated }}/{{ competitor_posts_limit }} used).
-            {% endif %}
           </p>
         </div>
       </div>
@@ -272,7 +216,6 @@
                         Generating...
                       </button>
                     {% else %}
-                      {% if can_generate_competitor_posts %}
                         <button
                           data-action="competitor-vs-post#generatePost"
                           class="inline-flex items-center px-3 py-1.5 text-xs font-medium text-white bg-gray-900 rounded-md border border-gray-900 hover:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-gray-500">
@@ -281,17 +224,6 @@
                           </svg>
                           Generate Post
                         </button>
-                      {% else %}
-                        <button
-                          disabled
-                          class="inline-flex items-center px-3 py-1.5 text-xs font-medium text-gray-400 bg-gray-200 rounded-md border border-gray-200 cursor-not-allowed"
-                          title="You have reached the competitor post generation limit for your plan">
-                          <svg class="mr-1.5 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path>
-                          </svg>
-                          Limit Reached
-                        </button>
-                      {% endif %}
                     {% endif %}
                   </td>
                 </tr>

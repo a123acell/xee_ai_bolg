@@ -168,10 +168,6 @@
       "stage": "conversion",
       "description": "Checkout failed due to payment or session error."
     },
-    "subscription_created": {
-      "stage": "revenue",
-      "description": "Subscription created in Stripe."
-    },
     "onboarding_completed": {
       "stage": "activation",
       "description": "User completed onboarding baseline by creating the first project."
@@ -186,7 +182,7 @@
     },
     "paid_conversion": {
       "stage": "revenue",
-      "description": "Paid conversion recorded from Stripe subscription creation."
+      "description": "Paid conversion recorded."
     },
     "plan_upgraded": {
       "stage": "revenue",

@@ -82,24 +82,15 @@ from xeeaisto.utils import get_xeeaisto_logger
 logger = get_xeeaisto_logger(__name__)
 
 
-def get_public_pricing_url() -> str:
-    base_url = settings.SITE_URL.rstrip("/") if getattr(settings, "SITE_URL", "") else ""
-    return f"{base_url}{reverse('pricing')}" if base_url else reverse("pricing")
-
-
 def plan_gate_error(code: str, message: str, *, status_code: int = 403) -> tuple[int, dict]:
     return (
         status_code,
-        error_payload(code=code, message=message, upgrade_url=get_public_pricing_url()),
+        error_payload(code=code, message=message),
     )
 
 
 def get_public_entitlement_error(profile, entitlement: PlanEntitlement) -> dict | None:
-    return evaluate_plan_entitlement(
-        profile,
-        entitlement,
-        upgrade_url=get_public_pricing_url(),
-    )
+    return None
 
 
 public_api = NinjaAPI(

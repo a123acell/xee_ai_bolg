@@ -22,7 +22,6 @@ class StaticViewSitemap(sitemaps.Sitemap):
             "landing",
             "home",
             "uses",
-            "pricing",
             "blog_posts",
             "changelog",
         ]

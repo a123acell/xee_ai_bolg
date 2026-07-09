@@ -80,22 +80,6 @@ services:
       - "8025:8025"
     restart: unless-stopped
 
-  stripe:
-    image: stripe/stripe-cli:latest
-    command: [
-      "listen",
-      "--forward-to", "http://backend:8000/stripe/webhook/9977bf48-cf0f-4bdd-8041-ef832fa6187c/",
-      "--latest"
-    ]
-    environment:
-      - STRIPE_API_KEY=${STRIPE_TEST_SECRET_KEY}
-      - STRIPE_DEVICE_NAME=djstripe_docker
-    dns:
-      - 8.8.8.8
-      - 8.8.4.4
-    env_file:
-      - .env
-
   mjml:
     image: danihodovic/mjml-server
     ports:

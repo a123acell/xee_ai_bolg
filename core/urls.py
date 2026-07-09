@@ -121,21 +121,4 @@ urlpatterns = [
     ),
     # utils
     path("resend-confirmation/", views.resend_confirmation_email, name="resend_confirmation"),
-    # payments
-    path("pricing", views.PricingView.as_view(), name="pricing"),
-    path(
-        "create-checkout-session/<str:product_name>/",
-        views.create_checkout_session,
-        name="user_upgrade_checkout_session",
-    ),
-    path(
-        "subscription/upgrade/<str:product_name>/",
-        views.upgrade_subscription,
-        name="upgrade_subscription",
-    ),
-    path(
-        "create-customer-portal/",
-        views.create_customer_portal_session,
-        name="create_customer_portal_session",
-    ),
 ]

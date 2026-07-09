@@ -104,7 +104,6 @@ INSTALLED_APPS = [
     "webpack_boilerplate",
     "widget_tweaks",
     "anymail",
-    "djstripe",
     "allauth",
     "allauth.account",
     "allauth.socialaccount",
@@ -148,7 +147,6 @@ TEMPLATES = [
                 "django.template.context_processors.request",
                 "django.contrib.auth.context_processors.auth",
                 "django.contrib.messages.context_processors.messages",
-                "core.context_processors.pro_subscription_status",
                 "core.context_processors.posthog_api_key",
                 "core.context_processors.available_social_providers",
                 "core.context_processors.turnstile_site_key",
@@ -590,20 +588,6 @@ TWENTY_CRM_API_KEY = env(
 TWENTY_SIGNUP_SYNC_ENABLED = env.bool("TWENTY_SIGNUP_SYNC_ENABLED", default=False)
 TWENTY_SIGNUP_SYNC_TIMEOUT_SECONDS = env.int("TWENTY_SIGNUP_SYNC_TIMEOUT_SECONDS", default=20)
 TWENTY_SIGNUP_SYNC_MAX_RETRIES = env.int("TWENTY_SIGNUP_SYNC_MAX_RETRIES", default=3)
-
-STRIPE_LIVE_SECRET_KEY = env("STRIPE_LIVE_SECRET_KEY", default="")
-STRIPE_TEST_SECRET_KEY = env("STRIPE_TEST_SECRET_KEY", default="")
-STRIPE_PRICE_ID_PRO_MONTHLY = env("STRIPE_PRICE_ID_PRO_MONTHLY", default="")
-STRIPE_PRICE_ID_PRO_YEARLY = env("STRIPE_PRICE_ID_PRO_YEARLY", default="")
-
-STRIPE_LIVE_MODE = False
-STRIPE_SECRET_KEY = STRIPE_TEST_SECRET_KEY
-if ENVIRONMENT == "prod":
-    STRIPE_LIVE_MODE = True
-    STRIPE_SECRET_KEY = STRIPE_LIVE_SECRET_KEY
-
-DJSTRIPE_WEBHOOK_SECRET = env("DJSTRIPE_WEBHOOK_SECRET", default="")
-DJSTRIPE_FOREIGN_KEY_TO_FIELD = "id"
 
 JINA_READER_API_KEY = env("JINA_READER_API_KEY")
 

@@ -44,7 +44,6 @@ urlpatterns = [
     path("anymail/", include("anymail.urls")),
     path("uses", TemplateView.as_view(template_name="pages/uses.html"), name="uses"),
     path("skill.md", skill_markdown_view, name="skill_markdown"),
-    path("stripe/", include("djstripe.urls", namespace="djstripe")),
     path("api/docs", partial(openapi_view, api=public_api), name="api_docs"),
     path("api/docs/", partial(openapi_view, api=public_api), name="api_docs_slash"),
     path("api/openapi.json", partial(openapi_json, api=public_api), name="api_openapi_json"),
