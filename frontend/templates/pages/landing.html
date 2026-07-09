@@ -1,5 +1,5 @@
 {% extends "base_landing.html" %}
-{% load webpack_loader static socialaccount %}
+{% load webpack_loader static %}
 
 {% block content %}
 <div class="relative isolate overflow-hidden px-4 sm:px-6 lg:px-8">
@@ -7,225 +7,132 @@
   <div class="pointer-events-none absolute -left-24 top-28 -z-10 h-80 w-80 rounded-full bg-red-500/10 blur-3xl"></div>
   <div class="pointer-events-none absolute -right-20 top-44 -z-10 h-80 w-80 rounded-full bg-cyan-500/10 blur-3xl"></div>
 
+  <!-- Hero Section -->
   <section class="mx-auto mt-4 max-w-7xl">
     <div class="rounded-3xl border border-slate-200 bg-white/90 px-6 py-14 shadow-[0_20px_80px_rgba(15,23,42,0.10)] backdrop-blur-sm sm:px-10 lg:px-14">
       <div class="mx-auto max-w-4xl text-center">
         <div class="inline-flex items-center gap-x-2 rounded-full border border-slate-200 bg-slate-50 px-4 py-2 text-sm font-semibold text-slate-700">
           <span class="inline-block h-2 w-2 rounded-full bg-emerald-500"></span>
-          AI 驱动的 SEO 发布系统
+          AI 内容创作平台
         </div>
 
         <h1 class="mt-6 text-4xl font-semibold tracking-tight text-slate-900 sm:text-5xl lg:text-6xl">
-          你的内容团队<br/>
-          <span class="bg-gradient-to-r from-red-600 via-fuchsia-600 to-sky-600 bg-clip-text text-transparent">自动运行</span>
+          用 AI 创作<br/>
+          <span class="bg-gradient-to-r from-red-600 via-fuchsia-600 to-sky-600 bg-clip-text text-transparent">高质量内容</span>
         </h1>
 
-        <div class="mt-8 flex flex-wrap items-center justify-center gap-x-6 gap-y-3 text-base text-slate-700 sm:text-lg">
-          <div class="flex items-center gap-x-2">
-            <svg class="h-5 w-5 flex-none text-emerald-600" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" />
-            </svg>
-            <span class="whitespace-nowrap"><span class="font-bold text-slate-900">自动</span>内容生成</span>
-          </div>
-          <div class="flex items-center gap-x-2">
-            <svg class="h-5 w-5 flex-none text-emerald-600" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" />
-            </svg>
-            <span class="whitespace-nowrap"><span class="font-bold text-slate-900">一键</span>发布</span>
-          </div>
-          <div class="flex items-center gap-x-2">
-            <svg class="h-5 w-5 flex-none text-emerald-600" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" />
-            </svg>
-            <span class="whitespace-nowrap">优化以<span class="font-bold text-slate-900">排名第一</span></span>
-          </div>
-        </div>
+        <p class="mx-auto mt-6 max-w-2xl text-lg leading-8 text-slate-600">
+          基于多模型 AI 引擎，自动生成技术博客、产品文案与 SEO 优化文章
+        </p>
 
         <div class="mt-10 flex flex-wrap items-center justify-center gap-4">
-          <a href="{% url 'account_signup' %}" class="inline-flex items-center gap-x-2 rounded-full bg-slate-900 px-6 py-3 text-base font-semibold text-white shadow-lg shadow-slate-900/20 transition hover:bg-slate-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-slate-700">
-            <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-              <path d="M11 3a1 1 0 10-2 0v1a1 1 0 102 0V3zM15.657 5.757a1 1 0 00-1.414-1.414l-.707.707a1 1 0 001.414 1.414l.707-.707zM18 10a1 1 0 01-1 1h-1a1 1 0 110-2h1a1 1 0 011 1zM5.05 6.464A1 1 0 106.464 5.05l-.707-.707a1 1 0 00-1.414 1.414l.707.707zM5 10a1 1 0 01-1 1H3a1 1 0 110-2h1a1 1 0 011 1zM8 16v-1h4v1a2 2 0 11-4 0zM12 14c.015-.34.208-.646.477-.859a4 4 0 10-4.954 0c.27.213.462.519.476.859h4.002z"/>
+          <a href="{% url 'home' %}" class="inline-flex items-center gap-x-2 rounded-full bg-slate-900 px-8 py-3.5 text-base font-semibold text-white shadow-lg shadow-slate-900/20 transition hover:bg-slate-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-slate-700">
+            <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M16.862 4.487l1.687-1.688a1.875 1.875 0 112.652 2.652L10.582 16.07a4.5 4.5 0 01-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 011.13-1.897l8.932-8.931zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0115.75 21H5.25A2.25 2.25 0 013 18.75V8.25A2.25 2.25 0 015.25 6H10" />
             </svg>
-            <span>免费开始，6 篇文章</span>
+            <span>开始创作</span>
           </a>
-          <form method="post" action="{% provider_login_url 'google' %}">
-            {% csrf_token %}
-            <button type="submit" class="inline-flex items-center gap-x-2 rounded-full border border-slate-300 bg-white px-6 py-3 text-base font-semibold text-slate-700 shadow-sm transition hover:bg-slate-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-slate-700">
-              <svg class="h-5 w-5" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/>
-                <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/>
-                <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/>
-                <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/>
-              </svg>
-              <span>使用 Google 注册</span>
-            </button>
-          </form>
-        </div>
-
-        <div class="mt-14 rounded-2xl border border-slate-200 bg-slate-950/95 p-3 shadow-2xl shadow-slate-900/25">
-          <div class="rounded-xl border border-white/10 bg-slate-900/60 p-2">
-            <iframe class="aspect-video w-full rounded-lg" src="https://www.youtube.com/embed/99KCMqVV6rQ?si=cBNrJhnqIW0QClVK" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-          </div>
         </div>
       </div>
     </div>
   </section>
 
-  <section class="mx-auto mt-14 max-w-7xl rounded-3xl border border-slate-200 bg-gradient-to-b from-white to-slate-50 px-6 py-12 shadow-sm sm:px-10 sm:py-14">
-    <div class="mx-auto max-w-3xl text-center">
-      <div class="inline-flex items-center gap-x-2 rounded-full border border-red-200 bg-red-50 px-4 py-2 text-sm font-medium text-red-700">
-        <svg class="h-4 w-4" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-          <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
-        </svg>
-        <span>深受内容创作者信赖</span>
-      </div>
-      <h2 class="mt-5 text-3xl font-semibold tracking-tight text-slate-900 sm:text-4xl">
-        为<br/>
-        <span class="text-red-600">顶级新闻通讯和独立企业提供内容创作支持</span>
-      </h2>
-    </div>
-
-    <div class="mx-auto mt-10 grid max-w-lg grid-cols-2 gap-6 sm:max-w-2xl sm:grid-cols-3 lg:max-w-6xl lg:grid-cols-4">
-      <div class="group flex flex-col items-center gap-y-4 rounded-2xl border border-slate-200 bg-white p-6 text-center shadow-sm transition-all duration-200 hover:-translate-y-0.5 hover:border-sky-200 hover:shadow-md">
-        <a class="h-24 w-auto" href="https://isitketo.org">
-          <img class="pt-2" src="{% static 'vendors/images/isitketo.png' %}" alt="Is It Keto">
-        </a>
-        <a href="https://isitketo.org" class="text-sm font-semibold text-slate-900 transition-colors group-hover:text-sky-700">Is It Keto</a>
-      </div>
-      <div class="group flex flex-col items-center gap-y-4 rounded-2xl border border-slate-200 bg-white p-6 text-center shadow-sm transition-all duration-200 hover:-translate-y-0.5 hover:border-sky-200 hover:shadow-md">
-        <a href="https://builtwithdjango.com">
-          <img class="h-24 w-24 rounded-full bg-slate-100 object-cover" src="{% static 'vendors/images/bwd.png' %}" alt="Built with Django">
-        </a>
-        <a href="https://builtwithdjango.com" class="text-sm font-semibold text-slate-900 transition-colors group-hover:text-sky-700">Built with Django</a>
-      </div>
-      <div class="group flex flex-col items-center gap-y-4 rounded-2xl border border-slate-200 bg-white p-6 text-center shadow-sm transition-all duration-200 hover:-translate-y-0.5 hover:border-sky-200 hover:shadow-md">
-        <a href="https://gettjalerts.com">
-          <img src="{% static 'vendors/images/gettjalerts.png' %}" alt="Tech Job Alerts">
-        </a>
-        <a href="https://gettjalerts.com" class="text-sm font-semibold text-slate-900 transition-colors group-hover:text-sky-700">Tech Job Alerts</a>
-      </div>
-      <div class="group flex flex-col items-center gap-y-4 rounded-2xl border border-slate-200 bg-white p-6 text-center shadow-sm transition-all duration-200 hover:-translate-y-0.5 hover:border-sky-200 hover:shadow-md">
-        <a href="https://porkalpine.org/">
-          <div class="flex h-24 w-24 items-center justify-center rounded-full bg-slate-100">
-            <img class="h-16 w-16 p-1" src="{% static 'vendors/images/porkalpine.png' %}" alt="PorkAlpine" />
-          </div>
-        </a>
-        <a href="https://porkalpine.org/" class="text-sm font-semibold text-slate-900 transition-colors group-hover:text-sky-700">PorkAlpine</a>
-      </div>
-    </div>
-  </section>
-
+  <!-- Core Features Section -->
   <section class="mx-auto mt-14 max-w-7xl px-2 pb-2 sm:px-0">
     <div class="mx-auto max-w-3xl text-center">
-      <h2 class="text-sm font-semibold uppercase tracking-[0.18em] text-red-600">能转化的内容</h2>
-      <p class="mt-3 text-3xl font-semibold tracking-tight text-slate-900 sm:text-4xl">发布能驱动注册的 SEO 内容所需的一切</p>
-      <p class="mt-4 text-lg text-slate-600">XeeAISto 将研究、写作和发布整合到一个专注的工作流程中，专为小团队打造。</p>
+      <h2 class="text-sm font-semibold uppercase tracking-[0.18em] text-red-600">核心功能</h2>
+      <p class="mt-3 text-3xl font-semibold tracking-tight text-slate-900 sm:text-4xl">一站式内容创作平台</p>
+      <p class="mt-4 text-lg text-slate-600">从选题到发布，覆盖内容创作全流程</p>
     </div>
 
     <div class="mt-10 grid gap-6 lg:grid-cols-12">
+      <!-- Feature 1: Multi-Model AI -->
       <article class="rounded-3xl border border-slate-200 bg-white p-7 shadow-sm lg:col-span-5">
-        <h3 class="text-2xl font-semibold tracking-tight text-slate-900">从原始网站数据到可发布文章</h3>
-        <p class="mt-3 text-base leading-7 text-slate-600">
-          只需添加一次网站，XeeAISto 就能帮你发现机会、生成文章草稿并发布内容，无需在多个工具之间切换。
-        </p>
-
+        <div class="flex items-center gap-x-3">
+          <div class="flex h-10 w-10 items-center justify-center rounded-lg bg-slate-900">
+            <svg class="h-5 w-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09zM18.259 8.715L18 9.75l-.259-1.035a3.375 3.375 0 00-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 002.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 002.455 2.456L21.75 6l-1.036.259a3.375 3.375 0 00-2.455 2.456zM16.894 20.567L16.5 21.75l-.394-1.183a2.25 2.25 0 00-1.423-1.423L13.5 18.75l1.183-.394a2.25 2.25 0 001.423-1.423l.394-1.183.394 1.183a2.25 2.25 0 001.423 1.423l1.183.394-1.183.394a2.25 2.25 0 00-1.423 1.423z" />
+            </svg>
+          </div>
+          <h3 class="text-xl font-semibold text-slate-900">多模型 AI 驱动</h3>
+        </div>
         <ul class="mt-6 space-y-3 text-sm text-slate-700">
           <li class="flex gap-x-2">
-            <svg class="mt-0.5 h-5 w-5 flex-none text-red-600" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" /></svg>
-            <span>项目设置会拉取你的页面、主题上下文和基础内容方向。</span>
+            <svg class="mt-0.5 h-5 w-5 flex-none text-emerald-600" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" /></svg>
+            <span>集成 OpenAI、Gemini 等主流大模型</span>
           </li>
           <li class="flex gap-x-2">
-            <svg class="mt-0.5 h-5 w-5 flex-none text-red-600" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" /></svg>
-            <span>在同一个仪表盘中生成 SEO 优化或引人注目的文章创意和草稿。</span>
-          </li>
-          <li class="flex gap-x-2">
-            <svg class="mt-0.5 h-5 w-5 flex-none text-red-600" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" /></svg>
-            <span>一键发布，并在发布历史中追踪已上线内容。</span>
+            <svg class="mt-0.5 h-5 w-5 flex-none text-emerald-600" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" /></svg>
+            <span>可灵活切换模型，适应不同内容风格</span>
           </li>
         </ul>
       </article>
 
       <div class="grid gap-4 sm:grid-cols-2 lg:col-span-7">
+        <!-- Feature 2: Smart Title Generation -->
         <article class="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm transition hover:border-sky-200 hover:shadow-md">
-          <p class="text-xs font-semibold uppercase tracking-[0.16em] text-red-600">研究层</p>
-          <h3 class="mt-2 text-lg font-semibold text-slate-900">更快发现真实机会</h3>
-          <p class="mt-2 text-sm text-slate-600">利用关键词、页面和竞争对手洞察，优先处理具有明确搜索意图的内容。</p>
-        </article>
-
-        <article class="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm transition hover:border-sky-200 hover:shadow-md">
-          <p class="text-xs font-semibold uppercase tracking-[0.16em] text-red-600">写作层</p>
-          <h3 class="mt-2 text-lg font-semibold text-slate-900">符合你品牌的草稿</h3>
-          <p class="mt-2 text-sm text-slate-600">根据你的项目上下文、语气偏好和 SEO 目标生成结构化文章。</p>
-        </article>
-
-        <article class="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm transition hover:border-sky-200 hover:shadow-md">
-          <p class="text-xs font-semibold uppercase tracking-[0.16em] text-red-600">优化层</p>
-          <h3 class="mt-2 text-lg font-semibold text-slate-900">为页面 SEO 基础而构建</h3>
-          <p class="mt-2 text-sm text-slate-600">获取关键词感知的内容，以及元数据和内链引导支持。</p>
-        </article>
-
-        <article class="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm transition hover:border-sky-200 hover:shadow-md">
-          <p class="text-xs font-semibold uppercase tracking-[0.16em] text-red-600">发布层</p>
-          <h3 class="mt-2 text-lg font-semibold text-slate-900">持续发布，而非偶尔发布</h3>
-          <p class="mt-2 text-sm text-slate-600">几分钟内从创意到发布文章，然后在一个地方监控输出。</p>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <section class="mx-auto mt-14 max-w-7xl rounded-3xl border border-slate-200 bg-slate-50 px-6 py-12 sm:px-10 sm:py-14">
-    <div class="mx-auto max-w-5xl">
-      <div class="text-center">
-        <h2 class="text-sm font-semibold uppercase tracking-[0.18em] text-red-600">工作原理</h2>
-        <p class="mt-3 text-3xl font-semibold tracking-tight text-slate-900 sm:text-4xl">为创始人和 AI 代理打造的统一工作流</p>
-        <p class="mt-4 text-lg text-slate-600">选择你的方式：自己点击 UI 操作，或通过 XeeAISto skill.md 将相同流程交给代理。</p>
-      </div>
-
-      <div class="mt-10 grid grid-cols-1 gap-6 text-left sm:grid-cols-3">
-        <div class="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm transition hover:border-sky-200 hover:shadow-md">
-          <div class="mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-slate-900 text-lg font-semibold text-white">1</div>
-          <h4 class="text-lg font-semibold text-slate-900">一次设置</h4>
-          <p class="mt-2 text-slate-600">人工在仪表盘中添加项目 URL；代理可以从提示模板和技能文件中读取项目上下文。</p>
-        </div>
-        <div class="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm transition hover:border-sky-200 hover:shadow-md">
-          <div class="mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-slate-900 text-lg font-semibold text-white">2</div>
-          <h4 class="text-lg font-semibold text-slate-900">结合上下文生成</h4>
-          <p class="mt-2 text-slate-600">手动使用关键词和竞争对手洞察生成草稿，或让 AI 代理端到端运行相同的 SEO 工作流。</p>
-        </div>
-        <div class="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm transition hover:border-sky-200 hover:shadow-md">
-          <div class="mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-slate-900 text-lg font-semibold text-white">3</div>
-          <h4 class="text-lg font-semibold text-slate-900">发布与迭代</h4>
-          <p class="mt-2 text-slate-600">从一个地方发布，在发布历史中监控输出，让你的团队和代理对已上线内容保持同步。</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section id="contact-sales" class="mx-auto mt-14 max-w-7xl pb-16">
-    <div class="overflow-hidden rounded-3xl border border-slate-800 bg-slate-950 px-6 py-12 shadow-2xl shadow-slate-900/30 sm:px-12 sm:py-16">
-      <div class="pointer-events-none absolute inset-x-0 mt-[-8rem] h-64 bg-[radial-gradient(circle,rgba(14,165,233,0.35),transparent_60%)]"></div>
-      <div class="relative mx-auto max-w-2xl text-center">
-        <h2 class="text-3xl font-semibold tracking-tight text-white sm:text-4xl">准备好改变你的内容策略了吗？</h2>
-        <p class="mt-4 text-lg leading-8 text-slate-300">告别内容创作的挣扎，让 AI 生成能带来成果的引人入胜的博客文章。</p>
-        <div class="mt-8 flex flex-wrap items-center justify-center gap-4">
-          <a href="{% url 'account_signup' %}" class="inline-flex items-center gap-x-2 rounded-full bg-white px-6 py-3 text-base font-semibold text-slate-900 shadow-sm transition hover:bg-slate-100 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white">
-            <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-              <path d="M11 3a1 1 0 10-2 0v1a1 1 0 102 0V3zM15.657 5.757a1 1 0 00-1.414-1.414l-.707.707a1 1 0 001.414 1.414l.707-.707zM18 10a1 1 0 01-1 1h-1a1 1 0 110-2h1a1 1 0 011 1zM5.05 6.464A1 1 0 106.464 5.05l-.707-.707a1 1 0 00-1.414 1.414l.707.707zM5 10a1 1 0 01-1 1H3a1 1 0 110-2h1a1 1 0 011 1zM8 16v-1h4v1a2 2 0 11-4 0zM12 14c.015-.34.208-.646.477-.859a4 4 0 10-4.954 0c.27.213.462.519.476.859h4.002z"/>
+          <div class="flex h-10 w-10 items-center justify-center rounded-lg bg-slate-900">
+            <svg class="h-5 w-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25H12" />
             </svg>
-            <span>免费开始，6 篇文章</span>
+          </div>
+          <h3 class="mt-3 text-lg font-semibold text-slate-900">智能标题与大纲生成</h3>
+          <p class="mt-2 text-sm text-slate-600">输入主题，自动生成多个 SEO 优化的标题建议。</p>
+          <p class="mt-1 text-sm text-slate-600">支持点赞/点踩反馈，持续优化推荐质量。</p>
+        </article>
+
+        <!-- Feature 3: Full Article Generation -->
+        <article class="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm transition hover:border-sky-200 hover:shadow-md">
+          <div class="flex h-10 w-10 items-center justify-center rounded-lg bg-slate-900">
+            <svg class="h-5 w-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 14.25v-2.625a3.375 3.375 0 00-3.375-3.375h-1.5A1.125 1.125 0 0113.5 7.125v-1.5a3.375 3.375 0 00-3.375-3.375H8.25m0 12.75h7.5m-7.5 3H12M10.5 2.25H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 00-9-9z" />
+            </svg>
+          </div>
+          <h3 class="mt-3 text-lg font-semibold text-slate-900">一键生成完整文章</h3>
+          <p class="mt-2 text-sm text-slate-600">选定标题后自动生成结构化 Markdown 文章。</p>
+          <p class="mt-1 text-sm text-slate-600">包含 Meta 描述、标签、Slug 等完整 SEO 要素。</p>
+        </article>
+
+        <!-- Feature 4: Flexible Publishing -->
+        <article class="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm transition hover:border-sky-200 hover:shadow-md">
+          <div class="flex h-10 w-10 items-center justify-center rounded-lg bg-slate-900">
+            <svg class="h-5 w-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M3 16.5v2.25A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75V16.5M16.5 12L12 16.5m0 0L7.5 12m4.5 4.5V3" />
+            </svg>
+          </div>
+          <h3 class="mt-3 text-lg font-semibold text-slate-900">灵活发布与导出</h3>
+          <p class="mt-2 text-sm text-slate-600">支持复制为 Markdown / HTML 格式。</p>
+          <p class="mt-1 text-sm text-slate-600">可导出 PDF，方便离线使用。</p>
+        </article>
+
+        <!-- Feature 5: Competitor Analysis -->
+        <article class="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm transition hover:border-sky-200 hover:shadow-md">
+          <div class="flex h-10 w-10 items-center justify-center rounded-lg bg-slate-900">
+            <svg class="h-5 w-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 3v11.25A2.25 2.25 0 006 16.5h2.25M3.75 3h-1.5m1.5 0h16.5m0 0h1.5m-1.5 0v11.25A2.25 2.25 0 0118 16.5h-2.25m-7.5 0h7.5m-7.5 0l-1 3m8.5-3l1 3m0 0l.5 1.5m-.5-1.5h-9.5m0 0l-.5 1.5m.75-9l3-3 2.148 2.148A12.061 12.061 0 0116.5 7.605" />
+            </svg>
+          </div>
+          <h3 class="mt-3 text-lg font-semibold text-slate-900">竞争对手分析</h3>
+          <p class="mt-2 text-sm text-slate-600">自动发现并分析竞争对手的内容策略。</p>
+          <p class="mt-1 text-sm text-slate-600">生成对比文章，找到差异化切入点。</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section id="cta" class="mx-auto mt-14 max-w-7xl pb-16">
+    <div class="overflow-hidden rounded-3xl border border-slate-800 bg-slate-950 px-6 py-12 shadow-2xl shadow-slate-900/30 sm:px-12 sm:py-16">
+      <div class="relative mx-auto max-w-2xl text-center">
+        <h2 class="text-3xl font-semibold tracking-tight text-white sm:text-4xl">开始创作你的第一篇文章</h2>
+        <p class="mt-4 text-lg leading-8 text-slate-300">无需繁琐配置，立即体验 AI 辅助内容创作</p>
+        <div class="mt-8 flex flex-wrap items-center justify-center gap-4">
+          <a href="{% url 'home' %}" class="inline-flex items-center gap-x-2 rounded-full bg-white px-6 py-3 text-base font-semibold text-slate-900 shadow-sm transition hover:bg-slate-100 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white">
+            <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M16.862 4.487l1.687-1.688a1.875 1.875 0 112.652 2.652L10.582 16.07a4.5 4.5 0 01-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 011.13-1.897l8.932-8.931zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0115.75 21H5.25A2.25 2.25 0 013 18.75V8.25A2.25 2.25 0 015.25 6H10" />
+            </svg>
+            <span>开始创作</span>
           </a>
-          <form method="post" action="{% provider_login_url 'google' %}">
-            {% csrf_token %}
-            <button type="submit" class="inline-flex items-center gap-x-2 rounded-full border border-slate-600 bg-slate-900 px-6 py-3 text-base font-semibold text-white shadow-sm transition hover:bg-slate-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-slate-400">
-              <svg class="h-5 w-5" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/>
-                <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/>
-                <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/>
-                <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/>
-              </svg>
-              <span>使用 Google 注册</span>
-            </button>
-          </form>
         </div>
       </div>
     </div>
