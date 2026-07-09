@@ -3,7 +3,7 @@
 
 {% block content %}
     <div class="mx-auto my-4 prose md:my-10 lg:prose-lg">
-        <h1 class="text-center">Please confirm Sign Out</h1>
+        <h1 class="text-center">请确认退出登录</h1>
         <form method="post" class="flex flex-row justify-center" action="{% url 'account_logout' %}">
             {% csrf_token %}
 
@@ -13,7 +13,7 @@
 
             <button class="inline-flex items-center px-6 py-3 text-base font-medium text-white bg-red-600 rounded-md border border-transparent border-solid shadow-sm hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
                     type="submit">
-                Sign Out
+                退出登录
             </button>
         </form>
     </div>

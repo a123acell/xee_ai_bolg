@@ -1,7 +1,7 @@
 {% extends "base_app.html" %}
 
 {% block meta %}
-  <title>Admin Panel - XeeAISto</title>
+  <title>管理面板 - XeeAISto</title>
 {% endblock meta %}
 
 {% block content %}
@@ -10,8 +10,8 @@
 
     <!-- Page Header -->
     <div class="mb-8">
-      <h1 class="text-3xl font-bold tracking-tight text-gray-900">Admin Panel</h1>
-      <p class="mt-2 text-lg text-gray-600">System statistics and overview</p>
+      <h1 class="text-3xl font-bold tracking-tight text-gray-900">管理面板</h1>
+      <p class="mt-2 text-lg text-gray-600">系统统计概览</p>
     </div>
 
     <!-- Stats Grid -->
@@ -21,7 +21,7 @@
       <div class="p-6 bg-white rounded-lg border border-gray-200 shadow-sm">
         <div class="flex justify-between items-center">
           <div>
-            <p class="text-sm font-medium text-gray-600">Total Users</p>
+            <p class="text-sm font-medium text-gray-600">总用户数</p>
             <p class="mt-2 text-3xl font-semibold text-gray-900">{{ stats.total_users }}</p>
           </div>
           <div class="p-3 bg-blue-100 rounded-lg">
@@ -31,7 +31,7 @@
           </div>
         </div>
         <p class="mt-2 text-sm text-gray-500">
-          {{ stats.verified_users }} verified
+          {{ stats.verified_users }} 已验证
         </p>
       </div>
 
@@ -39,7 +39,7 @@
       <div class="p-6 bg-white rounded-lg border border-gray-200 shadow-sm">
         <div class="flex justify-between items-center">
           <div>
-            <p class="text-sm font-medium text-gray-600">Total Projects</p>
+            <p class="text-sm font-medium text-gray-600">项目总数</p>
             <p class="mt-2 text-3xl font-semibold text-gray-900">{{ stats.total_projects }}</p>
           </div>
           <div class="p-3 bg-green-100 rounded-lg">
@@ -49,7 +49,7 @@
           </div>
         </div>
         <p class="mt-2 text-sm text-gray-500">
-          Across all users
+          涵盖所有用户
         </p>
       </div>
 
@@ -57,7 +57,7 @@
       <div class="p-6 bg-white rounded-lg border border-gray-200 shadow-sm">
         <div class="flex justify-between items-center">
           <div>
-            <p class="text-sm font-medium text-gray-600">Generated Posts</p>
+            <p class="text-sm font-medium text-gray-600">已生成文章</p>
             <p class="mt-2 text-3xl font-semibold text-gray-900">{{ stats.total_blog_posts }}</p>
           </div>
           <div class="p-3 bg-purple-100 rounded-lg">
@@ -67,7 +67,7 @@
           </div>
         </div>
         <p class="mt-2 text-sm text-gray-500">
-          {{ stats.posted_blog_posts }} posted
+          {{ stats.posted_blog_posts }} 已发布
         </p>
       </div>
 
@@ -79,7 +79,7 @@
       <!-- Recent Users -->
       <div class="bg-white rounded-lg border border-gray-200 shadow-sm">
         <div class="px-6 py-4 border-b border-gray-200">
-          <h2 class="text-lg font-semibold text-gray-900">Recent Users</h2>
+          <h2 class="text-lg font-semibold text-gray-900">最近用户</h2>
         </div>
         <div class="p-6">
           <div class="space-y-4">
@@ -100,17 +100,17 @@
                 <p class="text-xs text-gray-500">{{ user.date_joined|date:"M d, Y" }}</p>
                 {% if user.is_verified %}
                 <span class="inline-flex items-center px-2 py-0.5 text-xs font-medium text-green-800 bg-green-100 rounded-full">
-                  Verified
+                  已验证
                 </span>
                 {% else %}
                 <span class="inline-flex items-center px-2 py-0.5 text-xs font-medium text-gray-600 bg-gray-100 rounded-full">
-                  Unverified
+                  未验证
                 </span>
                 {% endif %}
               </div>
             </div>
             {% empty %}
-            <p class="text-sm text-gray-500">No recent users</p>
+            <p class="text-sm text-gray-500">暂无最近用户</p>
             {% endfor %}
           </div>
         </div>
@@ -119,7 +119,7 @@
       <!-- Recent Projects -->
       <div class="bg-white rounded-lg border border-gray-200 shadow-sm">
         <div class="px-6 py-4 border-b border-gray-200">
-          <h2 class="text-lg font-semibold text-gray-900">Recent Projects</h2>
+          <h2 class="text-lg font-semibold text-gray-900">最近项目</h2>
         </div>
         <div class="p-6">
           <div class="space-y-4">
@@ -127,7 +127,7 @@
             <div class="flex justify-between items-center pb-4 border-b border-gray-100 last:border-0 last:pb-0">
               <div>
                 <p class="text-sm font-medium text-gray-900">{{ project.name }}</p>
-                <p class="text-xs text-gray-500">by {{ project.profile.user.username }}</p>
+                <p class="text-xs text-gray-500">创建者：{{ project.profile.user.username }}</p>
               </div>
               <div class="text-right">
                 <p class="text-xs text-gray-500">{{ project.created_at|date:"M d, Y" }}</p>
@@ -137,7 +137,7 @@
               </div>
             </div>
             {% empty %}
-            <p class="text-sm text-gray-500">No recent projects</p>
+            <p class="text-sm text-gray-500">暂无最近项目</p>
             {% endfor %}
           </div>
         </div>
@@ -148,7 +148,7 @@
     <!-- Quick Actions -->
     <div class="mt-8">
       <div class="p-6 bg-white rounded-lg border border-gray-200 shadow-sm">
-        <h2 class="mb-4 text-lg font-semibold text-gray-900">Quick Actions</h2>
+        <h2 class="mb-4 text-lg font-semibold text-gray-900">快捷操作</h2>
         <div class="flex flex-wrap gap-4">
           <a href="{% url 'admin:index' %}"
              class="inline-flex items-center px-4 py-2 text-sm font-medium text-gray-700 bg-white rounded-md border border-gray-300 hover:bg-gray-50">
@@ -156,7 +156,7 @@
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"></path>
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
             </svg>
-            Django Admin
+            Django 管理后台
           </a>
         </div>
       </div>

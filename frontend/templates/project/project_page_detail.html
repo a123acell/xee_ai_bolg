@@ -2,8 +2,8 @@
 {% load static %}
 
 {% block meta %}
-  <title>XeeAISto - Page Detail for {{ project.name }}</title>
-  <meta name="description" content="Detail workspace for {{ project.name }} page {{ project_page.url }}." />
+  <title>XeeAISto - {{ project.name }} 页面详情</title>
+  <meta name="description" content="{{ project.name }} 页面 {{ project_page.url }} 的详情工作区。" />
 {% endblock meta %}
 
 {% block project_content %}
@@ -15,46 +15,46 @@
       <svg class="mr-1 h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
       </svg>
-      Back to Your Pages
+      返回页面列表
     </a>
 
-    <h2 class="mt-3 text-2xl font-bold text-gray-900">Page Command Center</h2>
+    <h2 class="mt-3 text-2xl font-bold text-gray-900">页面指挥中心</h2>
     <p class="mt-2 text-sm text-gray-600 break-all">{{ project_page.url }}</p>
   </div>
 
     <div class="grid grid-cols-1 gap-6 lg:grid-cols-3">
       <section class="rounded-lg border border-gray-200 bg-white p-6 shadow-sm">
-        <h3 class="text-lg font-semibold text-gray-900">Overview</h3>
+        <h3 class="text-lg font-semibold text-gray-900">概览</h3>
 
         {% if overview_state == "loading" %}
           <div class="mt-4 rounded-md border border-blue-200 bg-blue-50 p-4 text-sm text-blue-700">
-            We are preparing this page overview. Refresh in a moment.
+            正在准备页面概览，请稍后刷新。
           </div>
         {% elif overview_state == "error" %}
           <div class="mt-4 rounded-md border border-red-200 bg-red-50 p-4 text-sm text-red-700">
-            We could not load this page overview right now. Please try again.
+            目前无法加载页面概览，请重试。
           </div>
         {% elif overview_state == "empty" %}
           <div class="mt-4 rounded-md border border-gray-200 bg-gray-50 p-4 text-sm text-gray-600">
-            No overview data is available yet for this page.
+            此页面暂无概览数据。
           </div>
         {% else %}
           <dl class="mt-4 space-y-3 text-sm">
             <div>
-              <dt class="text-gray-500">Path</dt>
+              <dt class="text-gray-500">路径</dt>
               <dd class="font-medium text-gray-900">{{ project_page_path }}</dd>
             </div>
             <div>
-              <dt class="text-gray-500">Domain</dt>
+              <dt class="text-gray-500">域名</dt>
               <dd class="font-medium text-gray-900">{{ project_page_domain }}</dd>
             </div>
             <div>
-              <dt class="text-gray-500">Page type</dt>
-              <dd class="font-medium text-gray-900">{{ project_page.get_type_display|default:"Not classified yet" }}</dd>
+              <dt class="text-gray-500">页面类型</dt>
+              <dd class="font-medium text-gray-900">{{ project_page.get_type_display|default:"尚未分类" }}</dd>
             </div>
             <div>
-              <dt class="text-gray-500">Summary</dt>
-              <dd class="font-medium text-gray-900">{{ project_page.summary|default:"Summary will appear here after analysis." }}</dd>
+              <dt class="text-gray-500">摘要</dt>
+              <dd class="font-medium text-gray-900">{{ project_page.summary|default:"分析后摘要将显示在此处。" }}</dd>
             </div>
           </dl>
         {% endif %}
@@ -62,42 +62,42 @@
 
       <section class="rounded-lg border border-gray-200 bg-white p-6 shadow-sm">
         <div class="flex flex-wrap items-center justify-between gap-3">
-          <h3 class="text-lg font-semibold text-gray-900">SEO Analysis</h3>
+          <h3 class="text-lg font-semibold text-gray-900">SEO 分析</h3>
           <form method="post" class="inline-flex" id="seo-analysis-form">
             {% csrf_token %}
             <input type="hidden" name="action" value="run_seo_analysis" />
             <button
               type="submit"
               id="seo-run-button"
-              data-analyzing-label="Analyzing..."
+              data-analyzing-label="分析中..."
               {% if not detail_view_feature_flags.seo_analysis %}disabled{% endif %}
               class="inline-flex items-center rounded-md bg-gray-900 px-3 py-2 text-xs font-semibold text-white hover:bg-gray-700 {% if not detail_view_feature_flags.seo_analysis %}cursor-not-allowed opacity-60{% endif %}"
             >
-              {% if not detail_view_feature_flags.seo_analysis %}Temporarily disabled{% elif latest_analysis_run and latest_analysis_run.status == "failed" %}Retry analysis{% elif analysis_last_run_at %}Refresh analysis{% else %}Run analysis{% endif %}
+              {% if not detail_view_feature_flags.seo_analysis %}暂时禁用{% elif latest_analysis_run and latest_analysis_run.status == "failed" %}重试分析{% elif analysis_last_run_at %}刷新分析{% else %}运行分析{% endif %}
             </button>
           </form>
         </div>
 
         <p class="mt-2 text-xs text-gray-500">
           {% if analysis_last_run_at %}
-            Last successful run: {{ analysis_last_run_at|date:"M d, Y H:i" }} UTC from {{ analysis_source_label }} page snapshot.
+            上次成功运行：{{ analysis_last_run_at|date:"M d, Y H:i" }} UTC，来自 {{ analysis_source_label }} 页面快照。
           {% else %}
-            No completed analysis yet. Run analysis to generate a score and fixes.
+            尚无完成的分析。运行分析以生成评分和修复建议。
           {% endif %}
         </p>
 
         {% if latest_analysis_run %}
           <div class="mt-3 rounded-md border border-gray-200 bg-gray-50 p-3 text-xs text-gray-700">
-            <p class="font-semibold text-gray-900">Latest run status: {{ latest_analysis_run.get_status_display }}</p>
+            <p class="font-semibold text-gray-900">最新运行状态：{{ latest_analysis_run.get_status_display }}</p>
             {% if latest_analysis_run.started_at %}
-              <p class="mt-1">Started: {{ latest_analysis_run.started_at|date:"M d, Y H:i:s" }} UTC</p>
+              <p class="mt-1">开始：{{ latest_analysis_run.started_at|date:"M d, Y H:i:s" }} UTC</p>
             {% endif %}
             {% if latest_analysis_run.finished_at %}
-              <p class="mt-1">Finished: {{ latest_analysis_run.finished_at|date:"M d, Y H:i:s" }} UTC</p>
+              <p class="mt-1">结束：{{ latest_analysis_run.finished_at|date:"M d, Y H:i:s" }} UTC</p>
             {% endif %}
             {% if latest_analysis_run.status == "failed" and latest_analysis_run.failure_message %}
-              <p class="mt-2 text-red-700">Failure: {{ latest_analysis_run.failure_message }}</p>
-              <p class="mt-1">Use “Retry analysis” after addressing the issue.</p>
+              <p class="mt-2 text-red-700">失败：{{ latest_analysis_run.failure_message }}</p>
+              <p class="mt-1">解决问题后使用"重试分析"。</p>
             {% endif %}
           </div>
         {% endif %}
@@ -114,7 +114,7 @@
 
         {% if analysis_run_history %}
           <div class="mt-4 rounded-md border border-gray-200 bg-white p-3 text-xs text-gray-700">
-            <p class="font-semibold text-gray-900">Recent runs</p>
+            <p class="font-semibold text-gray-900">最近运行</p>
             <ul class="mt-2 space-y-1">
               {% for run in analysis_run_history %}
                 <li>
@@ -129,25 +129,25 @@
 
         {% if seo_state == "disabled" %}
           <div class="mt-4 rounded-md border border-gray-200 bg-gray-50 p-4 text-sm text-gray-600">
-            SEO analysis is currently disabled by feature flag.
+            SEO 分析当前已通过功能开关禁用。
           </div>
         {% elif seo_state == "loading" %}
           <div class="mt-4 rounded-md border border-blue-200 bg-blue-50 p-4 text-sm text-blue-700">
-            SEO analysis is not ready yet. Click “Run analysis” to fetch the latest page content.
+            SEO 分析尚未就绪。点击"运行分析"获取最新页面内容。
           </div>
         {% elif seo_state == "error" %}
           <div class="mt-4 rounded-md border border-red-200 bg-red-50 p-4 text-sm text-red-700">
-            SEO analysis failed to load. Please retry with “Refresh analysis”.
+            SEO 分析加载失败。请使用“刷新分析”重试。
           </div>
         {% elif seo_state == "empty" %}
           <div class="mt-4 rounded-md border border-gray-200 bg-gray-50 p-4 text-sm text-gray-600">
-            No SEO insights yet. Run analysis to populate score, checks, and fix suggestions.
+            暂无 SEO 洞察。运行分析以生成评分、检查和修复建议。
           </div>
         {% else %}
           <div class="mt-4 rounded-md p-4 {% if seo_analysis.score >= 80 %}border border-green-200 bg-green-50{% elif seo_analysis.score >= 50 %}border border-yellow-200 bg-yellow-50{% else %}border border-red-200 bg-red-50{% endif %}">
-            <p class="text-sm font-semibold {% if seo_analysis.score >= 80 %}text-green-800{% elif seo_analysis.score >= 50 %}text-yellow-800{% else %}text-red-800{% endif %}">Overall v1 score: {{ seo_analysis.score }}/100</p>
+            <p class="text-sm font-semibold {% if seo_analysis.score >= 80 %}text-green-800{% elif seo_analysis.score >= 50 %}text-yellow-800{% else %}text-red-800{% endif %}">综合 v1 评分： {{ seo_analysis.score }}/100</p>
             <p class="mt-1 text-xs {% if seo_analysis.score >= 80 %}text-green-700{% elif seo_analysis.score >= 50 %}text-yellow-700{% else %}text-red-700{% endif %}">
-              {{ seo_analysis.failed_checks }} fail · {{ seo_analysis.warned_checks }} warn · {{ seo_analysis.passed_checks }} pass ({{ seo_analysis.total_checks }} total)
+              {{ seo_analysis.failed_checks }} 失败 · {{ seo_analysis.warned_checks }} 警告 · {{ seo_analysis.passed_checks }} 通过（共 {{ seo_analysis.total_checks }} 项）
             </p>
           </div>
 
@@ -160,24 +160,24 @@
                     {{ check.status|upper }}
                   </span>
                 </div>
-                <p class="mt-1 text-xs text-gray-600">Current value: {{ check.value }}</p>
-                <p class="mt-2 text-xs text-gray-700"><span class="font-semibold text-gray-900">Why it matters:</span> {{ check.why_it_matters }}</p>
-                <p class="mt-1 text-xs text-gray-700"><span class="font-semibold text-gray-900">How to fix:</span> {{ check.how_to_fix }}</p>
+                <p class="mt-1 text-xs text-gray-600">当前值：{{ check.value }}</p>
+                <p class="mt-2 text-xs text-gray-700"><span class="font-semibold text-gray-900">为何重要：</span> {{ check.why_it_matters }}</p>
+                <p class="mt-1 text-xs text-gray-700"><span class="font-semibold text-gray-900">如何修复：</span> {{ check.how_to_fix }}</p>
               </li>
             {% empty %}
               <li class="rounded-md border border-gray-200 bg-gray-50 p-3 text-xs text-gray-600">
-                We don't have check-level results yet. Click “Refresh analysis” to try again.
+                暂无检查级别结果。点击“刷新分析”重试。
               </li>
             {% endfor %}
           </ul>
 
           <div class="mt-4 rounded-md border border-gray-200 bg-gray-50 p-4 text-xs text-gray-700">
-            <p class="font-semibold text-gray-900">JSON-LD recommendations</p>
-            <p class="mt-1">Status: {{ seo_analysis.json_ld.status_label }}</p>
-            <p class="mt-1">Detected schema summary: {{ seo_analysis.json_ld.detected_summary }}</p>
+            <p class="font-semibold text-gray-900">JSON-LD 建议</p>
+            <p class="mt-1">状态：{{ seo_analysis.json_ld.status_label }}</p>
+            <p class="mt-1">检测到的 Schema 摘要：{{ seo_analysis.json_ld.detected_summary }}</p>
 
             {% if seo_analysis.json_ld.detected_types %}
-              <p class="mt-2 font-medium text-gray-900">Detected types</p>
+              <p class="mt-2 font-medium text-gray-900">检测到的类型</p>
               <ul class="mt-1 list-disc space-y-1 pl-5 text-gray-700">
                 {% for schema_type in seo_analysis.json_ld.detected_types %}
                   <li>{{ schema_type }}</li>
@@ -186,7 +186,7 @@
             {% endif %}
 
             {% if seo_analysis.json_ld.issue_list %}
-              <p class="mt-2 font-medium text-gray-900">Issue list</p>
+              <p class="mt-2 font-medium text-gray-900">问题列表</p>
               <ul class="mt-1 list-disc space-y-1 pl-5 text-red-700">
                 {% for issue in seo_analysis.json_ld.issue_list %}
                   <li>{{ issue }}</li>
@@ -195,7 +195,7 @@
             {% endif %}
 
             {% if seo_analysis.json_ld.starter_suggestion %}
-              <p class="mt-3 font-medium text-gray-900">Suggested starter block (copy and customize): {{ seo_analysis.json_ld.starter_suggestion.template_type }}</p>
+              <p class="mt-3 font-medium text-gray-900">建议的起始代码块（复制并自定义）：{{ seo_analysis.json_ld.starter_suggestion.template_type }}</p>
               <pre class="mt-2 max-h-64 overflow-x-auto overflow-y-auto rounded border border-gray-200 bg-white p-3 text-[11px] leading-4 text-gray-800 whitespace-pre-wrap">{{ seo_analysis.json_ld.starter_suggestion.json_ld_pretty }}</pre>
             {% endif %}
 
@@ -212,26 +212,26 @@
 
       <section class="rounded-lg border border-gray-200 bg-white p-6 shadow-sm lg:col-span-3">
         <div class="flex flex-wrap items-center justify-between gap-3">
-          <h3 class="text-lg font-semibold text-gray-900">Backlink Opportunities</h3>
+          <h3 class="text-lg font-semibold text-gray-900">外链机会</h3>
           <form method="post" class="inline-flex" id="backlink-refresh-form">
             {% csrf_token %}
             <input type="hidden" name="action" value="run_backlink_refresh" />
             <button
               type="submit"
               id="backlink-run-button"
-              data-loading-label="Refreshing..."
+              data-loading-label="刷新中..."
               {% if not detail_view_feature_flags.backlink_discovery %}disabled{% endif %}
               class="inline-flex items-center rounded-md border border-gray-300 bg-white px-3 py-2 text-xs font-semibold text-gray-700 hover:bg-gray-50 {% if not detail_view_feature_flags.backlink_discovery %}cursor-not-allowed opacity-60{% endif %}"
             >
-              {% if not detail_view_feature_flags.backlink_discovery %}Temporarily disabled{% elif backlink_refresh_in_progress %}Refreshing discovery…{% elif backlink_candidates_count %}Refresh discovery{% else %}Run discovery{% endif %}
+              {% if not detail_view_feature_flags.backlink_discovery %}暂时禁用{% elif backlink_refresh_in_progress %}刷新发现中…{% elif backlink_candidates_count %}刷新发现{% else %}运行发现{% endif %}
             </button>
           </form>
         </div>
 
         <div class="mt-3 flex flex-wrap items-center gap-2 text-xs text-gray-500">
-          <span>{{ backlink_candidates_count }} opportunities shown</span>
+          <span>{{ backlink_candidates_count }} 个机会已显示</span>
           {% if backlink_refresh_in_progress %}
-            <span class="inline-flex items-center rounded-full bg-blue-100 px-2 py-1 font-semibold text-blue-700">Refresh in progress</span>
+            <span class="inline-flex items-center rounded-full bg-blue-100 px-2 py-1 font-semibold text-blue-700">刷新中</span>
           {% endif %}
         </div>
 
@@ -247,17 +247,17 @@
 
         <form method="get" class="mt-4 grid grid-cols-1 gap-3 rounded-md border border-gray-200 bg-gray-50 p-3 md:grid-cols-3">
           <div>
-            <label for="backlink_sort" class="text-xs font-semibold text-gray-700">Sort</label>
+            <label for="backlink_sort" class="text-xs font-semibold text-gray-700">排序</label>
             <select id="backlink_sort" name="backlink_sort" class="mt-1 w-full rounded-md border border-gray-300 bg-white px-2 py-2 text-xs text-gray-700">
-              <option value="relevance" {% if backlink_sort == "relevance" %}selected{% endif %}>Highest relevance</option>
-              <option value="has_contact" {% if backlink_sort == "has_contact" %}selected{% endif %}>Has contact method first</option>
-              <option value="newest" {% if backlink_sort == "newest" %}selected{% endif %}>Newest discovered</option>
+              <option value="relevance" {% if backlink_sort == "relevance" %}selected{% endif %}>最高相关度</option>
+              <option value="has_contact" {% if backlink_sort == "has_contact" %}selected{% endif %}>有联系方式优先</option>
+              <option value="newest" {% if backlink_sort == "newest" %}selected{% endif %}>最新发现</option>
             </select>
           </div>
           <div class="flex items-end">
             <label class="inline-flex items-center gap-2 text-xs font-medium text-gray-700">
               <input type="checkbox" name="backlink_has_contact" value="1" {% if backlink_has_contact_only %}checked{% endif %} class="rounded border-gray-300 text-indigo-600 focus:ring-indigo-500" />
-              Has contact method
+              有联系方式
             </label>
           </div>
           <div class="flex items-end justify-start md:justify-end">
@@ -269,26 +269,26 @@
 
         {% if backlink_state == "disabled" %}
           <div class="mt-4 rounded-md border border-gray-200 bg-gray-50 p-4 text-sm text-gray-600">
-            Backlink discovery is currently disabled by feature flag.
+            外链发现当前已通过功能开关禁用。
           </div>
         {% elif backlink_state == "loading" %}
           <div class="mt-4 rounded-md border border-blue-200 bg-blue-50 p-4 text-sm text-blue-700">
-            Backlink opportunities are being prepared.
+            正在准备外链机会。
           </div>
         {% elif backlink_state == "error" %}
           <div class="mt-4 rounded-md border border-red-200 bg-red-50 p-4 text-sm text-red-700">
-            Could not load backlink opportunities. Please retry.
+            无法加载外链机会，请重试。
           </div>
         {% elif backlink_state == "ready" and backlink_candidates %}
           <div class="mt-4 overflow-x-auto">
             <table class="min-w-full divide-y divide-gray-200 text-sm">
               <thead class="bg-gray-50 text-xs uppercase tracking-wide text-gray-500">
                 <tr>
-                  <th class="px-3 py-2 text-left">Target</th>
-                  <th class="px-3 py-2 text-left">Reason & type</th>
-                  <th class="px-3 py-2 text-left">Contacts</th>
-                  <th class="px-3 py-2 text-left">Confidence</th>
-                  <th class="px-3 py-2 text-right">Quick actions</th>
+                  <th class="px-3 py-2 text-left">目标</th>
+                  <th class="px-3 py-2 text-left">原因和类型</th>
+                  <th class="px-3 py-2 text-left">联系方式</th>
+                  <th class="px-3 py-2 text-left">置信度</th>
+                  <th class="px-3 py-2 text-right">快速操作</th>
                 </tr>
               </thead>
               <tbody class="divide-y divide-gray-100 bg-white">
@@ -307,8 +307,8 @@
                       <p class="text-xs font-semibold text-gray-800">{{ candidate.opportunity_type }}</p>
                       <p class="mt-1 text-xs text-gray-600">{{ candidate.relevance_reason }}</p>
                       <div class="mt-2 flex flex-wrap gap-2">
-                        <span class="inline-flex items-center rounded-full bg-emerald-50 px-2 py-1 text-[10px] font-semibold text-emerald-700">Relevance {{ candidate.relevance_score|default:0|floatformat:2 }}</span>
-                        <span class="inline-flex items-center rounded-full bg-indigo-50 px-2 py-1 text-[10px] font-semibold text-indigo-700">Topic {{ candidate.topic }}</span>
+                        <span class="inline-flex items-center rounded-full bg-emerald-50 px-2 py-1 text-[10px] font-semibold text-emerald-700">相关度 {{ candidate.relevance_score|default:0|floatformat:2 }}</span>
+                        <span class="inline-flex items-center rounded-full bg-indigo-50 px-2 py-1 text-[10px] font-semibold text-indigo-700">主题 {{ candidate.topic }}</span>
                       </div>
                     </td>
                     <td class="px-3 py-3 align-top">
@@ -322,31 +322,31 @@
                               {% elif method.status == "low_confidence" and method.value %}
                                 <span class="break-all">{{ method.value }}</span>
                               {% else %}
-                                <span class="text-gray-500">Not found</span>
+                                <span class="text-gray-500">未找到</span>
                               {% endif %}
                             </li>
                           {% endfor %}
                         </ul>
                       {% else %}
-                        <span class="text-xs text-gray-500">No public contact methods detected</span>
+                        <span class="text-xs text-gray-500">未检测到公开联系方式</span>
                       {% endif %}
                     </td>
                     <td class="px-3 py-3 align-top">
                       <div class="space-y-1 text-xs">
-                        <p class="text-gray-700">Found: <span class="font-semibold">{{ candidate.found_contact_count }}</span></p>
-                        <p class="text-gray-700">High confidence: <span class="font-semibold">{{ candidate.high_confidence_contact_count }}</span></p>
-                        <p class="text-gray-700">Source: <span class="font-semibold">{{ candidate.source|upper }}</span></p>
+                        <p class="text-gray-700">已找到：<span class="font-semibold">{{ candidate.found_contact_count }}</span></p>
+                        <p class="text-gray-700">高置信度：<span class="font-semibold">{{ candidate.high_confidence_contact_count }}</span></p>
+                        <p class="text-gray-700">来源：<span class="font-semibold">{{ candidate.source|upper }}</span></p>
                       </div>
                     </td>
                     <td class="px-3 py-3 align-top text-right">
                       <div class="flex flex-col items-end gap-2">
                         <a href="{{ candidate.url }}" target="_blank" rel="noopener noreferrer" class="inline-flex items-center rounded-md border border-gray-300 px-2 py-1 text-xs font-medium text-gray-700 hover:bg-gray-50">
-                          Open source page
+                          打开源页面
                         </a>
                         {% for method in candidate.contact_methods %}
                           {% if method.value and method.status != "not_found" %}
                             <button type="button" data-copy-value="{{ method.value }}" class="copy-contact-button inline-flex items-center rounded-md border border-indigo-200 bg-indigo-50 px-2 py-1 text-xs font-medium text-indigo-700 hover:bg-indigo-100">
-                              Copy {{ method.label }}
+                              复制 {{ method.label }}
                             </button>
                           {% endif %}
                         {% endfor %}
@@ -359,11 +359,11 @@
           </div>
         {% elif backlink_state == "filtered_empty" %}
           <div class="mt-4 rounded-md border border-gray-200 bg-gray-50 p-4 text-sm text-gray-600">
-            No opportunities match the current filters. Clear "Has contact method" to see the full ranked list.
+            没有符合当前筛选条件的机会。清除"有联系方式"以查看完整排名列表。
           </div>
         {% else %}
           <div class="mt-4 rounded-md border border-gray-200 bg-gray-50 p-4 text-sm text-gray-600">
-            No opportunities discovered yet. Try analyzing this page again after updating its summary/content.
+            尚未发现机会。更新摘要/内容后重新分析此页面。
           </div>
         {% endif %}
       </section>
@@ -371,30 +371,30 @@
 
     {% if request.user.is_staff %}
       <section class="mt-6 rounded-lg border border-amber-200 bg-amber-50 p-4">
-        <h4 class="text-sm font-semibold text-amber-900">Admin debug visibility</h4>
-        <p class="mt-1 text-xs text-amber-800">Use this panel to diagnose failed paid DetailView module runs.</p>
+        <h4 class="text-sm font-semibold text-amber-900">管理员调试视图</h4>
+        <p class="mt-1 text-xs text-amber-800">使用此面板诊断失败的付费 DetailView 模块运行。</p>
 
         <div class="mt-3 grid grid-cols-1 gap-3 lg:grid-cols-2">
           <div class="rounded border border-amber-200 bg-white p-3">
-            <p class="text-xs font-semibold text-gray-900">Feature flags</p>
+            <p class="text-xs font-semibold text-gray-900">功能开关</p>
             <ul class="mt-2 space-y-1 text-xs text-gray-700">
-              <li>SEO analysis: <span class="font-semibold">{{ detail_view_feature_flags.seo_analysis|yesno:"on,off" }}</span></li>
-              <li>Backlink discovery: <span class="font-semibold">{{ detail_view_feature_flags.backlink_discovery|yesno:"on,off" }}</span></li>
-              <li>Contact enrichment: <span class="font-semibold">{{ detail_view_feature_flags.contact_enrichment|yesno:"on,off" }}</span></li>
+              <li>SEO 分析：<span class="font-semibold">{{ detail_view_feature_flags.seo_analysis|yesno:"on,off" }}</span></li>
+              <li>外链发现：<span class="font-semibold">{{ detail_view_feature_flags.backlink_discovery|yesno:"on,off" }}</span></li>
+              <li>联系方式丰富：<span class="font-semibold">{{ detail_view_feature_flags.contact_enrichment|yesno:"on,off" }}</span></li>
             </ul>
           </div>
           <div class="rounded border border-amber-200 bg-white p-3">
-            <p class="text-xs font-semibold text-gray-900">Latest backlink debug state</p>
+            <p class="text-xs font-semibold text-gray-900">最新外链调试状态</p>
             {% if backlink_debug_state %}
               <pre class="mt-2 max-h-48 overflow-auto rounded border border-gray-200 bg-gray-50 p-2 text-[11px] text-gray-700 whitespace-pre-wrap">{{ backlink_debug_state|pprint }}</pre>
             {% else %}
-              <p class="mt-2 text-xs text-gray-600">No debug payload yet.</p>
+              <p class="mt-2 text-xs text-gray-600">暂无调试数据。</p>
             {% endif %}
           </div>
         </div>
 
         <div class="mt-3 rounded border border-amber-200 bg-white p-3">
-          <p class="text-xs font-semibold text-gray-900">Recent failed SEO analysis runs</p>
+          <p class="text-xs font-semibold text-gray-900">最近失败的 SEO 分析运行</p>
           {% if failed_analysis_debug_runs %}
             <ul class="mt-2 space-y-2 text-xs text-gray-700">
               {% for run in failed_analysis_debug_runs %}
@@ -408,7 +408,7 @@
               {% endfor %}
             </ul>
           {% else %}
-            <p class="mt-2 text-xs text-gray-600">No recent failed runs.</p>
+            <p class="mt-2 text-xs text-gray-600">最近没有失败的运行。</p>
           {% endif %}
         </div>
       </section>

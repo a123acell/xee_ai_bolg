@@ -78,7 +78,7 @@
 
         <!-- Created At -->
         <div>
-          <label class="block mb-2 text-sm font-medium text-gray-700">Created</label>
+          <label class="block mb-2 text-sm font-medium text-gray-700">创建时间</label>
           <div class="block px-3 py-2 w-full text-sm text-gray-900 bg-gray-50 rounded-md border border-gray-300">
             {{ generated_post.created_at|date:"F j, Y g:i A" }}
           </div>
@@ -111,7 +111,7 @@
       <!-- Full Description -->
       {% if generated_post.description %}
       <div class="mt-6" data-controller="copy">
-        <label class="block mb-2 text-sm font-medium text-gray-700">Description</label>
+        <label class="block mb-2 text-sm font-medium text-gray-700">描述</label>
         <div class="relative">
           <textarea
             data-copy-target="source"
@@ -123,9 +123,9 @@
             data-action="copy#copy"
             data-copy-target="button"
             class="absolute right-2 bottom-2 px-3 py-1 text-xs font-medium text-white bg-gray-900 rounded hover:bg-gray-800"
-          >
-            Copy
+          >复制
           </button>
+          </div>
         </div>
       </div>
       {% endif %}
@@ -139,7 +139,7 @@
         <!-- Image exists - show it with copy URL -->
         <div data-generate-image-target="imageContainer">
           <div class="mb-4" data-controller="copy">
-            <label class="block mb-2 text-sm font-medium text-gray-700">Image URL</label>
+            <label class="block mb-2 text-sm font-medium text-gray-700">图片 URL</label>
             <div class="relative">
               <input
                 type="text"
@@ -170,7 +170,7 @@
       {% else %}
         <!-- No image - show generate button -->
         <div class="text-center" data-generate-image-target="emptyState">
-          <p class="mb-4 text-sm text-gray-600">No OG image has been generated yet.</p>
+          <p class="mb-4 text-sm text-gray-600">尚未生成 OG 图片。</p>
           <button
             data-action="generate-image#generate"
             data-generate-image-target="button"
@@ -226,7 +226,7 @@
               <svg class="mr-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path>
               </svg>
-              Copy as HTML
+              复制为 HTML
             </button>
             <textarea
               data-copy-html-target="source"
@@ -242,7 +242,7 @@
                 href="{% url 'project_settings' generated_post.project.id %}#blogging-agent-settings"
                 class="inline-flex items-center px-4 py-2 text-sm font-medium text-gray-500 bg-gray-100 rounded-md border border-gray-200 transition-colors hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-gray-500"
                 data-controller="tooltip"
-                data-tooltip-message-value="You need to setup the API endpoint for automatic posting in project settings."
+                data-tooltip-message-value="你需要在项目设置中配置自动发布的 API 端点。"
                 data-action="mouseenter->tooltip#show mouseleave->tooltip#hide"
               >
                 <svg class="mr-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -267,7 +267,7 @@
                 <svg class="mr-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
                 </svg>
-                Posted
+                已发布
               </button>
             {% endif %}
           </div>

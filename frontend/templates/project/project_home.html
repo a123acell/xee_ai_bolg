@@ -5,26 +5,26 @@
     <section class="overflow-hidden p-6 bg-white rounded-lg border border-gray-200 shadow-sm">
       <div class="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
         <div>
-          <h2 class="text-xl font-semibold text-gray-900">Project Home</h2>
-          <p class="mt-1 text-sm text-gray-500">Overview of project setup and generated content.</p>
+          <h2 class="text-xl font-semibold text-gray-900">项目首页</h2>
+          <p class="mt-1 text-sm text-gray-500">项目设置和生成内容的概览。</p>
         </div>
         {% if has_loading_generation_state %}
           <span class="inline-flex items-center px-3 py-1 text-xs font-semibold text-amber-800 bg-amber-100 rounded-full">
-            Generation in progress
+            生成进行中
           </span>
         {% elif has_empty_generation_state %}
           <span class="inline-flex items-center px-3 py-1 text-xs font-semibold text-gray-700 bg-gray-100 rounded-full">
-            No generated content yet
+            暂无生成内容
           </span>
         {% else %}
           <span class="inline-flex items-center px-3 py-1 text-xs font-semibold text-green-800 bg-green-100 rounded-full">
-            Content available
+            内容可用
           </span>
         {% endif %}
       </div>
 
       <div class="mt-6">
-        <h3 class="text-sm font-semibold tracking-wide text-gray-700 uppercase">Summary</h3>
+        <h3 class="text-sm font-semibold tracking-wide text-gray-700 uppercase">摘要</h3>
         {% if project.summary %}
           <p class="mt-2 text-sm leading-relaxed text-gray-700">{{ project.summary }}</p>
         {% elif is_summary_loading_state %}
@@ -32,19 +32,19 @@
             <svg class="w-4 h-4 animate-spin" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"></path>
             </svg>
-            <span>Summary is still being generated.</span>
+            <span>摘要仍在生成中。</span>
           </div>
         {% else %}
-          <p class="mt-2 text-sm text-gray-500">No summary is available for this project yet.</p>
+          <p class="mt-2 text-sm text-gray-500">此项目暂无可用摘要。</p>
         {% endif %}
       </div>
     </section>
 
     <section class="grid grid-cols-1 gap-4 md:grid-cols-2 xl:grid-cols-3">
       <article class="p-5 bg-white rounded-lg border border-gray-200 shadow-sm md:col-span-2 xl:col-span-3">
-        <h3 class="text-base font-semibold text-gray-900">How to use XeeAISto</h3>
+        <h3 class="text-base font-semibold text-gray-900">如何使用 XeeAISto</h3>
         <p class="mt-1 text-sm text-gray-600">
-          Use the core workflow below to go from ideas to published content quickly.
+          使用下方核心工作流，快速从构思到发布内容。
         </p>
 
         <div class="grid grid-cols-1 gap-3 mt-4 sm:grid-cols-3">
@@ -52,37 +52,36 @@
             href="{% url 'project_seo_posts' project.id %}"
             class="inline-flex justify-center items-center px-4 py-2 text-sm font-medium text-gray-700 bg-gray-50 rounded-md border border-gray-200 hover:bg-gray-100"
           >
-            Title Ideas
+            标题创意
           </a>
           <a
             href="{% url 'project_seo_posts' project.id %}"
             class="inline-flex justify-center items-center px-4 py-2 text-sm font-medium text-gray-700 bg-gray-50 rounded-md border border-gray-200 hover:bg-gray-100"
           >
-            Generate Posts
+            生成文章
           </a>
           <a
             href="{% url 'project_keywords' project.id %}"
             class="inline-flex justify-center items-center px-4 py-2 text-sm font-medium text-gray-700 bg-gray-50 rounded-md border border-gray-200 hover:bg-gray-100"
           >
-            Keywords
+            关键词
           </a>
         </div>
 
         <div class="pt-5 mt-5 border-t border-gray-200">
-          <h4 class="text-sm font-semibold tracking-wide text-gray-700 uppercase">API Quickstart</h4>
+          <h4 class="text-sm font-semibold tracking-wide text-gray-700 uppercase">API 快速入门</h4>
           <p class="mt-2 text-sm text-gray-600">
-            Your API key is pre-filled below from your account so you can run one command immediately.
-            You can manage or regenerate it in
-            <a href="{% url 'settings' %}" class="font-medium text-gray-800 underline">Settings</a>.
-            Full docs:
-            <a href="/api/docs" class="font-medium text-gray-800 underline">Public API docs</a>.
+            下方已从您的账户预填了 API 密钥，您可以立即运行命令。您可以在
+            <a href="{% url 'settings' %}" class="font-medium text-gray-800 underline">设置</a>中管理或重新生成。
+            完整文档：
+            <a href="/api/docs" class="font-medium text-gray-800 underline">公开 API 文档</a>。
           </p>
           <p class="mt-2 text-xs font-medium text-amber-700">
-            Security note: treat this key like a password. Never paste it in public chats, screenshots, or client-side code.
+            安全提示：请像对待密码一样保护此密钥。切勿将其粘贴到公共聊天、截图或客户端代码中。
           </p>
 
           <div class="mt-4" data-controller="copy">
-            <label class="block mb-2 text-xs font-semibold tracking-wide text-gray-600 uppercase">Account curl example</label>
+            <label class="block mb-2 text-xs font-semibold tracking-wide text-gray-600 uppercase">账户 curl 示例</label>
             <textarea
               readonly
               rows="5"
@@ -97,12 +96,12 @@
               data-action="click->copy#copy"
               class="inline-flex items-center px-3 py-1.5 mt-2 text-xs font-medium text-white bg-pink-600 rounded-md hover:bg-pink-700"
             >
-              Copy
+              复制
             </button>
           </div>
 
           <div class="mt-4" data-controller="copy">
-            <label class="block mb-2 text-xs font-semibold tracking-wide text-gray-600 uppercase">Prompt template for AI agents</label>
+            <label class="block mb-2 text-xs font-semibold tracking-wide text-gray-600 uppercase">AI 代理提示词模板</label>
             <textarea
               readonly
               rows="9"
@@ -118,14 +117,13 @@ XeeAISto API key: {{ request.user.profile.key }}</textarea>
               data-action="click->copy#copy"
               class="inline-flex items-center px-3 py-1.5 mt-2 text-xs font-medium text-white bg-pink-600 rounded-md hover:bg-pink-700"
             >
-              Copy
+              复制
             </button>
           </div>
 
           <p class="mt-4 text-xs text-gray-600">
-            Need to rotate your production key? Regenerate it in
-            <a href="{% url 'settings' %}" class="font-medium text-gray-800 underline">Settings → API Access</a>,
-            then update your app's secret manager before redeploying.
+            需要轮换生产密钥？在<a href="{% url 'settings' %}" class="font-medium text-gray-800 underline">设置 → API 访问</a>中重新生成，
+            然后在重新部署前更新应用的密钥管理器。
           </p>
         </div>
       </article>
@@ -133,28 +131,28 @@ XeeAISto API key: {{ request.user.profile.key }}</textarea>
       <article class="p-5 bg-white rounded-lg border border-gray-200 shadow-sm md:col-span-2 xl:col-span-3">
         <div class="flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">
           <div>
-            <h3 class="text-base font-semibold text-gray-900">Analytics summary</h3>
-            <p class="mt-1 text-sm text-gray-600">High-level snapshot only. Use the Analytics page for detailed charts, tables, and filters.</p>
+            <h3 class="text-base font-semibold text-gray-900">分析概览</h3>
+            <p class="mt-1 text-sm text-gray-600">仅显示高级快照。请使用分析页面查看详细图表、表格和筛选器。</p>
           </div>
           <a
             href="{% url 'project_analytics' project.id %}"
             class="inline-flex items-center px-3 py-1.5 text-sm font-medium text-white bg-gray-900 rounded-md hover:bg-gray-800"
           >
-            View detailed analytics
+            查看详细分析
           </a>
         </div>
 
         <div class="grid grid-cols-1 gap-3 mt-4 sm:grid-cols-3">
           <div class="p-3 rounded-md border border-gray-200 bg-gray-50">
-            <p class="text-xs font-semibold tracking-wide text-gray-600 uppercase">Clicks (30d)</p>
+            <p class="text-xs font-semibold tracking-wide text-gray-600 uppercase">点击量 (30天)</p>
             <p class="mt-1 text-xl font-semibold text-gray-900">{{ analytics_snapshot_state.totals.clicks }}</p>
           </div>
           <div class="p-3 rounded-md border border-gray-200 bg-gray-50">
-            <p class="text-xs font-semibold tracking-wide text-gray-600 uppercase">Sessions (30d)</p>
+            <p class="text-xs font-semibold tracking-wide text-gray-600 uppercase">会话数 (30天)</p>
             <p class="mt-1 text-xl font-semibold text-gray-900">{{ analytics_snapshot_state.totals.sessions }}</p>
           </div>
           <div class="p-3 rounded-md border border-gray-200 bg-gray-50">
-            <p class="text-xs font-semibold tracking-wide text-gray-600 uppercase">Conversion rate</p>
+            <p class="text-xs font-semibold tracking-wide text-gray-600 uppercase">转化率</p>
             <p class="mt-1 text-xl font-semibold text-gray-900">{{ analytics_snapshot_state.derived.conversion_rate_pct|floatformat:2 }}%</p>
           </div>
         </div>
@@ -162,22 +160,22 @@ XeeAISto API key: {{ request.user.profile.key }}</textarea>
         <div class="flex flex-wrap gap-2 mt-4">
           {% for provider in analytics_snapshot_state.providers %}
             <span class="inline-flex items-center px-2.5 py-1 text-xs font-medium rounded-full {% if provider.is_connected %}text-green-800 bg-green-100{% else %}text-gray-700 bg-gray-100{% endif %}">
-              {{ provider.label }} {% if provider.is_connected %}Connected{% else %}Not connected{% endif %}
+              {{ provider.label }} {% if provider.is_connected %}已连接{% else %}未连接{% endif %}
             </span>
           {% endfor %}
         </div>
 
         {% if not analytics_snapshot_state.has_data %}
-          <p class="mt-3 text-sm text-gray-600">No analytics data synced yet. Connect integrations and run sync to populate detailed analytics.</p>
+          <p class="mt-3 text-sm text-gray-600">尚未同步分析数据。请连接集成并运行同步以填充详细分析数据。</p>
         {% endif %}
       </article>
 
       <article class="p-5 bg-white rounded-lg border border-gray-200 shadow-sm md:col-span-2 xl:col-span-3">
         <div class="flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">
           <div>
-            <h3 class="text-base font-semibold text-gray-900">AI Visibility + SEO Outcome Snapshot (30d)</h3>
+            <h3 class="text-base font-semibold text-gray-900">AI 可见性 + SEO 结果快照 (30天)</h3>
             <p class="mt-1 text-sm text-gray-600">
-              Aggregated from outcome attribution events for client-ready reporting and exports.
+              从结果归因事件聚合而来，用于客户就绪的报告和导出。
             </p>
           </div>
           <span class="inline-flex items-center px-2.5 py-1 text-xs font-medium rounded-full
@@ -189,31 +187,31 @@ XeeAISto API key: {{ request.user.profile.key }}</textarea>
               text-gray-700 bg-gray-100
             {% endif %}
           ">
-            Confidence: {{ reporting_snapshot_state.snapshot.confidence.label|title }}
+            置信度：{{ reporting_snapshot_state.snapshot.confidence.label|title }}
           </span>
         </div>
 
         <div class="grid grid-cols-1 gap-4 mt-4 md:grid-cols-3">
           <div class="p-3 rounded-md border border-gray-200 bg-gray-50">
-            <p class="text-xs font-semibold tracking-wide text-gray-600 uppercase">AI visibility signal</p>
+            <p class="text-xs font-semibold tracking-wide text-gray-600 uppercase">AI 可见性信号</p>
             <p class="mt-1 text-2xl font-semibold text-gray-900">{{ reporting_snapshot_state.snapshot.ai_visibility.signal_value|floatformat:0 }}</p>
-            <p class="mt-1 text-xs text-gray-600">Events: {{ reporting_snapshot_state.snapshot.ai_visibility.event_count }}</p>
+            <p class="mt-1 text-xs text-gray-600">事件数：{{ reporting_snapshot_state.snapshot.ai_visibility.event_count }}</p>
           </div>
           <div class="p-3 rounded-md border border-gray-200 bg-gray-50">
-            <p class="text-xs font-semibold tracking-wide text-gray-600 uppercase">SEO outcome value</p>
+            <p class="text-xs font-semibold tracking-wide text-gray-600 uppercase">SEO 结果值</p>
             <p class="mt-1 text-2xl font-semibold text-gray-900">{{ reporting_snapshot_state.snapshot.seo_outcomes.total_value|floatformat:0 }}</p>
-            <p class="mt-1 text-xs text-gray-600">Events: {{ reporting_snapshot_state.snapshot.seo_outcomes.event_count }}</p>
+            <p class="mt-1 text-xs text-gray-600">事件数：{{ reporting_snapshot_state.snapshot.seo_outcomes.event_count }}</p>
           </div>
           <div class="p-3 rounded-md border border-gray-200 bg-gray-50">
-            <p class="text-xs font-semibold tracking-wide text-gray-600 uppercase">Coverage</p>
+            <p class="text-xs font-semibold tracking-wide text-gray-600 uppercase">覆盖率</p>
             <p class="mt-1 text-2xl font-semibold text-gray-900">{{ reporting_snapshot_state.snapshot.coverage.ratio|floatformat:2 }}</p>
-            <p class="mt-1 text-xs text-gray-600">Status: {{ reporting_snapshot_state.snapshot.coverage.status|title }}</p>
+            <p class="mt-1 text-xs text-gray-600">状态：{{ reporting_snapshot_state.snapshot.coverage.status|title }}</p>
           </div>
         </div>
 
         <div class="grid grid-cols-1 gap-4 mt-4 lg:grid-cols-2">
           <div>
-            <p class="text-xs font-semibold tracking-wide text-gray-600 uppercase">Outcome trend (14d)</p>
+            <p class="text-xs font-semibold tracking-wide text-gray-600 uppercase">结果趋势 (14天)</p>
             <div class="flex gap-1 items-end h-20 mt-2">
               {% for point in reporting_snapshot_state.sparkline %}
                 <div class="flex-1 rounded-sm bg-pink-300"
@@ -224,7 +222,7 @@ XeeAISto API key: {{ request.user.profile.key }}</textarea>
             </div>
           </div>
           <div>
-            <p class="text-xs font-semibold tracking-wide text-gray-600 uppercase">Contribution split</p>
+            <p class="text-xs font-semibold tracking-wide text-gray-600 uppercase">贡献分布</p>
             <ul class="mt-2 space-y-1 text-sm text-gray-700">
               {% for item in reporting_snapshot_state.snapshot.contribution_split %}
                 <li class="flex justify-between">
@@ -232,19 +230,19 @@ XeeAISto API key: {{ request.user.profile.key }}</textarea>
                   <span>{{ item.share_pct|floatformat:1 }}%</span>
                 </li>
               {% empty %}
-                <li class="text-xs text-gray-500">No attribution events yet in selected window.</li>
+                <li class="text-xs text-gray-500">在选定的时间窗口内尚无归因事件。</li>
               {% endfor %}
             </ul>
           </div>
         </div>
 
         <details class="mt-4">
-          <summary class="text-xs font-semibold tracking-wide text-gray-600 uppercase cursor-pointer">Metric definitions</summary>
+          <summary class="text-xs font-semibold tracking-wide text-gray-600 uppercase cursor-pointer">指标定义</summary>
           <ul class="mt-2 space-y-2">
             {% for metric in reporting_snapshot_state.snapshot.metric_definitions %}
               <li class="text-xs text-gray-600">
                 <span class="font-semibold text-gray-800">{{ metric.label }}</span> — {{ metric.tooltip }}
-                <span class="block mt-0.5 text-gray-500">Source events: {{ metric.source_events|join:", " }}</span>
+                <span class="block mt-0.5 text-gray-500">来源事件：{{ metric.source_events|join:", " }}</span>
               </li>
             {% endfor %}
           </ul>
@@ -253,69 +251,69 @@ XeeAISto API key: {{ request.user.profile.key }}</textarea>
         <p class="mt-4 text-xs text-amber-700">
           {{ reporting_snapshot_state.snapshot.coverage.note }}
           {% if reporting_snapshot_state.snapshot.coverage.missing_metrics %}
-            Missing metrics: {{ reporting_snapshot_state.snapshot.coverage.missing_metrics|join:", " }}.
+            缺少指标：{{ reporting_snapshot_state.snapshot.coverage.missing_metrics|join:", " }}.
           {% endif %}
         </p>
       </article>
 
       <article class="p-5 bg-white rounded-lg border border-gray-200 shadow-sm">
-        <p class="text-sm font-medium text-gray-500">Title Ideas</p>
+        <p class="text-sm font-medium text-gray-500">标题创意</p>
         <p class="mt-2 text-3xl font-semibold text-gray-900">{{ title_ideas_state.count }}</p>
         {% if title_ideas_state.is_loading_state %}
-          <p class="mt-2 text-xs text-amber-700">Generating title suggestions...</p>
+          <p class="mt-2 text-xs text-amber-700">正在生成标题建议...</p>
         {% elif title_ideas_state.is_empty_state %}
-          <p class="mt-2 text-xs text-gray-500">No title suggestions generated yet.</p>
+          <p class="mt-2 text-xs text-gray-500">尚未生成标题建议。</p>
         {% else %}
-          <p class="mt-2 text-xs text-green-700">Title suggestions are ready.</p>
+          <p class="mt-2 text-xs text-green-700">标题建议已就绪。</p>
         {% endif %}
       </article>
 
       <article class="p-5 bg-white rounded-lg border border-gray-200 shadow-sm">
-        <p class="text-sm font-medium text-gray-500">Keywords</p>
+        <p class="text-sm font-medium text-gray-500">关键词</p>
         <p class="mt-2 text-3xl font-semibold text-gray-900">{{ keywords_state.count }}</p>
         {% if keywords_state.is_loading_state %}
-          <p class="mt-2 text-xs text-amber-700">Extracting keywords...</p>
+          <p class="mt-2 text-xs text-amber-700">正在提取关键词...</p>
         {% elif keywords_state.is_empty_state %}
-          <p class="mt-2 text-xs text-gray-500">No keywords found yet.</p>
+          <p class="mt-2 text-xs text-gray-500">尚未找到关键词。</p>
         {% else %}
-          <p class="mt-2 text-xs text-green-700">Keywords are available.</p>
+          <p class="mt-2 text-xs text-green-700">关键词已可用。</p>
         {% endif %}
       </article>
 
       <article class="p-5 bg-white rounded-lg border border-gray-200 shadow-sm">
-        <p class="text-sm font-medium text-gray-500">Pages</p>
+        <p class="text-sm font-medium text-gray-500">页面</p>
         <p class="mt-2 text-3xl font-semibold text-gray-900">{{ pages_state.count }}</p>
         {% if pages_state.is_loading_state %}
-          <p class="mt-2 text-xs text-amber-700">Discovering pages...</p>
+          <p class="mt-2 text-xs text-amber-700">正在发现页面...</p>
         {% elif pages_state.is_empty_state %}
-          <p class="mt-2 text-xs text-gray-500">No project pages discovered yet.</p>
+          <p class="mt-2 text-xs text-gray-500">尚未发现项目页面。</p>
         {% else %}
-          <p class="mt-2 text-xs text-green-700">Project pages are available.</p>
+          <p class="mt-2 text-xs text-green-700">项目页面已可用。</p>
         {% endif %}
       </article>
 
       <article class="p-5 bg-white rounded-lg border border-gray-200 shadow-sm">
-        <p class="text-sm font-medium text-gray-500">Competitors</p>
+        <p class="text-sm font-medium text-gray-500">竞争对手</p>
         <p class="mt-2 text-3xl font-semibold text-gray-900">{{ competitors_state.count }}</p>
         {% if competitors_state.is_loading_state %}
-          <p class="mt-2 text-xs text-amber-700">Discovering competitors...</p>
+          <p class="mt-2 text-xs text-amber-700">正在发现竞争对手...</p>
         {% elif competitors_state.is_empty_state %}
-          <p class="mt-2 text-xs text-gray-500">No competitors found yet.</p>
+          <p class="mt-2 text-xs text-gray-500">尚未找到竞争对手。</p>
         {% else %}
-          <p class="mt-2 text-xs text-green-700">Competitor data is available.</p>
+          <p class="mt-2 text-xs text-green-700">竞争对手数据已可用。</p>
         {% endif %}
       </article>
 
       <article class="p-5 bg-white rounded-lg border border-gray-200 shadow-sm">
-        <p class="text-sm font-medium text-gray-500">Generated Posts</p>
+        <p class="text-sm font-medium text-gray-500">已生成的文章</p>
         <p class="mt-2 text-3xl font-semibold text-gray-900">{{ generated_posts_count }}</p>
-        <p class="mt-2 text-xs text-gray-500">Created from title suggestions.</p>
+        <p class="mt-2 text-xs text-gray-500">从标题建议创建。</p>
       </article>
 
       <article class="p-5 bg-white rounded-lg border border-gray-200 shadow-sm">
-        <p class="text-sm font-medium text-gray-500">Posted Posts</p>
+        <p class="text-sm font-medium text-gray-500">已发布的文章</p>
         <p class="mt-2 text-3xl font-semibold text-gray-900">{{ posted_posts_count }}</p>
-        <p class="mt-2 text-xs text-gray-500">Successfully published.</p>
+        <p class="mt-2 text-xs text-gray-500">已成功发布。</p>
       </article>
     </section>
   </div>

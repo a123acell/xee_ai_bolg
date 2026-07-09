@@ -46,7 +46,7 @@
           line-height="32px"
           padding-bottom="20px"
         >
-          Hi {{ user.first_name|default:user.username }}! 👋
+          您好，{{ user.first_name|default:user.username }}！👋
         </mj-text>
 
         <mj-text
@@ -55,7 +55,7 @@
           line-height="24px"
           padding-bottom="16px"
         >
-          My name is Rasul, and I'm the founder of XeeAISto. I hope you're enjoying the product! I'm constantly working to improve it, and your feedback would be incredibly valuable to me.
+          我是 Rasul，XeeAISto 的创始人。希望您喜欢这个产品！我一直在努力改进它，您的反馈对我来说非常宝贵。
         </mj-text>
 
         <mj-text
@@ -117,7 +117,7 @@
           color="#78350f"
           line-height="24px"
         >
-          If you're not interested in upgrading right now, I'd love to know why. Your feedback helps me understand what features matter most to you.
+          如果您目前不打算升级，我很想知道原因。您的反馈有助于我了解哪些功能对您最重要。
         </mj-text>
       </mj-column>
     </mj-section>
@@ -138,7 +138,7 @@
           color="#374151"
           line-height="24px"
         >
-          Thank you for being part of the XeeAISto community!<br/>
+          感谢您成为 XeeAISto 社区的一员！<br/>
           <strong>- Rasul</strong>
         </mj-text>
       </mj-column>
@@ -174,7 +174,7 @@
           align="center"
           line-height="20px"
         >
-          This email was sent by XeeAISto
+          此邮件由 XeeAISto 发送
         </mj-text>
         <mj-text
           font-size="12px"
@@ -191,20 +191,20 @@
 </mjml>
 {% endmjml %}
 {% else %}
-Hi {{ user.first_name|default:user.username }}!
+您好，{{ user.first_name|default:user.username }}！
 
-My name is Rasul, and I'm the founder of XeeAISto. I hope you're enjoying the product! I'm constantly working to improve it, and your feedback would be incredibly valuable to me.
+我是 Rasul，XeeAISto 的创始人。希望您喜欢这个产品！我一直在努力改进它，您的反馈对我来说非常宝贵。
 
-I'd love to hear from you about:
-• How are you finding XeeAISto? (ease of usage, quality of content generated)
-• What's working well for you?
-• What could I improve?
+我很想听听您对以下方面的看法：
+• 您觉得 XeeAISto 怎么样？（使用便捷性、生成内容质量）
+• 哪些功能对您来说效果很好？
+• 哪些方面我可以改进？
 
-Please reply to this email with your feedback. I read every response and use your input to make XeeAISto better.
+请回复此邮件分享您的反馈。我会阅读每一条回复，并用您的意见让 XeeAISto 变得更好。
 
-Thank you for being part of the XeeAISto community!
+感谢您成为 XeeAISto 社区的一员！
 - Rasul
 
 ---
-Just reply to this email to share your feedback.
+回复此邮件即可分享您的反馈。
 {% endif %}

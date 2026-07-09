@@ -2,48 +2,48 @@
 {% load static %}
 
 {% block meta %}
-  <title>XeeAISto - Keywords for {{ project.name }}</title>
+  <title>XeeAISto - {{ project.name }} 的关键词</title>
   <meta name="description"
-        content="Keywords for {{ project.name }}." />
+        content="{{ project.name }} 的关键词。" />
 {% endblock meta %}
 
 {% block project_content %}
 <div class="mb-6">
-  <h2 class="text-2xl font-bold text-gray-900">Keywords</h2>
+  <h2 class="text-2xl font-bold text-gray-900">关键词</h2>
   <p class="mt-2 text-gray-600">
-    Manage and track keyword performance for your project
+    管理和跟踪项目的关键词表现
   </p>
 </div>
 
-    <!-- Keywords Management -->
+    <!-- 关键词s Management -->
     <div class="mt-12" data-controller="keyword">
-      <!-- Main Keywords Table (with volume > 0) -->
+      <!-- Main 关键词s Table (with volume > 0) -->
       {% if keywords %}
         <!-- Filter keywords with volume > 0 -->
         {% comment %}Split keywords into two groups{% endcomment %}
         <div class="mb-6">
-          <h2 class="mb-4 text-lg font-semibold text-gray-900">Keywords</h2>
+          <h2 class="mb-4 text-lg font-semibold text-gray-900">关键词s</h2>
 
           <!-- Search and Add Button Controls -->
           <div class="flex justify-between items-center mb-4">
             <div class="max-w-sm">
               <input id="search-keywords"
                      type="text"
-                     placeholder="Search keywords..."
+                     placeholder="搜索关键词..."
                      class="block px-3 py-2 w-full text-sm text-gray-900 bg-white rounded-md border border-gray-300 focus:ring-gray-500 focus:border-gray-500"
                      data-keyword-target="search"
-                     data-action="input->keyword#filterKeywords">
+                     data-action="input->keyword#filter关键词s">
             </div>
             {% if user.profile.reached_keyword_limit %}
               <a href="{% url 'settings' %}"
                  class="inline-flex items-center px-4 py-2 text-sm font-medium text-gray-500 bg-gray-100 rounded-md border border-gray-200 shadow-sm transition-all duration-200 ease-in-out hover:bg-gray-200 hover:text-gray-600"
                  data-controller="tooltip"
-                 data-tooltip-message-value="{% if user.profile.is_on_free_plan %}Keyword additions are not available on the Free plan. Upgrade to Pro to add custom keywords.{% endif %}"
+                 data-tooltip-message-value="{% if user.profile.is_on_free_plan %}免费套餐不支持添加关键词。升级到 Pro 套餐以添加自定义关键词。{% endif %}"
                  data-action="mouseenter->tooltip#show mouseleave->tooltip#hide">
                 <svg class="mr-2 w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
                 </svg>
-                Add New Keyword
+                添加新关键词
               </a>
             {% else %}
               <button type="button"
@@ -52,7 +52,7 @@
                 <svg class="mr-2 w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
                 </svg>
-                Add New Keyword
+                添加新关键词
               </button>
             {% endif %}
           </div>
@@ -67,7 +67,7 @@
                             data-action="click->keyword#sortByColumn"
                             data-column="keyword"
                             data-sort-type="alphabetical">
-                      <span class="font-medium">Keyword</span>
+                      <span class="font-medium">关键词</span>
                       <div class="flex flex-col ml-1 -space-y-0.5">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
                           <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 15 12 18.75 15.75 15m-7.5-6L12 5.25 15.75 9" />
@@ -80,7 +80,7 @@
                             data-action="click->keyword#sortByColumn"
                             data-column="volume"
                             data-sort-type="numerical">
-                      <span class="font-medium">Volume</span>
+                      <span class="font-medium">搜索量</span>
                       <div class="flex flex-col ml-1 -space-y-0.5">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
                           <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 15 12 18.75 15.75 15m-7.5-6L12 5.25 15.75 9" />
@@ -106,7 +106,7 @@
                             data-action="click->keyword#sortByColumn"
                             data-column="competition"
                             data-sort-type="numerical">
-                      <span class="font-medium">Competition</span>
+                      <span class="font-medium">竞争度</span>
                       <div class="flex flex-col ml-1 -space-y-0.5">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
                           <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 15 12 18.75 15.75 15m-7.5-6L12 5.25 15.75 9" />
@@ -115,10 +115,10 @@
                     </button>
                   </th>
                   <th scope="col" class="px-6 py-3 text-xs font-medium tracking-wider text-left text-gray-500 uppercase">
-                    Trend
+                    趋势
                   </th>
                   <th scope="col" class="px-6 py-3 text-xs font-medium tracking-wider text-left text-gray-500 uppercase">
-                    Action
+                    操作
                   </th>
                 </tr>
               </thead>
@@ -161,19 +161,19 @@
                           <button type="button"
                                   class="inline-flex items-center px-3 py-1.5 text-xs font-medium rounded-md transition-colors focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-offset-2
                                   {% if keyword.use %}bg-gray-900 text-white hover:bg-gray-800{% else %}bg-white text-gray-700 border border-gray-300 hover:bg-gray-50{% endif %}"
-                                  data-action="click->keyword#toggleUse"
+                                  data-action="click->keyword#toggle使用"
                                   data-keyword-id="{{ keyword.id }}"
                                   data-project-id="{{ project.id }}"
                                   data-keyword-use="{{ keyword.use|yesno:'true,false' }}">
-                            {% if keyword.use %}In Use{% else %}Use{% endif %}
+                            {% if keyword.use %}使用中{% else %}使用{% endif %}
                           </button>
                           <button type="button"
                                   class="inline-flex items-center px-3 py-1.5 text-xs font-medium text-red-700 bg-white rounded-md border border-red-300 transition-colors hover:bg-red-50 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2"
-                                  data-action="click->keyword#deleteKeyword"
+                                  data-action="click->keyword#delete关键词"
                                   data-keyword-id="{{ keyword.id }}"
                                   data-project-id="{{ project.id }}"
                                   data-keyword-text="{{ keyword.keyword_text }}"
-                                  title="Remove keyword from project">
+                                  title="从项目中移除关键词">
                             <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
                             </svg>
@@ -188,7 +188,7 @@
           </div>
         </div>
 
-        <!-- Zero Volume Keywords Section (Collapsible) -->
+        <!-- Zero 搜索量 关键词s Section (Collapsible) -->
         <div data-controller="archived-list" class="mt-6 archived-list" data-archived-list-name-value="zero-volume-keywords">
           <div class="bg-gray-50 rounded-lg border border-gray-200">
             <button
@@ -196,9 +196,9 @@
               data-action="click->archived-list#toggle"
             >
               <h4 class="text-base font-medium text-gray-900">
-                Zero Volume Keywords
+                Zero 搜索量 关键词s
                 <span class="ml-2 text-sm font-normal text-gray-500">
-                  (Low search volume keywords)
+                  （低搜索量关键词）
                 </span>
               </h4>
               <svg class="w-5 h-5 text-gray-400 transition-transform duration-200 transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" data-archived-list-target="icon">
@@ -215,7 +215,7 @@
                                 data-action="click->keyword#sortByColumn"
                                 data-column="keyword"
                                 data-sort-type="alphabetical">
-                          <span class="font-medium">Keyword</span>
+                          <span class="font-medium">关键词</span>
                           <div class="flex flex-col ml-1 -space-y-0.5">
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
                               <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 15 12 18.75 15.75 15m-7.5-6L12 5.25 15.75 9" />
@@ -228,7 +228,7 @@
                                 data-action="click->keyword#sortByColumn"
                                 data-column="volume"
                                 data-sort-type="numerical">
-                          <span class="font-medium">Volume</span>
+                          <span class="font-medium">搜索量</span>
                           <div class="flex flex-col ml-1 -space-y-0.5">
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
                               <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 15 12 18.75 15.75 15m-7.5-6L12 5.25 15.75 9" />
@@ -254,7 +254,7 @@
                                 data-action="click->keyword#sortByColumn"
                                 data-column="competition"
                                 data-sort-type="numerical">
-                          <span class="font-medium">Competition</span>
+                          <span class="font-medium">竞争度</span>
                           <div class="flex flex-col ml-1 -space-y-0.5">
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
                               <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 15 12 18.75 15.75 15m-7.5-6L12 5.25 15.75 9" />
@@ -263,10 +263,10 @@
                         </button>
                       </th>
                       <th scope="col" class="px-6 py-3 text-xs font-medium tracking-wider text-left text-gray-500 uppercase">
-                        Trend
+                        趋势
                       </th>
                       <th scope="col" class="px-6 py-3 text-xs font-medium tracking-wider text-left text-gray-500 uppercase">
-                        Action
+                        操作
                       </th>
                     </tr>
                   </thead>
@@ -309,19 +309,19 @@
                               <button type="button"
                                       class="inline-flex items-center px-3 py-1.5 text-xs font-medium rounded-md transition-colors focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-offset-2
                                       {% if keyword.use %}bg-gray-900 text-white hover:bg-gray-800{% else %}bg-white text-gray-700 border border-gray-300 hover:bg-gray-50{% endif %}"
-                                      data-action="click->keyword#toggleUse"
+                                      data-action="click->keyword#toggle使用"
                                       data-keyword-id="{{ keyword.id }}"
                                       data-project-id="{{ project.id }}"
                                       data-keyword-use="{{ keyword.use|yesno:'true,false' }}">
-                                {% if keyword.use %}In Use{% else %}Use{% endif %}
+                                {% if keyword.use %}使用中{% else %}使用{% endif %}
                               </button>
                               <button type="button"
                                       class="inline-flex items-center px-3 py-1.5 text-xs font-medium text-red-700 bg-white rounded-md border border-red-300 transition-colors hover:bg-red-50 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2"
-                                      data-action="click->keyword#deleteKeyword"
+                                      data-action="click->keyword#delete关键词"
                                       data-keyword-id="{{ keyword.id }}"
                                       data-project-id="{{ project.id }}"
                                       data-keyword-text="{{ keyword.keyword_text }}"
-                                      title="Remove keyword from project">
+                                      title="从项目中移除关键词">
                                 <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
                                 </svg>
@@ -340,28 +340,28 @@
 
       {% else %}
         <div class="mb-6">
-          <h2 class="mb-4 text-lg font-semibold text-gray-900">Keywords</h2>
+          <h2 class="mb-4 text-lg font-semibold text-gray-900">关键词s</h2>
 
           <!-- Search and Add Button Controls -->
           <div class="flex justify-between items-center mb-4">
             <div class="max-w-sm">
               <input id="search-keywords"
                      type="text"
-                     placeholder="Search keywords..."
+                     placeholder="搜索关键词..."
                      class="block px-3 py-2 w-full text-sm text-gray-900 bg-white rounded-md border border-gray-300 focus:ring-gray-500 focus:border-gray-500"
                      data-keyword-target="search"
-                     data-action="input->keyword#filterKeywords">
+                     data-action="input->keyword#filter关键词s">
             </div>
             {% if user.profile.reached_keyword_limit %}
               <a href="{% url 'settings' %}"
                  class="inline-flex items-center px-4 py-2 text-sm font-medium text-gray-500 bg-gray-100 rounded-md border border-gray-200 shadow-sm transition-all duration-200 ease-in-out hover:bg-gray-200 hover:text-gray-600"
                  data-controller="tooltip"
-                 data-tooltip-message-value="{% if user.profile.is_on_free_plan %}Keyword additions are not available on the Free plan. Upgrade to Pro to add custom keywords.{% endif %}"
+                 data-tooltip-message-value="{% if user.profile.is_on_free_plan %}免费套餐不支持添加关键词。升级到 Pro 套餐以添加自定义关键词。{% endif %}"
                  data-action="mouseenter->tooltip#show mouseleave->tooltip#hide">
                 <svg class="mr-2 w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
                 </svg>
-                Add New Keyword
+                添加新关键词
               </a>
             {% else %}
               <button type="button"
@@ -370,7 +370,7 @@
                 <svg class="mr-2 w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
                 </svg>
-                Add New Keyword
+                添加新关键词
               </button>
             {% endif %}
           </div>
@@ -379,12 +379,12 @@
           <svg class="mx-auto w-12 h-12 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 20l4-16m2 16l4-16M6 9h14M4 15h14" />
           </svg>
-          <h3 class="mt-2 text-sm font-medium text-gray-900">No keywords found</h3>
-          <p class="mt-1 text-sm text-gray-500">Get started by adding your first keyword to this project.</p>
+          <h3 class="mt-2 text-sm font-medium text-gray-900">未找到关键词</h3>
+          <p class="mt-1 text-sm text-gray-500">开始添加你的第一个关键词到此项目。</p>
         </div>
       {% endif %}
 
-      <!-- Add Keyword Modal -->
+      <!-- Add 关键词 Modal -->
       <div class="flex hidden fixed inset-0 z-50 justify-center items-center p-4" data-keyword-target="modal" style="background-color: rgba(0, 0, 0, 0.5);">
         <!-- Background overlay -->
         <div class="absolute inset-0 bg-gray-500 bg-opacity-75 transition-opacity"
@@ -396,16 +396,16 @@
             <div class="sm:flex sm:items-start">
               <div class="mt-3 w-full text-center sm:mt-0 sm:text-left">
                 <h3 class="text-lg font-medium leading-6 text-gray-900">
-                  Add New Keyword
+                  添加新关键词
                 </h3>
                 <div class="mt-4">
-                  <form id="modal-keyword-form" data-action="submit->keyword#addKeyword">
+                  <form id="modal-keyword-form" data-action="submit->keyword#add关键词">
                     {% csrf_token %}
                     <input type="hidden" name="project_id" value="{{ project.id }}">
                     <div>
-                      <label for="modal-keyword-input" class="block mb-2 text-sm font-medium text-gray-700">Keyword</label>
+                      <label for="modal-keyword-input" class="block mb-2 text-sm font-medium text-gray-700">关键词</label>
                       <input id="modal-keyword-input" name="keyword_text" type="text" required
-                             placeholder="Enter keyword..."
+                             placeholder="输入关键词..."
                              class="block px-3 py-2 w-full text-gray-900 bg-white rounded-md border border-gray-300 focus:ring-gray-500 focus:border-gray-500"
                              data-keyword-target="modalInput" />
                     </div>
@@ -422,12 +422,12 @@
               <svg class="mr-2 w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
               </svg>
-              Add Keyword
+              Add 关键词
             </button>
             <button type="button"
                     class="inline-flex justify-center px-4 py-2 mt-3 w-full text-base font-medium text-gray-700 bg-white rounded-md border border-gray-300 shadow-sm hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-gray-500 sm:mt-0 sm:ml-3 sm:w-auto sm:text-sm"
                     data-action="click->keyword#hideModal">
-              Cancel
+              取消
             </button>
           </div>
         </div>

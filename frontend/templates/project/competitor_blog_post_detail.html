@@ -15,7 +15,7 @@
       <div class="flex-1">
         <h1 class="text-3xl font-bold text-gray-900">{{ blog_post_title }}</h1>
         <p class="mt-2 text-sm text-gray-600">
-          Comparison blog post for {{ competitor.name }}
+          {{ competitor.name }} 的对比博客文章
         </p>
       </div>
       <a
@@ -25,7 +25,7 @@
         <svg class="mr-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
         </svg>
-        Back to Competitors
+        返回竞争对手
       </a>
     </div>
 
@@ -34,14 +34,14 @@
         <svg class="mr-1.5 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
         </svg>
-        Created {{ competitor.created_at|date:"M d, Y" }}
+        创建于 {{ competitor.created_at|date:"M d, Y" }}
       </div>
       {% if competitor.updated_at != competitor.created_at %}
         <div class="flex items-center">
           <svg class="mr-1.5 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
           </svg>
-          Updated {{ competitor.updated_at|date:"M d, Y" }}
+          更新于 {{ competitor.updated_at|date:"M d, Y" }}
         </div>
       {% endif %}
     </div>
@@ -60,7 +60,7 @@
           <svg class="mr-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" />
           </svg>
-          Copy as Markdown
+          复制为 Markdown
         </button>
       </div>
 
@@ -73,7 +73,7 @@
           <svg class="mr-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path>
           </svg>
-          Copy as HTML
+          复制为 HTML
         </button>
         <textarea
           data-copy-html-target="source"
@@ -95,16 +95,16 @@
       <svg class="mx-auto w-12 h-12 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
       </svg>
-      <h3 class="mt-2 text-sm font-medium text-gray-900">No blog post yet</h3>
+      <h3 class="mt-2 text-sm font-medium text-gray-900">暂无博客文章</h3>
       <p class="mt-1 text-sm text-gray-500">
-        The blog post for this competitor hasn't been generated yet.
+        该竞争对手的博客文章尚未生成。
       </p>
       <div class="mt-6">
         <a
           href="{% url 'project_competitors' project.id %}"
           class="inline-flex items-center px-4 py-2 text-sm font-medium text-white bg-gray-900 rounded-md border border-transparent hover:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-gray-500"
         >
-          Go to Competitors
+          前往竞争对手
         </a>
       </div>
     </div>

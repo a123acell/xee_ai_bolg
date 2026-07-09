@@ -2,9 +2,9 @@
 {% load static %}
 
 {% block meta %}
-  <title>XeeAISto - Competitors for {{ project.name }}</title>
+  <title>XeeAISto - {{ project.name }} 的竞争对手</title>
   <meta name="description"
-        content="Competitors for {{ project.name }}." />
+        content="{{ project.name }} 的竞争对手。" />
 {% endblock meta %}
 
 {% block project_content %}
@@ -14,9 +14,9 @@
 >
   <div class="flex flex-col gap-4 justify-between items-start mb-6 sm:flex-row sm:items-center">
     <div>
-      <h2 class="text-2xl font-bold text-gray-900">Your Competitors</h2>
+      <h2 class="text-2xl font-bold text-gray-900">你的竞争对手</h2>
       <p class="mt-2 text-gray-600">
-        View and analyze competitors for your project
+        查看和分析你项目的竞争对手
       </p>
     </div>
     <button
@@ -26,11 +26,11 @@
       <svg class="mr-2 w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
       </svg>
-      Add Competitor
+      添加竞争对手
     </button>
   </div>
 
-  <!-- Add Competitor Modal -->
+  <!-- 添加竞争对手 Modal -->
   <div
     data-add-competitor-target="modal"
     class="hidden overflow-y-auto fixed inset-0 z-50"
@@ -57,14 +57,14 @@
             </div>
             <div class="mt-3 w-full text-center sm:mt-0 sm:ml-4 sm:text-left">
               <h3 class="text-lg font-medium leading-6 text-gray-900" id="modal-title">
-                Add Competitor
+                添加竞争对手
               </h3>
               <div class="mt-4">
                 <form data-add-competitor-target="form" data-action="submit->add-competitor#submit">
                   {% csrf_token %}
                   <div class="mb-4">
                     <label for="competitor-url" class="block mb-2 text-sm font-medium text-gray-700">
-                      Competitor URL <span class="text-red-500">*</span>
+                      竞争对手 URL <span class="text-red-500">*</span>
                     </label>
                     <input
                       type="url"
@@ -76,7 +76,7 @@
                       class="block px-3 py-2 w-full text-gray-900 bg-white rounded-md border border-gray-300 focus:ring-gray-500 focus:border-gray-500"
                     />
                     <p class="mt-1 text-xs text-gray-500">
-                      Enter the homepage URL of your competitor
+                      输入竞争对手的首页 URL
                     </p>
                   </div>
                 </form>
@@ -91,14 +91,14 @@
             data-add-competitor-target="submitButton"
             class="inline-flex justify-center px-4 py-2 w-full text-base font-medium text-white bg-gray-900 rounded-md border border-transparent shadow-sm hover:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500 sm:ml-3 sm:w-auto sm:text-sm"
           >
-            Add Competitor
+            添加竞争对手
           </button>
           <button
             type="button"
             data-action="click->add-competitor#hideModal"
             class="inline-flex justify-center px-4 py-2 mt-3 w-full text-base font-medium text-gray-700 bg-white rounded-md border border-gray-300 shadow-sm hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500 sm:mt-0 sm:ml-3 sm:w-auto sm:text-sm"
           >
-            Cancel
+            取消
           </button>
         </div>
       </div>
@@ -109,19 +109,19 @@
     <!-- Statistics Cards -->
     <div class="grid grid-cols-1 gap-4 mt-8 sm:grid-cols-2 lg:grid-cols-4">
       <div class="p-6 bg-white rounded-lg border border-gray-200 shadow-sm">
-        <div class="text-sm font-medium text-gray-500">Total Competitors</div>
+        <div class="text-sm font-medium text-gray-500">竞争对手总数</div>
         <div class="mt-2 text-3xl font-bold text-gray-900">{{ total_competitors_count }}</div>
       </div>
       <div class="p-6 bg-white rounded-lg border border-gray-200 shadow-sm">
-        <div class="text-sm font-medium text-gray-500">Analyzed</div>
+        <div class="text-sm font-medium text-gray-500">已分析</div>
         <div class="mt-2 text-3xl font-bold text-green-600">{{ analyzed_competitors_count }}</div>
       </div>
       <div class="p-6 bg-white rounded-lg border border-gray-200 shadow-sm">
-        <div class="text-sm font-medium text-gray-500">Scraped</div>
+        <div class="text-sm font-medium text-gray-500">已抓取</div>
         <div class="mt-2 text-3xl font-bold text-blue-600">{{ scraped_competitors_count }}</div>
       </div>
       <div class="p-6 bg-white rounded-lg border border-gray-200 shadow-sm">
-        <div class="text-sm font-medium text-gray-500">Pending Analysis</div>
+        <div class="text-sm font-medium text-gray-500">待分析</div>
         <div class="mt-2 text-3xl font-bold text-gray-600">{{ unanalyzed_competitors_count }}</div>
       </div>
     </div>
@@ -133,10 +133,10 @@
           <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd" />
         </svg>
         <div class="ml-3">
-          <h3 class="text-sm font-medium text-blue-800">About Competitor Analysis</h3>
+          <h3 class="text-sm font-medium text-blue-800">关于竞争对手分析</h3>
           <p class="mt-1 text-sm text-blue-700">
-            Competitors are automatically discovered and analyzed to help you understand your competitive landscape.
-            Analysis includes key features, strengths, weaknesses, and opportunities for differentiation.
+            竞争对手会被自动发现和分析，帮助你了解竞争格局。
+            分析包括关键特性、优势、劣势以及差异化机会。
           </p>
         </div>
       </div>
@@ -151,13 +151,13 @@
             <thead class="bg-gray-50">
               <tr>
                 <th scope="col" class="px-6 py-3 text-xs font-medium tracking-wider text-left text-gray-500 uppercase whitespace-nowrap">
-                  Name
+                  名称
                 </th>
                 <th scope="col" class="px-4 py-3 text-xs font-medium tracking-wider text-left text-gray-500 uppercase whitespace-nowrap">
                   URL
                 </th>
                 <th scope="col" class="px-4 py-3 text-xs font-medium tracking-wider text-right text-gray-500 uppercase whitespace-nowrap">
-                  VS Post
+                  对比文章
                 </th>
               </tr>
             </thead>
@@ -202,18 +202,18 @@
                           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
                           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path>
                         </svg>
-                        View Post
+                        查看文章
                       </a>
                     {% elif competitor.is_blog_post_generation_in_progress %}
                       <button
                         disabled
                         class="inline-flex items-center px-3 py-1.5 text-xs font-medium text-white bg-gray-900 rounded-md border border-gray-900 opacity-75 cursor-not-allowed"
-                        title="Competitor comparison post generation is in progress">
+                        title="竞争对手对比文章正在生成中">
                         <svg class="mr-1.5 w-4 h-4 animate-spin" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
                           <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z"></path>
                         </svg>
-                        Generating...
+                        生成中...
                       </button>
                     {% else %}
                         <button
@@ -222,7 +222,7 @@
                           <svg class="mr-1.5 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path>
                           </svg>
-                          Generate Post
+                          生成文章
                         </button>
                     {% endif %}
                   </td>
@@ -236,9 +236,9 @@
           <svg class="mx-auto w-12 h-12 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
           </svg>
-          <h3 class="mt-2 text-sm font-medium text-gray-900">No competitors found</h3>
+          <h3 class="mt-2 text-sm font-medium text-gray-900">未找到竞争对手</h3>
           <p class="mt-1 text-sm text-gray-500">
-            Competitors will be automatically discovered and analyzed for your project. Check back soon!
+            竞争对手会被自动发现和分析。请稍后再来查看！
           </p>
         </div>
       {% endif %}

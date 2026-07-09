@@ -3,7 +3,7 @@
 {% load widget_tweaks %}
 
 {% block meta %}
-  <title>XeeAISto - User Settings</title>
+  <title>XeeAISto - 用户设置</title>
 {% endblock meta %}
 
 {% block content %}
@@ -13,8 +13,8 @@
 
       <!-- Page Header -->
       <div class="mb-8">
-        <h1 class="text-3xl font-bold tracking-tight text-gray-900">Account Settings</h1>
-        <p class="mt-2 text-base text-gray-600">Manage your account preferences and subscription.</p>
+        <h1 class="text-3xl font-bold tracking-tight text-gray-900">账户设置</h1>
+        <p class="mt-2 text-base text-gray-600">管理您的账户偏好和订阅。</p>
       </div>
 
       <!-- Two Column Layout -->
@@ -26,8 +26,8 @@
           <!-- Personal Information Section -->
           <div class="overflow-hidden bg-white rounded-lg border border-gray-200 shadow-sm">
             <div class="px-6 py-5 bg-white border-b border-gray-200">
-              <h2 class="text-lg font-semibold text-gray-900">Personal Information</h2>
-              <p class="mt-1 text-sm text-gray-600">Update your account details and contact information.</p>
+              <h2 class="text-lg font-semibold text-gray-900">个人信息</h2>
+              <p class="mt-1 text-sm text-gray-600">更新您的账户详细信息和联系方式。</p>
             </div>
             <div class="px-6 py-6">
               <form action="" method="post" class="space-y-6">
@@ -38,7 +38,7 @@
                   <div>
                     {{ form.first_name.errors | safe }}
                     <label for="{{ form.first_name.id_for_label }}" class="block mb-2 text-sm font-medium text-gray-700">
-                      First name
+                      名
                     </label>
                     {% render_field form.first_name id="first-name" name="first-name" type="text" autocomplete="given-name" class="block px-3 py-2 w-full placeholder-gray-400 rounded-md border border-gray-300 shadow-sm focus:border-gray-500 focus:outline-none focus:ring-gray-500 sm:text-sm" %}
                   </div>
@@ -46,7 +46,7 @@
                   <div>
                     {{ form.last_name.errors | safe }}
                     <label for="{{ form.last_name.id_for_label }}" class="block mb-2 text-sm font-medium text-gray-700">
-                      Last name
+                      姓
                     </label>
                     {% render_field form.last_name id="last-name" name="last-name" type="text" autocomplete="family-name" class="block px-3 py-2 w-full placeholder-gray-400 rounded-md border border-gray-300 shadow-sm focus:border-gray-500 focus:outline-none focus:ring-gray-500 sm:text-sm" %}
                   </div>
@@ -55,7 +55,7 @@
                 <div>
                   {{ form.email.errors | safe }}
                   <label for="{{ form.email.id_for_label }}" class="block mb-2 text-sm font-medium text-gray-700">
-                    Email address
+                    电子邮件地址
                   </label>
                   {% render_field form.email id="email-address" name="email-address" type="email" autocomplete="email" class="block px-3 py-2 w-full placeholder-gray-400 rounded-md border border-gray-300 shadow-sm focus:border-gray-500 focus:outline-none focus:ring-gray-500 sm:text-sm" %}
                 </div>
@@ -65,7 +65,7 @@
                     type="submit"
                     class="inline-flex justify-center px-6 py-2.5 text-sm font-medium text-white bg-gray-800 rounded-md border border-transparent shadow-sm hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-offset-2"
                   >
-                    Save Changes
+                    保存更改
                   </button>
                 </div>
               </form>
@@ -80,12 +80,12 @@
             data-api-key-regenerate-url-value="/api/settings/api-key/regenerate"
           >
             <div class="px-6 py-5 bg-white border-b border-gray-200">
-              <h2 class="text-lg font-semibold text-gray-900">API Access</h2>
-              <p class="mt-1 text-sm text-gray-600">Manage your API key for programmatic access.</p>
+              <h2 class="text-lg font-semibold text-gray-900">API 访问</h2>
+              <p class="mt-1 text-sm text-gray-600">管理您的 API 密钥，用于程序化访问。</p>
             </div>
             <div class="px-6 py-6 space-y-4">
               <div>
-                <label class="block mb-2 text-sm font-medium text-gray-700">API Key</label>
+                <label class="block mb-2 text-sm font-medium text-gray-700">API 密钥</label>
                 <input
                   type="text"
                   readonly
@@ -101,24 +101,24 @@
                   data-action="api-key#toggleReveal"
                   class="inline-flex items-center px-4 py-2 text-sm font-medium text-gray-700 bg-white rounded-md border border-gray-300 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-gray-500"
                 >
-                  Reveal
+                  显示
                 </button>
                 <button
                   type="button"
                   data-action="api-key#copy"
                   class="inline-flex items-center px-4 py-2 text-sm font-medium text-white bg-gray-800 rounded-md border border-gray-800 hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-gray-500"
                 >
-                  Copy
+                  复制
                 </button>
                 <button
                   type="button"
                   data-action="api-key#regenerate"
                   class="inline-flex items-center px-4 py-2 text-sm font-medium text-white bg-red-600 rounded-md border border-red-600 hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-red-500"
                 >
-                  Regenerate API Key
+                  重新生成 API 密钥
                 </button>
               </div>
-              <p class="text-xs text-gray-500">Regenerating immediately invalidates your current key.</p>
+              <p class="text-xs text-gray-500">重新生成将立即使您当前的密钥失效。</p>
             </div>
           </div>
 
@@ -129,23 +129,23 @@
           <div class="sticky top-24">
             <div class="overflow-hidden bg-white rounded-lg border border-gray-200 shadow-sm">
               <div class="px-6 py-4 bg-gray-50 border-b border-gray-200">
-                <h2 class="text-lg font-semibold text-gray-900">Account Overview</h2>
+                <h2 class="text-lg font-semibold text-gray-900">账户概览</h2>
               </div>
               <div class="px-6 py-6">
                 <dl class="space-y-4">
 
                   <div class="pt-4 border-t border-gray-100">
-                    <dt class="text-sm font-medium text-gray-500">Account Email</dt>
+                    <dt class="text-sm font-medium text-gray-500">账户邮箱</dt>
                     <dd class="mt-1 text-sm text-gray-900">{{ user.email }}</dd>
                   </div>
                   {% if user.first_name or user.last_name %}
                   <div class="pt-4 border-t border-gray-100">
-                    <dt class="text-sm font-medium text-gray-500">Name</dt>
+                    <dt class="text-sm font-medium text-gray-500">姓名</dt>
                     <dd class="mt-1 text-sm text-gray-900">{{ user.first_name }} {{ user.last_name }}</dd>
                   </div>
                   {% endif %}
                   <div class="pt-4 border-t border-gray-100">
-                    <dt class="text-sm font-medium text-gray-500">Member Since</dt>
+                    <dt class="text-sm font-medium text-gray-500">注册时间</dt>
                     <dd class="mt-1 text-sm text-gray-900">{{ user.date_joined|date:"F Y" }}</dd>
                   </div>
                 </dl>
@@ -155,7 +155,7 @@
             <!-- Quick Actions -->
             <div class="overflow-hidden mt-6 bg-white rounded-lg border border-gray-200 shadow-sm">
               <div class="px-6 py-4 bg-gray-50 border-b border-gray-200">
-                <h2 class="text-lg font-semibold text-gray-900">Quick Actions</h2>
+                <h2 class="text-lg font-semibold text-gray-900">快捷操作</h2>
               </div>
               <div class="px-6 py-6">
                 <ul class="space-y-3">
@@ -164,7 +164,7 @@
                       <svg class="mr-3 w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z" />
                       </svg>
-                      View Projects
+                      查看项目
                     </a>
                   </li>
                   <li>
@@ -174,7 +174,7 @@
                         <svg class="mr-3 w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1" />
                         </svg>
-                        Sign Out
+                        退出登录
                       </button>
                     </form>
                   </li>

@@ -106,7 +106,7 @@
           line-height="24px"
           padding-bottom="20px"
         >
-          If you have any questions or need help getting started, just reply to this email. I'm here to help!
+          如果您有任何问题或需要帮助入门，只需回复此邮件。我随时为您提供帮助！
         </mj-text>
 
         <mj-text
@@ -137,7 +137,7 @@
           line-height="20px"
           align="center"
         >
-          Ready to get started? <a href="{{ home_url }}" class="text-link">Create your first project</a>
+          准备好开始了吗？<a href="{{ home_url }}" class="text-link">创建您的第一个项目</a>
         </mj-text>
       </mj-column>
     </mj-section>
@@ -151,7 +151,7 @@
           align="center"
           line-height="20px"
         >
-          This email was sent by XeeAISto
+          此邮件由 XeeAISto 发送
         </mj-text>
         <mj-text
           font-size="12px"
@@ -160,7 +160,7 @@
           line-height="18px"
           padding-top="10px"
         >
-          © {% now 'Y' %} XeeAISto. All rights reserved.
+          © {% now 'Y' %} XeeAISto. 保留所有权利。
         </mj-text>
       </mj-column>
     </mj-section>
@@ -168,24 +168,24 @@
 </mjml>
 {% endmjml %}
 {% else %}
-Hi {{ user.first_name|default:user.username }}!
+您好，{{ user.first_name|default:user.username }}！
 
-Thanks for verifying your email! I noticed you haven't created your first project yet.
+感谢您验证邮箱！我注意到您还没有创建第一个项目。
 
-XeeAISto helps you generate SEO-optimized blog posts by analyzing your website and competitors. Here's how easy it is to get started:
+XeeAISto 通过分析您的网站和竞争对手，帮助您生成 SEO 优化的博客文章。以下是入门步骤：
 
-1. Add your website URL
-2. Let XeeAISto analyze your content
-3. Get AI-generated blog post suggestions tailored to your site
+1. 添加您的网站 URL
+2. 让 XeeAISto 分析您的内容
+3. 获取为您的网站量身定制的 AI 生成博客文章建议
 
-Create your first project: {{ home_url }}
+创建您的第一个项目：{{ home_url }}
 
-If you have any questions or need help getting started, just reply to this email. I'm here to help!
+如果您有任何问题或需要帮助入门，只需回复此邮件。我随时为您提供帮助！
 
-Best regards,
+此致敬礼，
 - Rasul
-Founder, XeeAISto
+XeeAISto 创始人
 
 ---
-Ready to get started? {{ home_url }}
+准备好开始了吗？{{ home_url }}
 {% endif %}

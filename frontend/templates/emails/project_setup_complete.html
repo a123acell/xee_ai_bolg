@@ -57,7 +57,7 @@
           line-height="32px"
           padding-bottom="20px"
         >
-          Congratulations, {{ user.first_name|default:user.username }}! 🎉
+          恭喜您，{{ user.first_name|default:user.username }}！🎉
         </mj-text>
 
         <mj-text
@@ -101,7 +101,7 @@
           line-height="24px"
           padding-bottom="12px"
         >
-          ✅ Found <strong>{{ keywords_count }} Keywords</strong> to consider tracking and using in posts
+          ✅ 已找到 <strong>{{ keywords_count }} 个关键词</strong>供您考虑跟踪和在文章中使用
         </mj-text>
 
         <!-- Competitors -->
@@ -135,7 +135,7 @@
           line-height="24px"
           padding-bottom="20px"
         >
-          Choose from your {{ blog_post_suggestions_count }} blog post suggestions and let our AI create a comprehensive, SEO-optimized article for you.
+          从您的 {{ blog_post_suggestions_count }} 条博客文章建议中选择，让我们的 AI 为您创建一篇全面的 SEO 优化文章。
         </mj-text>
 
         <mj-button
@@ -167,7 +167,7 @@
           color="#6b7280"
           line-height="20px"
         >
-          If you have any questions or need help, just reply to this email. I'm here to help!
+          如果您有任何问题或需要帮助，只需回复此邮件。我随时为您提供帮助！
         </mj-text>
 
         <mj-text
@@ -201,7 +201,7 @@
           line-height="18px"
           padding-top="10px"
         >
-          © {% now 'Y' %} XeeAISto. All rights reserved.
+          © {% now 'Y' %} XeeAISto. 保留所有权利。
         </mj-text>
       </mj-column>
     </mj-section>
@@ -209,29 +209,29 @@
 </mjml>
 {% endmjml %}
 {% else %}
-Congratulations, {{ user.first_name|default:user.username }}! 🎉
+恭喜您，{{ user.first_name|default:user.username }}！🎉
 
-You've successfully created your first project {{ project.name }}! We've been hard at work analyzing your website and gathering insights to help you create amazing content.
+您已成功创建了第一个项目 {{ project.name }}！我们一直在努力分析您的网站并收集洞察，以帮助您创建精彩的内容。
 
-Here's what we've accomplished so far:
+以下是我们目前完成的工作：
 
-✅ Created {{ blog_post_suggestions_count }} Blog Post Suggestions
-✅ Found {{ keywords_count }} Keywords to consider tracking and using in posts
-✅ Found {{ competitors_count }} Competitors to learn from
+✅ 已创建 {{ blog_post_suggestions_count }} 条博客文章建议
+✅ 已找到 {{ keywords_count }} 个关键词供您考虑跟踪和在文章中使用
+✅ 已发现 {{ competitors_count }} 个竞争对手供您参考学习
 
-Ready to generate your first blog post?
+准备好生成您的第一篇博客文章了吗？
 
-Choose from your {{ blog_post_suggestions_count }} blog post suggestions and let our AI create a comprehensive, SEO-optimized article for you.
+从您的 {{ blog_post_suggestions_count }} 条博客文章建议中选择，让我们的 AI 为您创建一篇全面的 SEO 优化文章。
 
-Generate Your First Post: {{ project_posts_url }}
+生成您的第一篇文章：{{ project_posts_url }}
 
-If you have any questions or need help, just reply to this email. I'm here to help!
+如果您有任何问题或需要帮助，只需回复此邮件。我随时为您提供帮助！
 
-Best regards,
+此致敬礼，
 - Rasul
-Founder, XeeAISto
+XeeAISto 创始人
 
 ---
-This email was sent by XeeAISto
-© {% now 'Y' %} XeeAISto. All rights reserved.
+此邮件由 XeeAISto 发送
+© {% now 'Y' %} XeeAISto。保留所有权利。
 {% endif %}

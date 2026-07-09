@@ -7,16 +7,16 @@
       </svg>
     </div>
     <div class="flex-1 ml-4">
-      <h3 class="text-base font-semibold text-yellow-900">Email Confirmation Required</h3>
+      <h3 class="text-base font-semibold text-yellow-900">需要确认邮箱</h3>
       <div class="mt-2 text-sm text-yellow-800">
         <form method="post" action="{{ resend_confirmation_url }}">
           {% csrf_token %}
-          <p class="font-medium">Your email is not yet confirmed.</p>
-          <p class="mt-1">You won't be able to interact with the app until you verify your email address.</p>
+          <p class="font-medium">您的邮箱尚未确认。</p>
+          <p class="mt-1">在验证邮箱地址之前，您将无法与应用进行交互。</p>
           <p class="mt-2">
-            You should have received a confirmation link in your email. If you haven't received it,
+            您应该已经收到了一封包含确认链接的邮件。如果尚未收到，
             <button type="submit" class="inline-flex items-center font-semibold text-yellow-900 underline transition-colors hover:text-yellow-700">
-              click here to resend
+              点击此处重新发送
             </button>
           </p>
         </form>

@@ -1,41 +1,41 @@
 {% extends "base_project.html" %}
 
 {% block meta %}
-<title>XeeAISto - {{ project.name }} - Custom Post Types</title>
+<title>XeeAISto - {{ project.name }} - 自定义文章类型</title>
 <meta name="description" content="{{ project.summary }}" />
 {% endblock meta %}
 
 {% block project_content %}
 <div class="space-y-8">
   <section class="p-6 bg-white rounded-lg border border-gray-200 shadow-sm">
-    <h2 class="text-xl font-semibold text-gray-900">Create custom post type</h2>
-    <p class="mt-2 text-sm text-gray-600">Define a reusable post style with prompt guidance used during idea generation.</p>
+    <h2 class="text-xl font-semibold text-gray-900">创建自定义文章类型</h2>
+    <p class="mt-2 text-sm text-gray-600">定义一个可复用的文章风格，包含用于创意生成时的提示指导。</p>
 
     <form method="post" enctype="multipart/form-data" class="mt-6 space-y-4">
       {% csrf_token %}
       <div>
-        <label class="block mb-1 text-sm font-medium text-gray-700" for="id_name">Name</label>
+        <label class="block mb-1 text-sm font-medium text-gray-700" for="id_name">名称</label>
         {{ create_form.name }}
         {% for error in create_form.name.errors %}<p class="mt-1 text-sm text-red-600">{{ error }}</p>{% endfor %}
       </div>
       <div>
-        <label class="block mb-1 text-sm font-medium text-gray-700" for="id_prompt_guidance">Prompt guidance</label>
+        <label class="block mb-1 text-sm font-medium text-gray-700" for="id_prompt_guidance">提示指导</label>
         {{ create_form.prompt_guidance }}
         {% for error in create_form.prompt_guidance.errors %}<p class="mt-1 text-sm text-red-600">{{ error }}</p>{% endfor %}
       </div>
       <div>
-        <label class="block mb-1 text-sm font-medium text-gray-700" for="id_logo">Logo (optional)</label>
+        <label class="block mb-1 text-sm font-medium text-gray-700" for="id_logo">Logo（可选）</label>
         {{ create_form.logo }}
-        <p class="mt-1 text-xs text-gray-500">Accepted: PNG, JPG, WEBP, GIF · max 2MB.</p>
+        <p class="mt-1 text-xs text-gray-500">支持格式：PNG, JPG, WEBP, GIF · 最大 2MB。</p>
         {% for error in create_form.logo.errors %}<p class="mt-1 text-sm text-red-600">{{ error }}</p>{% endfor %}
       </div>
       {% for error in create_form.non_field_errors %}<p class="mt-1 text-sm text-red-600">{{ error }}</p>{% endfor %}
-      <button type="submit" class="inline-flex items-center px-4 py-2 text-sm font-medium text-white bg-gray-900 rounded-md border border-gray-900 hover:bg-gray-800">Create post type</button>
+      <button type="submit" class="inline-flex items-center px-4 py-2 text-sm font-medium text-white bg-gray-900 rounded-md border border-gray-900 hover:bg-gray-800">创建文章类型</button>
     </form>
   </section>
 
   <section class="p-6 bg-white rounded-lg border border-gray-200 shadow-sm" data-controller="custom-post-type-delete-modal">
-    <h3 class="text-lg font-semibold text-gray-900">Existing custom post types</h3>
+    <h3 class="text-lg font-semibold text-gray-900">已有的自定义文章类型</h3>
     {% if custom_post_types %}
       <div class="mt-4 space-y-6">
         {% for post_type in custom_post_types %}
@@ -56,8 +56,8 @@
               </div>
             </div>
             <div class="flex gap-3 items-center mt-4">
-              <a href="{% url 'project_custom_post_type_edit' project.id post_type.id %}" class="inline-flex items-center px-3 py-2 text-sm font-medium text-gray-700 bg-white rounded-md border border-gray-300 hover:bg-gray-50">Edit</a>
-              <a href="{% url 'project_custom_post_type_posts' project.id post_type.id %}" class="inline-flex items-center px-3 py-2 text-sm font-medium text-gray-700 bg-white rounded-md border border-gray-300 hover:bg-gray-50">Open</a>
+              <a href="{% url 'project_custom_post_type_edit' project.id post_type.id %}" class="inline-flex items-center px-3 py-2 text-sm font-medium text-gray-700 bg-white rounded-md border border-gray-300 hover:bg-gray-50">编辑</a>
+              <a href="{% url 'project_custom_post_type_posts' project.id post_type.id %}" class="inline-flex items-center px-3 py-2 text-sm font-medium text-gray-700 bg-white rounded-md border border-gray-300 hover:bg-gray-50">打开</a>
             </div>
             <div class="mt-3">
               <button
@@ -66,16 +66,16 @@
                 data-action="click->custom-post-type-delete-modal#open"
                 data-delete-modal-id="delete-post-type-modal-{{ post_type.id }}"
               >
-                Delete
+                删除
               </button>
             </div>
 
             <dialog id="delete-post-type-modal-{{ post_type.id }}" class="p-0 w-full max-w-md rounded-lg border border-gray-200 shadow-xl backdrop:bg-black/50" data-action="click->custom-post-type-delete-modal#closeOnBackdrop">
               <div class="p-6 space-y-4">
                 <div>
-                  <h4 class="text-lg font-semibold text-gray-900">Delete "{{ post_type.name }}"?</h4>
+                  <h4 class="text-lg font-semibold text-gray-900">删除"{{ post_type.name }}"?</h4>
                   <p class="mt-2 text-sm text-gray-600">
-                    This action cannot be undone. Deletion is blocked if this type is still used by active ideas.
+                    此操作无法撤销。如果该类型仍被启用的创意使用，则无法删除。
                   </p>
                 </div>
 
@@ -84,15 +84,15 @@
                   <input type="hidden" name="confirm_delete" value="yes" />
                   <label class="flex gap-2 items-start text-sm text-gray-700">
                     <input type="checkbox" required class="mt-0.5 rounded border-gray-300" />
-                    <span>I understand this will permanently delete this custom post type if it is safe to do so.</span>
+                    <span>我了解，如果安全，此操作将永久删除此自定义文章类型。</span>
                   </label>
 
                   <div class="flex gap-3 justify-end items-center">
                     <button type="button" class="inline-flex items-center px-3 py-2 text-sm font-medium text-gray-700 bg-white rounded-md border border-gray-300 hover:bg-gray-50" data-action="click->custom-post-type-delete-modal#close">
-                      Cancel
+                      取消
                     </button>
                     <button type="submit" class="inline-flex items-center px-3 py-2 text-sm font-medium text-white bg-red-600 rounded-md border border-red-600 hover:bg-red-700">
-                      Delete post type
+                      删除文章类型
                     </button>
                   </div>
                 </form>
@@ -102,7 +102,7 @@
         {% endfor %}
       </div>
     {% else %}
-      <p class="mt-3 text-sm text-gray-600">No custom post types yet.</p>
+      <p class="mt-3 text-sm text-gray-600">暂无自定义文章类型。</p>
     {% endif %}
   </section>
 </div>

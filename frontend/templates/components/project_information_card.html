@@ -53,7 +53,7 @@
       <!-- Blog Post Title Suggestions -->
       <div class="p-3 text-center bg-blue-50 rounded-lg border border-blue-100">
         <div class="text-lg font-bold text-blue-900">{{ project.blog_post_title_suggestions.count }}</div>
-        <div class="text-xs font-medium text-blue-700">Title Ideas</div>
+        <div class="text-xs font-medium text-blue-700">标题创意</div>
       </div>
 
       <!-- Generated Blog Posts -->
@@ -65,7 +65,7 @@
       <!-- Posted Blog Posts -->
       <div class="p-3 text-center bg-purple-50 rounded-lg border border-purple-100">
         <div class="text-lg font-bold text-purple-900">{{ project_data.posted_posts_count|default:0 }}</div>
-        <div class="text-xs font-medium text-purple-700">Posted</div>
+        <div class="text-xs font-medium text-purple-700">已发布</div>
       </div>
     </div>
 
@@ -105,7 +105,7 @@
           </h3>
           <div class="mt-2">
             <p class="text-sm text-gray-500">
-              Are you sure you want to delete "<strong>{% if project.name %}{{ project.name }}{% else %}{{ project.url|truncatechars:40 }}{% endif %}</strong>"? This will permanently delete all associated data including blog post suggestions, generated content, and keywords. This action cannot be undone.
+              您确定要删除 "<strong>{% if project.name %}{{ project.name }}{% else %}{{ project.url|truncatechars:40 }}{% endif %}</strong>"? 此操作将永久删除所有相关数据，包括博客文章建议、已生成的内容和关键词。此操作无法撤销。
             </p>
           </div>
         </div>
@@ -118,7 +118,7 @@
             type="button"
             data-action="click->delete-project#hideModal"
             class="inline-flex justify-center px-4 py-2 w-full text-base font-medium text-gray-700 bg-white rounded-md border border-gray-300 shadow-sm transition-colors hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500 sm:w-auto sm:text-sm">
-            Cancel
+            取消
           </button>
           <button
             type="button"

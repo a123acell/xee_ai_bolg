@@ -91,7 +91,7 @@
                 {% if user.is_superuser %}
                 <li>
                   <a href="{% url 'admin_panel' %}" class="rounded-full px-6 py-3 text-base font-semibold leading-[1.7] tracking-[-0.09px] text-red-600 transition-colors hover:bg-red-50">
-                    Admin
+                    管理
                   </a>
                 </li>
                 {% endif %}
@@ -117,7 +117,7 @@
                 Sign In
               </a>
               <a href="{% url 'account_signup' %}" class="px-5 py-3 text-sm font-semibold text-white bg-red-600 rounded-full transition-colors hover:bg-red-700">
-                Start for Free
+                免费开始
               </a>
             </div>
             {% endif %}
@@ -126,7 +126,7 @@
           <!-- Mobile Menu Button -->
           <div class="lg:hidden" data-controller="dropdown">
             <button class="flex relative justify-center items-center w-10 h-10 rounded-full border border-gray-200"
-                    aria-label="Toggle mobile menu"
+                    aria-label="切换移动菜单"
                     data-action="dropdown#toggle click@window->dropdown#hide">
               <span class="absolute left-1/2 top-[13px] flex h-[2px] w-4 -translate-x-1/2 rounded-full bg-black transition-transform"></span>
               <span class="absolute left-1/2 top-1/2 flex h-[2px] w-4 -translate-x-1/2 -translate-y-1/2 rounded-full bg-black transition-transform"></span>
@@ -166,12 +166,12 @@
                   {% else %}
                   <li class="py-5 text-center border-b border-gray-200">
                     <a href="{% url 'account_login' %}" class="text-sm font-semibold text-gray-900 hover:text-red-600">
-                      Sign In
+                      登录
                     </a>
                   </li>
                   <li class="py-5 text-center">
                     <a href="{% url 'account_signup' %}" class="text-sm font-semibold text-red-600 hover:text-red-700">
-                      Start for Free
+                      免费开始
                     </a>
                   </li>
                   {% endif %}
@@ -193,7 +193,7 @@
       <div class="px-6 py-12 mx-auto max-w-7xl md:flex md:items-center md:justify-between lg:px-8">
         <div class="mt-8 md:mt-0">
           <p class="text-xs leading-5 text-center text-gray-500">
-            &copy; 2025 <a href="https://lvtd.dev?ref={{ request.get_host }}">LVTD, LLC</a>. All rights reserved.
+            &copy; 2025 <a href="https://lvtd.dev?ref={{ request.get_host }}">LVTD, LLC</a>. 保留所有权利。
           </p>
         </div>
       </div>

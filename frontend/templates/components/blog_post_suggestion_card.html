@@ -52,7 +52,7 @@
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path>
                 </svg>
-                View Post
+                查看内容
               </a>
             {% endif %}
           {% endwith %}
@@ -78,7 +78,7 @@
         {% if generated_post and generated_post.content %}
           <div class="flex gap-1.5 items-center">
             <div class="w-3 h-3 bg-green-500 rounded-full"></div>
-            <span class="text-sm font-medium text-green-700">Generated</span>
+            <span class="text-sm font-medium text-green-700">已生成</span>
           </div>
         {% else %}
           <div class="flex gap-1.5 items-center">
@@ -111,7 +111,7 @@
             <svg class="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 010 2.828l-7 7a2 2 0 01-2.828 0l-7-7A1.994 1.994 0 013 12V7a4 4 0 014-4z"></path>
             </svg>
-            Keywords
+            关键词
           </h5>
           <div class="flex flex-wrap gap-2">
             {% for keyword_data in suggestion.keywords_with_usage %}
@@ -160,7 +160,7 @@
           <svg class="mr-1 w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 14H5.236a2 2 0 01-1.789-2.894l3.5-7A2 2 0 018.736 3h4.018c.163 0 .326.02.485.06L17 4m-7 10v2a2 2 0 002 2h.095c.5 0 .905-.405-.905-.905 0-.714.211-1.412.608-2.006L17 13V4m-7 10h2m5-10h2a2 2 0 012 2v6a2 2 0 01-2 2h-2.5" />
           </svg>
-          Dislike
+          踩
         </button>
       </div>
 
@@ -182,7 +182,7 @@
           <svg xmlns="http://www.w3.org/2000/svg" class="mr-1 w-3.5 h-3.5" viewBox="0 0 20 20" fill="currentColor">
             <path fill-rule="evenodd" d="M5 2a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V4a2 2 0 00-2-2H5zm3 8a1 1 0 00-1 1v2a1 1 0 102 0v-2a1 1 0 00-1-1zm3 0a1 1 0 00-1 1v2a1 1 0 102 0v-2a1 1 0 00-1-1z" clip-rule="evenodd" />
           </svg>
-          Unarchive
+          取消归档
         </button>
       </div>
 

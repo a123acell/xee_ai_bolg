@@ -2,14 +2,14 @@
 {% load account %}
 
 {% block head_title %}
-    Confirm Email Address
+    确认邮箱地址
 {% endblock head_title %}
 
 {% block content %}
 <div class="container px-4 py-8 mx-auto">
     <div class="mx-auto max-w-3xl">
         <h1 class="mb-8 text-3xl font-bold text-center">
-            Confirm Email Address
+            确认邮箱地址
         </h1>
 
         {% if confirmation %}
@@ -23,7 +23,7 @@
                   {% csrf_token %}
                     {{ redirect_field }}
                     <button type="submit" class="px-4 py-2 text-white bg-gray-800 rounded-md hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500">
-                        Confirm
+                        确认
                     </button>
                 </form>
             {% else %}
@@ -34,7 +34,7 @@
         {% else %}
             {% url 'account_email' as email_url %}
             <p class="text-center">
-                This email confirmation link expired or is invalid. Please <a href="{{ email_url }}" class="text-gray-600 hover:underline">issue a new email confirmation request</a>.
+                此邮箱确认链接已过期或无效。请<a href="{{ email_url }}" class="text-gray-600 hover:underline">重新发送确认邮件</a>。
             </p>
         {% endif %}
     </div>

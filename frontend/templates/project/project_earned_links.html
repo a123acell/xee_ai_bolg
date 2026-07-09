@@ -1,25 +1,25 @@
 {% extends "base_project.html" %}
 
 {% block meta %}
-  <title>XeeAISto - Earned Links for {{ project.name }}</title>
-  <meta name="description" content="Inbound links earned from other XeeAISto projects for {{ project.name }}." />
+  <title>XeeAISto - {{ project.name }} 的获得链接</title>
+  <meta name="description" content="其他 XeeAISto 项目为 {{ project.name }} 获得的入站链接。" />
 {% endblock meta %}
 
 {% block project_content %}
 <div class="mb-6">
-  <h2 class="text-2xl font-bold text-gray-900">Earned Links</h2>
+  <h2 class="text-2xl font-bold text-gray-900">获得链接</h2>
   <p class="mt-2 text-gray-600">
-    Inbound links where other XeeAISto projects referenced your pages in generated content.
+    其他 XeeAISto 项目在生成的内容中引用你页面时产生的入站链接。
   </p>
 </div>
 
 <div class="grid grid-cols-1 gap-4 mb-6 sm:grid-cols-2">
   <div class="p-4 bg-white rounded-lg border border-gray-200 shadow-sm">
-    <p class="text-sm font-medium text-gray-500">Inbound Links</p>
+    <p class="text-sm font-medium text-gray-500">入站链接</p>
     <p class="mt-1 text-2xl font-semibold text-gray-900">{{ total_earned_links_count }}</p>
   </div>
   <div class="p-4 bg-white rounded-lg border border-gray-200 shadow-sm">
-    <p class="text-sm font-medium text-gray-500">Source Projects</p>
+    <p class="text-sm font-medium text-gray-500">来源项目</p>
     <p class="mt-1 text-2xl font-semibold text-gray-900">{{ unique_source_projects_count }}</p>
   </div>
 </div>
@@ -30,10 +30,10 @@
       <table class="min-w-full divide-y divide-gray-200">
         <thead class="bg-gray-50">
           <tr>
-            <th class="px-4 py-3 text-xs font-semibold tracking-wider text-left text-gray-500 uppercase">Source Project</th>
-            <th class="px-4 py-3 text-xs font-semibold tracking-wider text-left text-gray-500 uppercase">Source Post/Page</th>
-            <th class="px-4 py-3 text-xs font-semibold tracking-wider text-left text-gray-500 uppercase">Target Page</th>
-            <th class="px-4 py-3 text-xs font-semibold tracking-wider text-left text-gray-500 uppercase">Last Seen</th>
+            <th class="px-4 py-3 text-xs font-semibold tracking-wider text-left text-gray-500 uppercase">来源项目</th>
+            <th class="px-4 py-3 text-xs font-semibold tracking-wider text-left text-gray-500 uppercase">来源文章/页面</th>
+            <th class="px-4 py-3 text-xs font-semibold tracking-wider text-left text-gray-500 uppercase">目标页面</th>
+            <th class="px-4 py-3 text-xs font-semibold tracking-wider text-left text-gray-500 uppercase">最后发现</th>
           </tr>
         </thead>
         <tbody class="divide-y divide-gray-100 bg-white">
@@ -48,7 +48,7 @@
                     {% elif link.source_generated_blog_post %}
                       {{ link.source_generated_blog_post.title }}
                     {% else %}
-                      Generated content
+                      生成的内容
                     {% endif %}
                   </a>
                 {% elif link.source_page_title %}
@@ -56,7 +56,7 @@
                 {% elif link.source_generated_blog_post %}
                   {{ link.source_generated_blog_post.title }}
                 {% else %}
-                  Generated content
+                  生成的内容
                 {% endif %}
               </td>
               <td class="px-4 py-3 text-sm">
@@ -72,7 +72,7 @@
     </div>
   {% else %}
     <div class="p-6 text-sm text-gray-600">
-      No earned links yet. Once another XeeAISto project links to your pages in generated content, entries will show up here.
+      暂无获得链接。一旦其他 XeeAISto 项目在生成的内容中链接到你的页面，条目将显示在此处。
     </div>
   {% endif %}
 </div>

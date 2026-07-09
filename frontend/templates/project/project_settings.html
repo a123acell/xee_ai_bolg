@@ -18,7 +18,7 @@
             <svg class="mr-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
             </svg>
-            Back to Projects
+            返回项目列表
           </a>
         </div>
 
@@ -37,7 +37,7 @@
                 <svg class="mr-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
                 </svg>
-                Visit Site
+                访问网站
               </a>
             {% endif %}
           </div>
@@ -55,7 +55,7 @@
             <svg class="mr-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
             </svg>
-            Back to Projects
+            返回项目列表
           </a>
         </div>
       </div>
@@ -73,7 +73,7 @@
           <nav class="bg-white rounded-lg border border-gray-200 shadow-sm" data-toc-target="sidebar">
             <div class="p-4">
               <h2 class="px-3 mb-2 text-xs font-semibold tracking-wider text-gray-500 uppercase">
-                On This Page
+                本页目录
               </h2>
               <ul class="space-y-2" data-toc-target="list">
                 <!-- TOC items will be generated here -->
@@ -87,8 +87,8 @@
       <main class="relative flex-1 w-full pointer-events-auto lg:min-w-0" data-toc-target="content">
         <!-- Page Header -->
         <div class="mb-8">
-          <h1 class="text-3xl font-bold tracking-tight text-gray-900">Settings</h1>
-          <p class="mt-2 text-base text-gray-600">Manage your project configuration and automation settings</p>
+          <h1 class="text-3xl font-bold tracking-tight text-gray-900">设置</h1>
+          <p class="mt-2 text-base text-gray-600">管理您的项目配置和自动化设置</p>
         </div>
 
 <!-- Settings Grid -->
@@ -97,8 +97,8 @@
   <!-- Project Details Section -->
   <section id="project-details" class="bg-white rounded-lg border border-gray-200 shadow-sm">
     <div class="px-6 py-5 border-b border-gray-200">
-      <h2 class="text-xl font-semibold text-gray-900">Project Details</h2>
-      <p class="mt-1 text-sm text-gray-500">Information about your project that helps generate better content</p>
+      <h2 class="text-xl font-semibold text-gray-900">项目详情</h2>
+      <p class="mt-1 text-sm text-gray-500">关于您的项目信息，有助于生成更优质的内容</p>
     </div>
 
     <div class="px-6 py-6">
@@ -111,9 +111,9 @@
             </svg>
           </div>
           <div>
-            <h3 class="text-sm font-medium text-blue-900">Pre-filled Information</h3>
+            <h3 class="text-sm font-medium text-blue-900">预填信息</h3>
             <p class="mt-1 text-sm text-blue-700">
-              We've analyzed your website and pre-filled these details. Review and update them to improve content quality.
+              我们已分析您的网站并预填了这些详细信息。请审查并更新它们以提高内容质量。
             </p>
           </div>
         </div>
@@ -129,35 +129,35 @@
         <div class="space-y-8">
           <!-- Basic Information -->
           <div id="basic-information">
-            <h3 class="mb-4 text-base font-semibold text-gray-900">Basic Information</h3>
+            <h3 class="mb-4 text-base font-semibold text-gray-900">基本信息</h3>
             <div class="space-y-6">
               <div>
                 <label for="summary" class="block mb-2 text-sm font-medium text-gray-700">
-                  Project Summary
+                  项目简介
                 </label>
-                <p class="mb-2 text-xs text-gray-500">A brief description of what your project does</p>
+                <p class="mb-2 text-xs text-gray-500">简要描述您的项目功能</p>
                 <textarea
                   id="summary"
                   name="summary"
                   data-project-details-target="input"
                   class="block w-full rounded-lg border-gray-300 shadow-sm transition-colors focus:border-gray-500 focus:ring-gray-500 sm:text-sm"
                   rows="4"
-                  placeholder="e.g., A platform that helps developers build faster..."
+                  placeholder="例如：一个帮助开发者更快构建的平台..."
                 >{{ project.summary }}</textarea>
               </div>
 
               <div>
                 <label for="key_features" class="block mb-2 text-sm font-medium text-gray-700">
-                  Key Features
+                  主要功能
                 </label>
-                <p class="mb-2 text-xs text-gray-500">Main functionalities and what makes your project unique</p>
+                <p class="mb-2 text-xs text-gray-500">主要功能以及项目的独特之处</p>
                 <textarea
                   id="key_features"
                   name="key_features"
                   data-project-details-target="input"
                   class="block w-full rounded-lg border-gray-300 shadow-sm transition-colors focus:border-gray-500 focus:ring-gray-500 sm:text-sm"
                   rows="4"
-                  placeholder="e.g., Real-time collaboration, AI-powered suggestions..."
+                  placeholder="例如：实时协作、AI 驱动建议..."
                 >{{ project.key_features }}</textarea>
               </div>
             </div>
@@ -165,50 +165,50 @@
 
           <!-- Audience & Usage -->
           <div id="audience-usage" class="pt-8 border-t border-gray-200">
-            <h3 class="mb-4 text-base font-semibold text-gray-900">Audience & Usage</h3>
+            <h3 class="mb-4 text-base font-semibold text-gray-900">受众与用途</h3>
             <div class="space-y-6">
               <div>
                 <label for="target_audience" class="block mb-2 text-sm font-medium text-gray-700">
-                  Target Audience
+                  目标受众
                 </label>
-                <p class="mb-2 text-xs text-gray-500">Who is this product for?</p>
+                <p class="mb-2 text-xs text-gray-500">该产品面向哪些用户？</p>
                 <textarea
                   id="target_audience"
                   name="target_audience_summary"
                   data-project-details-target="input"
                   class="block w-full rounded-lg border-gray-300 shadow-sm transition-colors focus:border-gray-500 focus:ring-gray-500 sm:text-sm"
                   rows="3"
-                  placeholder="e.g., Software developers, startup founders, product managers..."
+                  placeholder="例如：软件开发者、创业创始人、产品经理..."
                 >{{ project.target_audience_summary }}</textarea>
               </div>
 
               <div>
                 <label for="pain_points" class="block mb-2 text-sm font-medium text-gray-700">
-                  Problems Solved
+                  解决的问题
                 </label>
-                <p class="mb-2 text-xs text-gray-500">What pain points does your product address?</p>
+                <p class="mb-2 text-xs text-gray-500">您的产品解决了哪些痛点？</p>
                 <textarea
                   id="pain_points"
                   name="pain_points"
                   data-project-details-target="input"
                   class="block w-full rounded-lg border-gray-300 shadow-sm transition-colors focus:border-gray-500 focus:ring-gray-500 sm:text-sm"
                   rows="4"
-                  placeholder="e.g., Reduces development time, eliminates manual processes..."
+                  placeholder="例如：减少开发时间、消除手动流程..."
                 >{{ project.pain_points }}</textarea>
               </div>
 
               <div>
                 <label for="product_usage" class="block mb-2 text-sm font-medium text-gray-700">
-                  How It's Used
+                  使用方式
                 </label>
-                <p class="mb-2 text-xs text-gray-500">Describe typical usage scenarios</p>
+                <p class="mb-2 text-xs text-gray-500">描述典型的使用场景</p>
                 <textarea
                   id="product_usage"
                   name="product_usage"
                   data-project-details-target="input"
                   class="block w-full rounded-lg border-gray-300 shadow-sm transition-colors focus:border-gray-500 focus:ring-gray-500 sm:text-sm"
                   rows="4"
-                  placeholder="e.g., Teams use it daily for project planning and execution..."
+                  placeholder="例如：团队每天用于项目规划和执行..."
                 >{{ project.product_usage }}</textarea>
               </div>
             </div>
@@ -216,59 +216,59 @@
 
           <!-- Additional Settings -->
           <div id="additional-settings" class="pt-8 border-t border-gray-200">
-            <h3 class="mb-4 text-base font-semibold text-gray-900">Additional Settings</h3>
+            <h3 class="mb-4 text-base font-semibold text-gray-900">其他设置</h3>
             <div class="space-y-6">
               <div>
                 <label for="blog_theme" class="block mb-2 text-sm font-medium text-gray-700">
-                  Blog Content Theme
+                  博客内容主题
                 </label>
-                <p class="mb-2 text-xs text-gray-500">Overall direction and focus for your blog content</p>
+                <p class="mb-2 text-xs text-gray-500">博客内容的整体方向和侧重点</p>
                 <textarea
                   id="blog_theme"
                   name="blog_theme"
                   data-project-details-target="input"
                   class="block w-full rounded-lg border-gray-300 shadow-sm transition-colors focus:border-gray-500 focus:ring-gray-500 sm:text-sm"
                   rows="3"
-                  placeholder="e.g., Technical tutorials, industry insights, product updates..."
+                  placeholder="例如：技术教程、行业见解、产品更新..."
                 >{{ project.blog_theme }}</textarea>
               </div>
 
               <div>
                 <label for="links" class="block mb-2 text-sm font-medium text-gray-700">
-                  Related Links
+                  相关链接
                 </label>
-                <p class="mb-2 text-xs text-gray-500">Documentation, social media, or other relevant resources</p>
+                <p class="mb-2 text-xs text-gray-500">文档、社交媒体或其他相关资源</p>
                 <textarea
                   id="links"
                   name="links"
                   data-project-details-target="input"
                   class="block w-full rounded-lg border-gray-300 shadow-sm transition-colors focus:border-gray-500 focus:ring-gray-500 sm:text-sm"
                   rows="3"
-                  placeholder="Add relevant links (one per line)..."
+                  placeholder="添加相关链接（每行一个）..."
                 >{{ project.links }}</textarea>
               </div>
 
               <div class="grid grid-cols-1 gap-6 sm:grid-cols-2">
                 <div>
                   <label for="founders" class="block mb-2 text-sm font-medium text-gray-700">
-                    Team / Founders
+                    团队/创始人
                   </label>
-                  <p class="mb-2 text-xs text-gray-500">Key team members to mention in content</p>
+                  <p class="mb-2 text-xs text-gray-500">内容中需提及的关键团队成员</p>
                   <textarea
                     id="founders"
                     name="founders"
                     data-project-details-target="input"
                     class="block w-full rounded-lg border-gray-300 shadow-sm transition-colors focus:border-gray-500 focus:ring-gray-500 sm:text-sm"
                     rows="2"
-                    placeholder="e.g., John Doe, Jane Smith..."
+                    placeholder="例如：张三、李四..."
                   >{{ project.founders }}</textarea>
                 </div>
 
                 <div>
                   <label for="language" class="block mb-2 text-sm font-medium text-gray-700">
-                    Content Language
+                    内容语言
                   </label>
-                  <p class="mb-2 text-xs text-gray-500">Primary language for generated content</p>
+                  <p class="mb-2 text-xs text-gray-500">生成内容的主要语言</p>
                   <select
                     id="language"
                     name="language"
@@ -294,7 +294,7 @@
             <svg class="mr-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
             </svg>
-            Save Project Details
+            保存项目详情
           </button>
         </div>
       </form>
@@ -306,8 +306,8 @@
     <div class="px-6 py-5 border-b border-gray-200">
       <div class="flex justify-between items-start">
         <div>
-          <h2 class="text-xl font-semibold text-gray-900">OG Image Generation</h2>
-          <p class="mt-1 text-sm text-gray-500">Automatically generate Open Graph images for your blog posts</p>
+          <h2 class="text-xl font-semibold text-gray-900">OG 图片生成</h2>
+          <p class="mt-1 text-sm text-gray-500">自动为您的博客文章生成 Open Graph 图片</p>
         </div>
         <!-- Toggle Switch -->
         <div
@@ -350,9 +350,9 @@
                 </svg>
               </div>
               <div>
-                <h3 class="text-sm font-medium text-blue-900">About OG Images</h3>
+                <h3 class="text-sm font-medium text-blue-900">关于 OG 图片</h3>
                 <p class="mt-1 text-sm text-blue-700">
-                  Open Graph images appear when your blog posts are shared on social media platforms like Facebook, Twitter, and LinkedIn. We'll automatically generate eye-catching images based on your post titles and selected style.
+                  当您的博客文章在 Facebook、Twitter、LinkedIn 等社交媒体平台上分享时，Open Graph 图片会显示出来。我们将根据您的文章标题和所选风格自动生成引人注目的图片。
                 </p>
               </div>
             </div>
@@ -360,12 +360,12 @@
 
           <!-- Image Style Selection -->
           <div id="og-image-style">
-            <h3 class="mb-4 text-base font-semibold text-gray-900">Image Style</h3>
+            <h3 class="mb-4 text-base font-semibold text-gray-900">图片风格</h3>
             <div>
               <label for="og_image_style" class="block mb-2 text-sm font-medium text-gray-700">
-                Visual Style for Generated Images
+                生成图片的视觉风格
               </label>
-              <p class="mb-2 text-xs text-gray-500">Choose the aesthetic that best matches your brand</p>
+              <p class="mb-2 text-xs text-gray-500">选择与您品牌最匹配的美学风格</p>
               <select
                 id="og_image_style"
                 name="og_image_style"
@@ -381,16 +381,16 @@
 
             <!-- Style Descriptions -->
             <div class="p-4 mt-4 bg-gray-50 rounded-lg">
-              <h4 class="mb-3 text-sm font-medium text-gray-900">Style Descriptions</h4>
+              <h4 class="mb-3 text-sm font-medium text-gray-900">风格说明</h4>
               <div class="space-y-2 text-xs text-gray-600">
-                <p><strong>Modern Gradient:</strong> Contemporary gradient backgrounds with clean typography</p>
-                <p><strong>Minimalist Clean:</strong> Simple, elegant designs with plenty of white space</p>
-                <p><strong>Bold Typography:</strong> Eye-catching text-focused designs with strong contrast</p>
-                <p><strong>Tech Abstract:</strong> Geometric patterns and tech-inspired visuals</p>
-                <p><strong>Professional Corporate:</strong> Business-friendly, polished appearance</p>
-                <p><strong>Creative Artistic:</strong> Artistic flair with unique visual elements</p>
-                <p><strong>Dark Mode:</strong> Dark backgrounds with vibrant accent colors</p>
-                <p><strong>Vibrant Colorful:</strong> Bold colors and energetic compositions</p>
+                <p><strong>现代渐变：</strong>现代渐变背景搭配简洁排版</p>
+                <p><strong>简约干净：</strong>简洁优雅的设计，大量留白</p>
+                <p><strong>醒目排版：</strong>以文字为中心的醒目设计，对比强烈</p>
+                <p><strong>科技抽象：</strong>几何图案与科技感视觉元素</p>
+                <p><strong>专业商务：</strong>商务友好、精致的外观</p>
+                <p><strong>创意艺术：</strong>艺术风格搭配独特视觉元素</p>
+                <p><strong>深色模式：</strong>深色背景搭配鲜艳强调色</p>
+                <p><strong>鲜艳多彩：</strong>大胆的色彩与充满活力的构图</p>
               </div>
             </div>
           </div>
@@ -405,7 +405,7 @@
             <svg class="mr-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
             </svg>
-            Save OG Image Settings
+            保存 OG 图片设置
           </button>
         </div>
       </form>
@@ -417,8 +417,8 @@
     <div class="px-6 py-5 border-b border-gray-200">
       <div class="flex justify-between items-start">
         <div>
-          <h2 class="text-xl font-semibold text-gray-900">Automatic Post Submission</h2>
-          <p class="mt-1 text-sm text-gray-500">Automatically publish generated blog posts to your website</p>
+          <h2 class="text-xl font-semibold text-gray-900">自动发布提交</h2>
+          <p class="mt-1 text-sm text-gray-500">自动将生成的博客文章发布到您的网站</p>
         </div>
         <!-- Toggle Switch -->
         <div
@@ -461,7 +461,7 @@
 
         <!-- API Configuration -->
         <div id="api-configuration">
-          <h3 class="mb-4 text-base font-semibold text-gray-900">API Configuration</h3>
+          <h3 class="mb-4 text-base font-semibold text-gray-900">API 配置</h3>
           <div class="space-y-6">
             {% for field in auto_submission_settings_form.visible_fields %}
               {% if field.name != "body" and field.name != "header" and field.name != "posts_per_month" %}
@@ -482,8 +482,8 @@
 
         <!-- Request Headers -->
         <div id="request-headers" class="pt-8 border-t border-gray-200">
-          <h3 class="mb-4 text-base font-semibold text-gray-900">Request Headers</h3>
-          <p class="mb-4 text-sm text-gray-500">Add custom headers for your API requests (e.g., authentication tokens)</p>
+          <h3 class="mb-4 text-base font-semibold text-gray-900">请求头</h3>
+          <p class="mb-4 text-sm text-gray-500">为您的 API 请求添加自定义请求头（例如：身份验证令牌）</p>
           {% for field in auto_submission_settings_form.visible_fields %}
             {% if field.name == "header" %}
               <div
@@ -500,7 +500,7 @@
                   <svg class="mr-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4" />
                   </svg>
-                  Add Header
+                  添加请求头
                 </button>
                 <input type="hidden" name="header" data-auto-submit-header-target="jsonInput">
               </div>
@@ -510,23 +510,23 @@
 
         <!-- Request Body -->
         <div id="request-body" class="pt-8 border-t border-gray-200">
-          <h3 class="mb-4 text-base font-semibold text-gray-900">Request Body</h3>
+          <h3 class="mb-4 text-base font-semibold text-gray-900">请求体</h3>
           <div class="p-4 mb-4 bg-amber-50 rounded-lg border border-amber-200">
             <div class="flex gap-3">
               <svg class="flex-shrink-0 w-5 h-5 text-amber-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
               </svg>
               <div class="text-sm text-amber-800">
-                <p class="font-medium">Dynamic Values</p>
+                <p class="font-medium">动态值</p>
                 <p class="mt-1">
-                  Use
+                  使用
                   <code class="px-1 py-0.5 bg-amber-100 rounded">{% templatetag openvariable %} variable_name {% templatetag closevariable %}</code>
-                  for dynamic content. Available:
-                  <code class="px-1 py-0.5 bg-amber-100 rounded">title</code>,
-                  <code class="px-1 py-0.5 bg-amber-100 rounded">description</code>,
-                  <code class="px-1 py-0.5 bg-amber-100 rounded">slug</code>,
-                  <code class="px-1 py-0.5 bg-amber-100 rounded">tags</code>,
-                  <code class="px-1 py-0.5 bg-amber-100 rounded">content</code>,
+                  作为动态内容。可用变量：
+                  <code class="px-1 py-0.5 bg-amber-100 rounded">title</code>、
+                  <code class="px-1 py-0.5 bg-amber-100 rounded">description</code>、
+                  <code class="px-1 py-0.5 bg-amber-100 rounded">slug</code>、
+                  <code class="px-1 py-0.5 bg-amber-100 rounded">tags</code>、
+                  <code class="px-1 py-0.5 bg-amber-100 rounded">content</code>、
                   <code class="px-1 py-0.5 bg-amber-100 rounded">created_at</code>
                 </p>
               </div>
@@ -548,7 +548,7 @@
                   <svg class="mr-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4" />
                   </svg>
-                  Add Field
+                  添加字段
                 </button>
                 <input type="hidden" name="body" data-auto-submit-body-target="jsonInput">
               </div>
@@ -558,7 +558,7 @@
 
         <!-- Publishing Schedule -->
         <div id="publishing-schedule" class="pt-8 border-t border-gray-200">
-          <h3 class="mb-4 text-base font-semibold text-gray-900">Publishing Schedule</h3>
+          <h3 class="mb-4 text-base font-semibold text-gray-900">发布计划</h3>
           <div class="space-y-6">
             {% for field in auto_submission_settings_form.visible_fields %}
               {% if field.name == "posts_per_month" %}
@@ -586,7 +586,7 @@
             <svg class="mr-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
             </svg>
-            View Publish History
+            查看发布历史
           </a>
 
           <button
@@ -596,7 +596,7 @@
             <svg class="mr-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
             </svg>
-            Save Submission Settings
+            保存提交设置
           </button>
         </div>
       </form>
@@ -609,9 +609,9 @@
       <div class="flex justify-between items-start">
         <div>
           <h2 class="text-xl font-semibold text-gray-900">
-            Link Exchange Program
+            链接交换计划
           </h2>
-          <p class="mt-1 text-sm text-gray-500">Participate in cross-linking with other projects to improve SEO</p>
+          <p class="mt-1 text-sm text-gray-500">参与与其他项目的交叉链接以改善 SEO</p>
         </div>
         <!-- Toggle Switch -->
         <div
@@ -647,9 +647,9 @@
               </svg>
             </div>
             <div>
-              <h3 class="text-sm font-medium text-blue-900">About Link Exchange</h3>
+              <h3 class="text-sm font-medium text-blue-900">关于链接交换</h3>
               <p class="mt-1 text-sm text-blue-700">
-                When enabled, XeeAISto will automatically insert relevant links from other participating projects into your blog posts, and vice versa. This helps improve SEO through natural backlinks and provides additional value to readers.
+                启用后，XeeAISto 会自动将其他参与项目的相关链接插入到您的博客文章中，反之亦然。这有助于通过自然的反向链接改善 SEO，并为读者提供额外价值。
               </p>
             </div>
           </div>
@@ -658,31 +658,31 @@
       <!-- Feature Details -->
       <div class="mt-6 space-y-4">
         <div>
-          <h3 class="mb-3 text-base font-semibold text-gray-900">How It Works</h3>
+          <h3 class="mb-3 text-base font-semibold text-gray-900">工作原理</h3>
           <ul class="space-y-2 text-sm text-gray-600">
             <li class="flex gap-2 items-start">
               <svg class="flex-shrink-0 mt-0.5 w-5 h-5 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
               </svg>
-              <span>Links are inserted organically into relevant sections of your blog posts</span>
+              <span>链接会自然地嵌入到您博客文章的相关部分</span>
             </li>
             <li class="flex gap-2 items-start">
               <svg class="flex-shrink-0 mt-0.5 w-5 h-5 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
               </svg>
-              <span>AI matches content contextually to ensure links add value</span>
+              <span>AI 会根据上下文内容匹配，确保链接具有价值</span>
             </li>
             <li class="flex gap-2 items-start">
               <svg class="flex-shrink-0 mt-0.5 w-5 h-5 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
               </svg>
-              <span>You maintain full control and can disable at any time</span>
+              <span>您拥有完全控制权，可随时禁用</span>
             </li>
             <li class="flex gap-2 items-start">
               <svg class="flex-shrink-0 mt-0.5 w-5 h-5 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
               </svg>
-              <span>Limited to a small number of external links per post to maintain quality</span>
+              <span>每篇文章仅限少量外部链接，以保持质量</span>
             </li>
           </ul>
         </div>

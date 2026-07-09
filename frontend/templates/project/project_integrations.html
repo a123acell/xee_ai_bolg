@@ -1,15 +1,15 @@
 {% extends "base_project.html" %}
 
 {% block meta %}
-  <title>XeeAISto - Integrations for {{ project.name }}</title>
-  <meta name="description" content="Manage data source integrations for {{ project.name }}." />
+  <title>XeeAISto - {{ project.name }} 的集成</title>
+  <meta name="description" content="管理 {{ project.name }} 的数据源集成。" />
 {% endblock meta %}
 
 {% block project_content %}
 <div class="mb-6">
-  <h2 class="text-2xl font-bold text-gray-900">Integrations</h2>
+  <h2 class="text-2xl font-bold text-gray-900">集成</h2>
   <p class="mt-2 text-gray-600">
-    Connect analytics and search data sources for this project.
+    为此项目连接分析和搜索数据源。
   </p>
 </div>
 
@@ -17,20 +17,20 @@
   <div class="p-6 bg-white rounded-lg border border-gray-200 shadow-sm">
     <div class="flex justify-between items-start gap-4">
       <div>
-        <h3 class="text-lg font-semibold text-gray-900">Google Analytics (GA4)</h3>
+        <h3 class="text-lg font-semibold text-gray-900">Google Analytics（GA4）</h3>
         <p class="mt-1 text-sm text-gray-600">
-          Pull traffic and engagement data from your GA4 property.
+          从你的 GA4 媒体资源中获取流量和互动数据。
         </p>
         {% if ga4_integration and ga4_integration.is_connected %}
           <p class="mt-2 text-sm text-emerald-700">
-            Connected{% if ga4_integration.external_account_email %} as {{ ga4_integration.external_account_email }}{% endif %}
+            已连接{% if ga4_integration.external_account_email %}，账户：{{ ga4_integration.external_account_email }}{% endif %}
           </p>
         {% else %}
-          <p class="mt-2 text-sm text-gray-500">Not connected</p>
+          <p class="mt-2 text-sm text-gray-500">未连接</p>
         {% endif %}
       </div>
       <span class="inline-flex items-center px-2.5 py-0.5 text-xs font-medium {% if ga4_integration and ga4_integration.is_connected %}text-emerald-800 bg-emerald-100{% else %}text-gray-700 bg-gray-100{% endif %} rounded-full">
-        {% if ga4_integration and ga4_integration.is_connected %}Connected{% else %}Disconnected{% endif %}
+        {% if ga4_integration and ga4_integration.is_connected %}已连接{% else %}未连接{% endif %}
       </span>
     </div>
 
@@ -40,7 +40,7 @@
           {% csrf_token %}
           <input type="hidden" name="action" value="disconnect_google_analytics">
           <button type="submit" class="inline-flex items-center px-4 py-2 text-sm font-medium text-red-700 bg-red-50 rounded-md border border-red-200 hover:bg-red-100">
-            Disconnect
+            断开连接
           </button>
         </form>
       {% else %}
@@ -48,7 +48,7 @@
           {% csrf_token %}
           <input type="hidden" name="action" value="connect_google_analytics">
           <button type="submit" class="inline-flex items-center px-4 py-2 text-sm font-medium text-white bg-gray-900 rounded-md border border-gray-900 hover:bg-gray-800">
-            Connect Google Analytics
+            连接 Google Analytics
           </button>
         </form>
       {% endif %}
@@ -58,20 +58,20 @@
   <div class="p-6 bg-white rounded-lg border border-gray-200 shadow-sm">
     <div class="flex justify-between items-start gap-4">
       <div>
-        <h3 class="text-lg font-semibold text-gray-900">Google Search Console (GSC)</h3>
+        <h3 class="text-lg font-semibold text-gray-900">Google Search Console（GSC）</h3>
         <p class="mt-1 text-sm text-gray-600">
-          Pull search queries, impressions, clicks, and position data.
+          获取搜索查询、展示次数、点击次数和排名数据。
         </p>
         {% if gsc_integration and gsc_integration.is_connected %}
           <p class="mt-2 text-sm text-emerald-700">
-            Connected{% if gsc_integration.external_account_email %} as {{ gsc_integration.external_account_email }}{% endif %}
+            已连接{% if gsc_integration.external_account_email %}，账户：{{ gsc_integration.external_account_email }}{% endif %}
           </p>
         {% else %}
-          <p class="mt-2 text-sm text-gray-500">Not connected</p>
+          <p class="mt-2 text-sm text-gray-500">未连接</p>
         {% endif %}
       </div>
       <span class="inline-flex items-center px-2.5 py-0.5 text-xs font-medium {% if gsc_integration and gsc_integration.is_connected %}text-emerald-800 bg-emerald-100{% else %}text-gray-700 bg-gray-100{% endif %} rounded-full">
-        {% if gsc_integration and gsc_integration.is_connected %}Connected{% else %}Disconnected{% endif %}
+        {% if gsc_integration and gsc_integration.is_connected %}已连接{% else %}未连接{% endif %}
       </span>
     </div>
 
@@ -81,7 +81,7 @@
           {% csrf_token %}
           <input type="hidden" name="action" value="disconnect_google_search_console">
           <button type="submit" class="inline-flex items-center px-4 py-2 text-sm font-medium text-red-700 bg-red-50 rounded-md border border-red-200 hover:bg-red-100">
-            Disconnect
+            断开连接
           </button>
         </form>
       {% else %}
@@ -89,7 +89,7 @@
           {% csrf_token %}
           <input type="hidden" name="action" value="connect_google_search_console">
           <button type="submit" class="inline-flex items-center px-4 py-2 text-sm font-medium text-white bg-gray-900 rounded-md border border-gray-900 hover:bg-gray-800">
-            Connect Search Console
+            连接 Search Console
           </button>
         </form>
       {% endif %}
@@ -101,18 +101,18 @@
       <div>
         <h3 class="text-lg font-semibold text-gray-900">Plausible</h3>
         <p class="mt-1 text-sm text-gray-600">
-          Connect using your Plausible API key + site ID.
+          使用你的 Plausible API 密钥和站点 ID 连接。
         </p>
         {% if plausible_integration and plausible_integration.is_connected %}
           <p class="mt-2 text-sm text-emerald-700">
-            Connected to {{ plausible_integration.plausible_site_id }}
+            已连接到 {{ plausible_integration.plausible_site_id }}
           </p>
         {% else %}
-          <p class="mt-2 text-sm text-gray-500">Not connected</p>
+          <p class="mt-2 text-sm text-gray-500">未连接</p>
         {% endif %}
       </div>
       <span class="inline-flex items-center px-2.5 py-0.5 text-xs font-medium {% if plausible_integration and plausible_integration.is_connected %}text-emerald-800 bg-emerald-100{% else %}text-gray-700 bg-gray-100{% endif %} rounded-full">
-        {% if plausible_integration and plausible_integration.is_connected %}Connected{% else %}Disconnected{% endif %}
+        {% if plausible_integration and plausible_integration.is_connected %}已连接{% else %}未连接{% endif %}
       </span>
     </div>
 
@@ -121,12 +121,12 @@
       <input type="hidden" name="action" value="connect_plausible">
       {{ plausible_form.non_field_errors }}
       <div>
-        <label for="id_site_id" class="block mb-1 text-sm font-medium text-gray-700">Site ID</label>
+        <label for="id_site_id" class="block mb-1 text-sm font-medium text-gray-700">站点 ID</label>
         {{ plausible_form.site_id }}
         {{ plausible_form.site_id.errors }}
       </div>
       <div>
-        <label for="id_api_key" class="block mb-1 text-sm font-medium text-gray-700">API Key</label>
+        <label for="id_api_key" class="block mb-1 text-sm font-medium text-gray-700">API 密钥</label>
         {{ plausible_form.api_key }}
         {{ plausible_form.api_key.errors }}
       </div>
@@ -138,7 +138,7 @@
 
       <div class="flex gap-2">
         <button type="submit" class="inline-flex items-center px-4 py-2 text-sm font-medium text-white bg-gray-900 rounded-md border border-gray-900 hover:bg-gray-800">
-          Connect Plausible
+          连接 Plausible
         </button>
       </div>
     </form>
@@ -148,7 +148,7 @@
         {% csrf_token %}
         <input type="hidden" name="action" value="disconnect_plausible">
         <button type="submit" class="inline-flex items-center px-4 py-2 text-sm font-medium text-red-700 bg-red-50 rounded-md border border-red-200 hover:bg-red-100">
-          Disconnect
+          断开连接
         </button>
       </form>
     {% endif %}

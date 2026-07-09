@@ -2,7 +2,7 @@
 {% load static %}
 
 {% block meta %}
-<title>XeeAISto - {{ project.name }} - {{ custom_post_type.name }} Posts</title>
+<title>XeeAISto - {{ project.name }} - {{ custom_post_type.name }} 文章</title>
 <meta name="description" content="{{ project.summary }}" />
 {% endblock meta %}
 
@@ -25,21 +25,21 @@
           </svg>
         </div>
       {% endif %}
-      <h2 class="text-2xl font-bold text-gray-900">{{ custom_post_type.name }} Posts</h2>
+      <h2 class="text-2xl font-bold text-gray-900">{{ custom_post_type.name }} 文章</h2>
     </div>
     <p class="mt-2 text-gray-600">{{ custom_post_type.prompt_guidance }}</p>
   </div>
 
-  {% include "components/content_generator.html" with description="Create post ideas using this custom post type guidance" content_type="SHARING" %}
+  {% include "components/content_generator.html" with description="使用此自定义文章类型指导创建文章创意" content_type="SHARING" %}
 
   <div data-title-suggestions-target="suggestionsContainer">
     <div class="mb-6">
-      <h3 class="mb-4 text-lg font-semibold text-gray-900">Your {{ custom_post_type.name }} Post Ideas</h3>
+      <h3 class="mb-4 text-lg font-semibold text-gray-900">你的 {{ custom_post_type.name }} 文章创意</h3>
     </div>
 
     <div class="space-y-6" data-title-suggestions-target="suggestionsList">
-      {% include "components/suggestions_section.html" with section_title="Active Ideas" list_name="active" suggestions=active_suggestions collapsed=False %}
-      {% include "components/suggestions_section.html" with section_title="Archived Ideas" list_name="archived" suggestions=archived_suggestions collapsed=True %}
+      {% include "components/suggestions_section.html" with section_title="启用的创意" list_name="active" suggestions=active_suggestions collapsed=False %}
+      {% include "components/suggestions_section.html" with section_title="已归档的创意" list_name="archived" suggestions=archived_suggestions collapsed=True %}
     </div>
   </div>
 </div>

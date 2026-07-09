@@ -2,8 +2,8 @@
 {% load static %}
 
 {% block meta %}
-<title>Publish History - {{ project.name }} - XeeAISto</title>
-<meta name="description" content="View published blog posts for {{ project.name }}" />
+<title>发布历史 - {{ project.name }} - XeeAISto</title>
+<meta name="description" content="查看 {{ project.name }} 已发布的博客文章" />
 {% endblock meta %}
 
 {% block content %}
@@ -19,19 +19,19 @@
         <svg class="mr-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
         </svg>
-        Back to Settings
+        返回设置
       </a>
     </div>
 
     <!-- Header -->
     <div class="mb-8">
       <div class="flex items-center mb-2 space-x-3">
-        <h1 class="text-3xl font-bold text-gray-900">Publish History</h1>
+        <h1 class="text-3xl font-bold text-gray-900">发布历史</h1>
         <span class="inline-flex items-center px-3 py-1 text-xs font-medium text-gray-700 bg-gray-100 rounded-full border">
           {{ project.name }}
         </span>
       </div>
-      <p class="text-lg text-gray-600">View all published blog posts for this project</p>
+      <p class="text-lg text-gray-600">查看此项目的所有已发布博客文章</p>
     </div>
 
     <!-- Stats Section -->
@@ -44,7 +44,7 @@
             </svg>
           </div>
           <div class="ml-4">
-            <p class="text-sm font-medium text-gray-600">Total Published</p>
+            <p class="text-sm font-medium text-gray-600">已发布总数</p>
             <p class="text-2xl font-semibold text-gray-900">{{ total_published_count }}</p>
           </div>
         </div>
@@ -59,13 +59,13 @@
             <thead class="bg-gray-50">
               <tr>
                 <th scope="col" class="px-6 py-3 text-xs font-medium tracking-wider text-left text-gray-500 uppercase">
-                  Title
+                  标题
                 </th>
                 <th scope="col" class="hidden px-6 py-3 text-xs font-medium tracking-wider text-left text-gray-500 uppercase md:table-cell">
-                  Date Posted
+                  发布日期
                 </th>
                 <th scope="col" class="px-6 py-3 text-xs font-medium tracking-wider text-right text-gray-500 uppercase">
-                  Actions
+                  操作
                 </th>
               </tr>
             </thead>
@@ -87,7 +87,7 @@
                         </div>
                         {% if post.date_posted %}
                           <div class="mt-1 text-xs text-gray-400 md:hidden">
-                            Posted: {{ post.date_posted|date:"M d, Y g:i A" }}
+                            发布于：{{ post.date_posted|date:"M d, Y g:i A" }}
                           </div>
                         {% endif %}
                       </div>
@@ -102,7 +102,7 @@
                         {{ post.date_posted|date:"g:i A" }}
                       </div>
                     {% else %}
-                      <span class="text-sm text-gray-400">N/A</span>
+                      <span class="text-sm text-gray-400">无</span>
                     {% endif %}
                   </td>
                   <td class="px-6 py-4 text-sm font-medium text-right whitespace-nowrap">
@@ -114,7 +114,7 @@
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path>
                       </svg>
-                      View
+                      查看
                     </a>
                   </td>
                 </tr>
@@ -133,9 +133,9 @@
             </svg>
           </div>
         </div>
-        <h3 class="mb-2 text-lg font-semibold text-gray-900">No published posts yet</h3>
+        <h3 class="mb-2 text-lg font-semibold text-gray-900">暂无已发布文章</h3>
         <p class="mb-6 text-gray-600">
-          No posts have been published for this project yet.
+          此项目尚未发布任何文章。
         </p>
         <a
           href="{% url 'project_seo_posts' project.id %}"
@@ -144,7 +144,7 @@
           <svg class="mr-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
           </svg>
-          Back to Project
+          返回项目
         </a>
       </div>
     {% endif %}

@@ -2,19 +2,19 @@
 
 {% block meta %}
 <title>{{ page_title }} | XeeAISto</title>
-<meta name="description" content="See what's new in XeeAISto. View the complete changelog with all updates, new features, bug fixes, and improvements." />
+<meta name="description" content="查看 XeeAISto 的最新动态。浏览完整的更新日志，包含所有更新、新功能、错误修复和改进。" />
 <meta name="robots" content="index, follow" />
 <link rel="canonical" href="https://{{ request.get_host }}{% url 'changelog' %}" />
 
 <meta property="og:type" content="website" />
 <meta property="og:title" content="{{ page_title }} | XeeAISto" />
 <meta property="og:url" content="https://{{ request.get_host }}{% url 'changelog' %}" />
-<meta property="og:description" content="See what's new in XeeAISto. View the complete changelog with all updates, new features, bug fixes, and improvements." />
+<meta property="og:description" content="查看 XeeAISto 的最新动态。浏览完整的更新日志，包含所有更新、新功能、错误修复和改进。" />
 <meta property="og:site_name" content="XeeAISto" />
 
 <meta name="twitter:card" content="summary" />
 <meta name="twitter:title" content="{{ page_title }} | XeeAISto" />
-<meta name="twitter:description" content="See what's new in XeeAISto. View the complete changelog with all updates, new features, bug fixes, and improvements." />
+<meta name="twitter:description" content="查看 XeeAISto 的最新动态。浏览完整的更新日志，包含所有更新、新功能、错误修复和改进。" />
 {% endblock meta %}
 
 {% block content %}
@@ -29,14 +29,14 @@
         <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
         </svg>
-        <span>Back to Home</span>
+        <span>返回首页</span>
       </a>
       {% if user.is_authenticated %}
       <a href="{% url 'home' %}" class="inline-flex gap-x-2 items-center px-6 py-3 text-base font-medium text-white bg-red-600 rounded-lg shadow-sm transition-colors hover:bg-red-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-red-600">
         <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
         </svg>
-        <span>Go to Dashboard</span>
+        <span>前往控制台</span>
       </a>
       {% endif %}
     </div>

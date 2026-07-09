@@ -96,7 +96,7 @@
           line-height="28px"
           padding-bottom="16px"
         >
-          What's next?
+          下一步做什么？
         </mj-text>
 
         <mj-text
@@ -105,9 +105,9 @@
           line-height="24px"
           padding-left="20px"
         >
-          • Review and edit the content if needed<br/>
-          • Post it to your blog with one click<br/>
-          • Generate more content for your project
+          • 根据需要查看和编辑内容<br/>
+          • 一键发布到您的博客<br/>
+          • 为您的项目生成更多内容
         </mj-text>
 
         <mj-text
@@ -132,7 +132,7 @@
           line-height="24px"
           padding-bottom="12px"
         >
-          <strong>💡 Pro Tip:</strong> Add a sitemap to your project so we can correctly get all your pages to insert into blog posts.
+          <strong>💡 专业提示：</strong>为您的项目添加站点地图，以便我们正确获取所有页面并插入到博客文章中。
         </mj-text>
 
         <mj-button
@@ -166,7 +166,7 @@
           line-height="20px"
           align="center"
         >
-          If you have any questions or feedback, just reply to this email.
+          如果您有任何问题或反馈，只需回复此邮件。
         </mj-text>
       </mj-column>
     </mj-section>
@@ -189,7 +189,7 @@
           line-height="18px"
           padding-top="10px"
         >
-          © {% now 'Y' %} XeeAISto. All rights reserved.
+          © {% now 'Y' %} XeeAISto. 保留所有权利。
         </mj-text>
       </mj-column>
     </mj-section>
@@ -197,29 +197,29 @@
 </mjml>
 {% endmjml %}
 {% else %}
-Hi there!
+您好！
 
-Great news! Your blog post "{{ blog_post.title }}" for {{ project.name }} is ready.
+好消息！您为 {{ project.name }} 创建的博客文章 "{{ blog_post.title }}" 已准备就绪。
 
-We've completed extensive research and generated a comprehensive blog post for you.
+我们已完成广泛的研究，并为您生成了一篇全面的博客文章。
 
-View your blog post here:
+在此查看您的博客文章：
 {{ blog_post_url }}
 
-What's next?
-- Review and edit the content if needed
-- Post it to your blog with one click
-- Generate more content for your project
+下一步做什么？
+- 根据需要查看和编辑内容
+- 一键发布到您的博客
+- 为您的项目生成更多内容
 {% if show_sitemap_nudge %}
 
-💡 Pro Tip: Add a sitemap to your project so we can correctly get all your pages to insert into blog posts.
+💡 专业提示：为您的项目添加站点地图，以便我们正确获取所有页面并插入到博客文章中。
 
-Add Sitemap: {{ pages_url }}
+添加站点地图：{{ pages_url }}
 {% endif %}
 
-Happy blogging!
-- The XeeAISto Team
+祝您博客写作愉快！
+- XeeAISto 团队
 
 ---
-If you have any questions or feedback, just reply to this email.
+如果您有任何问题或反馈，只需回复此邮件。
 {% endif %}

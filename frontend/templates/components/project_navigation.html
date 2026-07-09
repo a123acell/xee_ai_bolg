@@ -2,7 +2,7 @@
 <nav class="bg-white rounded-lg border border-gray-200 shadow-sm">
   <div class="p-4">
     <h2 class="px-3 mb-2 text-xs font-semibold tracking-wider text-gray-500 uppercase">
-      Navigation
+      导航
     </h2>
     <ul class="space-y-1">
       <li>
@@ -35,7 +35,7 @@
             </svg>
             Posts
           </div>
-          <a href="{% url 'project_custom_post_types' project.id %}" class="inline-flex justify-center items-center w-6 h-6 text-gray-600 rounded border border-gray-300 hover:bg-gray-50" title="Manage custom post types">
+          <a href="{% url 'project_custom_post_types' project.id %}" class="inline-flex justify-center items-center w-6 h-6 text-gray-600 rounded border border-gray-300 hover:bg-gray-50" title="管理自定义文章类型">
             +
           </a>
         </div>
@@ -101,7 +101,7 @@
           <svg class="mr-3 w-5 h-5 {% if request.resolver_match.url_name == 'project_keywords' %}text-gray-900{% else %}text-gray-400{% endif %}" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 20l4-16m2 16l4-16M6 9h14M4 15h14" />
           </svg>
-          Keywords
+          关键词
         </a>
       </li>
       <li>
@@ -123,7 +123,7 @@
           <svg class="mr-3 w-5 h-5 {% if request.resolver_match.url_name == 'project_earned_links' %}text-gray-900{% else %}text-gray-400{% endif %}" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.828 10.172a4 4 0 015.657 5.656l-3 3a4 4 0 01-5.657-5.656m-1.414 1.414a4 4 0 01-5.657-5.656l3-3a4 4 0 015.657 5.656" />
           </svg>
-          Earned Links
+          外链
         </a>
       </li>
       <li>
@@ -134,7 +134,7 @@
           <svg class="mr-3 w-5 h-5 {% if request.resolver_match.url_name == 'project_competitors' %}text-gray-900{% else %}text-gray-400{% endif %}" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
           </svg>
-          Competitors
+          竞争对手
         </a>
       </li>
       <li>
@@ -157,7 +157,7 @@
           <svg class="mr-3 w-5 h-5 {% if request.resolver_match.url_name == 'project_integrations' %}text-gray-900{% else %}text-gray-400{% endif %}" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7.5 8.25h9m-9 3.75h9M4.5 18h15a2.25 2.25 0 002.25-2.25V8.25A2.25 2.25 0 0019.5 6h-15A2.25 2.25 0 002.25 8.25v7.5A2.25 2.25 0 004.5 18z" />
           </svg>
-          Integrations
+          集成
         </a>
       </li>
 
@@ -170,7 +170,7 @@
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"></path>
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
           </svg>
-          Settings
+          设置
         </a>
       </li>
     </ul>
