@@ -1,8 +1,8 @@
 {% extends "docs/base_docs.html" %}
 
 {% block meta %}
-<title>{{ page_title }} - {{ category_title }} | XeeAISto 文档</title>
-<meta name="description" content="{% if meta_description %}{{ meta_description }}{% else %}{{ page_title }} 的 XeeAISto 文档{% endif %}" />
+<title>{{ page_title }} - {{ category_title }} | XeeAIStu 文档</title>
+<meta name="description" content="{% if meta_description %}{{ meta_description }}{% else %}{{ page_title }} 的 XeeAIStu 文档{% endif %}" />
 {% if meta_keywords %}<meta name="keywords" content="{{ meta_keywords }}" />{% endif %}
 {% if author %}<meta name="author" content="{{ author }}" />{% endif %}
 <meta name="robots" content="index, follow" />
@@ -13,14 +13,14 @@
 {% endif %}
 
 <meta property="og:type" content="article" />
-<meta property="og:title" content="{{ page_title }} - {{ category_title }} | XeeAISto 文档" />
+<meta property="og:title" content="{{ page_title }} - {{ category_title }} | XeeAIStu 文档" />
 <meta property="og:url" content="https://{{ request.get_host }}{% url 'docs_page' category=current_category page=current_page %}" />
-<meta property="og:description" content="{% if meta_description %}{{ meta_description }}{% else %}{{ page_title }} 的 XeeAISto 文档{% endif %}" />
-<meta property="og:site_name" content="XeeAISto" />
+<meta property="og:description" content="{% if meta_description %}{{ meta_description }}{% else %}{{ page_title }} 的 XeeAIStu 文档{% endif %}" />
+<meta property="og:site_name" content="XeeAIStu" />
 
 <meta name="twitter:card" content="summary" />
-<meta name="twitter:title" content="{{ page_title }} - {{ category_title }} | XeeAISto 文档" />
-<meta name="twitter:description" content="{% if meta_description %}{{ meta_description }}{% else %}{{ page_title }} 的 XeeAISto 文档{% endif %}" />
+<meta name="twitter:title" content="{{ page_title }} - {{ category_title }} | XeeAIStu 文档" />
+<meta name="twitter:description" content="{% if meta_description %}{{ meta_description }}{% else %}{{ page_title }} 的 XeeAIStu 文档{% endif %}" />
 {% endblock meta %}
 
 {% block docs_content %}
